@@ -165,8 +165,7 @@
       selected: false
       param: style.selected
       message: >-
-        Please ENTER your preferred style from the above options (example: Clean
-        & Vibrant).
+        Please ENTER your preferred style from the options above (e.g., Clean & Vibrant).
     - type: gpt
       selected: false
       prompt: >-
@@ -188,7 +187,7 @@
       param: style.selected
     - type: say
       selected: false
-      message: "Palette generator config:"
+      message: "Palette generator configuration:"
     - type: gpt
       selected: false
       prompt: >-
@@ -222,7 +221,7 @@
       param: generator.description
     - type: say
       selected: false
-      message: "Related palette configs:"
+      message: "Related palette configurations:"
     - type: gpt
       selected: false
       prompt: >-
@@ -251,7 +250,7 @@
         Related palette generator configurations:
     - type: say
       selected: false
-      message: "Proposed palette configs:"
+      message: "Proposed palette configurations:"
     - type: gpt
       selected: false
       prompt: >-
@@ -282,8 +281,7 @@
       selected: false
       param: generator.config
       message: >-
-        Please ENTER your preferred palette generator config from the above
-        options (example: Monochrome & Vibrant).
+        Please ENTER your preferred palette generator config from the options above (e.g., Monochrome & Vibrant).
     - type: gpt
       selected: false
       prompt: >-
@@ -351,8 +349,7 @@
       selected: false
       param: style.typos
       message: >-
-        Please ENTER your preferred typos from the above options (example:
-        Titles: Roboto, Text: Open Sans).
+        Please ENTER your preferred typography option from the choices provided (e.g., Titles: Roboto, Text: Open Sans).
     - type: gpt
       selected: false
       prompt: >-
@@ -368,7 +365,7 @@
       param: style.typos
     - type: say
       selected: false
-      message: "Writer tone config nuances:"
+      message: "Subtle nuances in writer tone configuration:"
     - type: gpt
       selected: false
       prompt: >-
@@ -402,7 +399,7 @@
       param: writer.config
     - type: say
       selected: false
-      message: "Related writer tone configs:"
+      message: "Related writer tone configurations:"
     - type: gpt
       selected: false
       prompt: >-
@@ -442,7 +439,7 @@
         Related writer tone configurations:
     - type: say
       selected: false
-      message: "Proposed writer tone configs:"
+      message: "Proposed writer tone configurations:"
     - type: gpt
       selected: false
       prompt: >-
@@ -477,7 +474,7 @@
       selected: false
       param: writer.tone
       message: |-
-        Please ENTER your preferred writer tone from the above options. Example:
+        Please ENTER your preferred writer tone from the options provided. Example:
         - Funny vs Serious = Funny
         - Casual vs Formal = Casual
         - Irreverent vs Respectful = Neutral
@@ -508,21 +505,19 @@
     - type: ask
       selected: false
       param: domains.length
-      message: "How many domain suggestions would you prefer to receive? *Default: 20*"
+      message: "How many domain suggestions would you like to receive? *Default: 20*"
       default: "20"
     - type: ask
       selected: false
       param: domains.top
       message: >-
-        Which top-level domains would you like to utilize? (For instance: .com,
-        .net) *Default: .com*
+        Which top-level domains would you like to use? (For example: .com, .net) *Default: .com*
       default: .com
     - type: ask
       selected: false
       param: domains.lang
       message: >-
-        What language would you like to use to compose the domain name?
-        *Default: {{company.lang}}*
+        In which language would you like to compose the domain name? *Default: {{company.lang}}*
       default: "{{company.lang}}"
     - type: gpt
       selected: true
@@ -635,7 +630,7 @@
       message: >-
         Please review the current initial state report. If everything looks
         correct, press ENTER to continue.
-      default: Everything is ready for the magic!
+      default: Great! Everything is set for the magic to begin! Let's proceed.
     - type: gpt
       selected: false
       prompt: >-
@@ -644,7 +639,7 @@
         Answer in {{language}}
     - type: say
       selected: false
-      message: "Language used in the company name:"
+      message: "The language utilized in the company name is:"
     - type: gpt
       selected: false
       prompt: >-
@@ -692,9 +687,7 @@
       selected: false
       param: brief.domain
       message: >-
-        Please ENTER your preferred domain from all available options. Your
-        selection can differ from the suggested ones. Ensure to confirm its
-        availability prior to selection.
+        Please ENTER your preferred domain from the available options. You can choose a different domain than the suggested ones. Make sure to confirm its availability before making a selection.
     - type: gpt
       selected: false
       prompt: >-
