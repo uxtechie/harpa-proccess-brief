@@ -1,0 +1,565 @@
+meta:
+  title: _getStyleFromBrief
+  description: ''
+  category: User
+  name: _UM2K6w77G-ljoNuHUqwH
+steps:
+  - type: ask
+    selected: false
+    param: brief.domain
+    message: Please, press ENTER to continue...
+    default: ToolshedSupport.com
+  - type: ask
+    selected: false
+    param: brief.brand
+    message: Please, press ENTER to continue...
+    default: Toolshed Support
+  - type: say
+    selected: false
+    message: 'Supported aesthetics styles:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Please assume this fictional role: You're a Web Designer whizz with the
+      ability to work with the following design styles:
+
+
+      - Minimalistic
+
+      - Modern
+
+      - Feminine
+
+      - Vintage
+
+      - Elegant
+
+      - Clean
+
+      - Smart
+
+      - Classy
+
+      - High end
+
+      - Luxury
+
+      - Urban
+
+      - Cute
+
+      - Cartoonish
+
+      - Mysterious
+
+      - Sci-fi
+
+      - Futuristic
+
+      - High-tech
+
+      - Futuristic
+
+      - AI Utopia Advancement
+
+      - Vibrant
+
+      - Bright
+
+      - Neon
+
+      - Cyber
+
+      - Watercolor
+
+      - Retro
+
+
+      Please, if you have understood this instruction, respond just with the
+      comma separated style list.
+
+
+      Answer in English
+
+
+      Styles:
+    param: styles
+  - type: say
+    selected: false
+    message: 'Design premises:'
+  - type: gpt
+    prompt: >-
+      Analyze the website content to identify design brief.
+
+
+      Does the brief or the brand suggest premises related to the following
+      aspects?: aesthetics, target audience values, accessibility, company
+      values, product values, design format, layout, colors, typography, etc.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in English
+
+      Web page content:
+
+      {{page}}
+
+      Brand:
+
+      {{brief.brand}}
+
+      Brief & brand related premises:
+    selected: true
+    param: style.premises
+  - type: say
+    selected: false
+    message: 'Translation:'
+  - type: gpt
+    selected: false
+    prompt: 'Traslate to {{language}}: {{style.premises}}'
+  - type: say
+    selected: false
+    message: 'Related styles:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Considering the style premises, choose the 6 styles from the list
+      {{styles}} that best fit. Justify your decision.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Related styles:
+  - type: say
+    selected: false
+    message: 'Proposed styles:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Well, now review the style premises to make 3 proposals from the above
+      options about the styles that you think are most suitable.
+
+
+      You can choose unique styles or combine them. Explain the choice.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Proposed styles:
+  - type: ask
+    selected: false
+    param: style.selected
+    message: >-
+      Please ENTER your preferred style from the above options (example: Clean &
+      Vibrant).
+  - type: gpt
+    selected: false
+    prompt: |-
+      Normalizar {{style.selected}} usando como referencia la lista de estilos. 
+
+      Usa el formato de referencia como respuesta sin añadir ningún comentario.
+
+      Respuesta en inglés.
+      Estilos:
+      {{styles}}
+      Formato de referencia:
+      Clean & Vibrant
+      Normalized selected styles:
+    param: style.selected
+  - type: say
+    selected: false
+    message: 'Palette generator config:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      This is the description about the config parameters of a color palette
+      generator.
+
+
+      The first parameter is the type of color palette to process:
+
+      - Magazine
+
+      - Monochrome
+
+      - 1 color accent
+
+      - 2 colores accent
+
+      - 3 colores accent
+
+
+      The second parameter is the preset of the color range to generate:
+
+      - Default
+
+      - High Contrast
+
+      - Bright & Light
+
+      - Pastel
+
+      - Vibrant
+
+      - Dark
+
+      - Hyper Color.
+
+
+      Premise: throughout the entire process, the name of the config parameters
+      should remain in English.
+
+
+      Please, if you have understood this instruction, respond just with the
+      palette generator config description.
+
+
+      Answer in English
+
+
+      Generator config descripion:
+    param: generator.description
+  - type: say
+    selected: false
+    message: 'Related palette configs:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Considering the style premises, selected style and palette generator
+      description, give me 6 palette generator config. Justify your decision.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Selected Style:
+
+      {{style.selected}}
+
+      Palette generator description
+
+      {{generator.description}}
+
+      Related palette generator configs:
+  - type: say
+    selected: false
+    message: 'Related typographies:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Considering the style premises and the selected style, choose the 8
+      typographies that best fit. Justify your decision.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Selected Style:
+
+      {{style.selected}}
+
+      Related typographies:
+  - type: say
+    selected: false
+    message: 'Proposed palette configs:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Considering the style premises, selected style and the above related
+      palette configs, please provide the 3 configurations you believe to be the
+      most appropriate. Justify your decision.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Selected Style:
+
+      {{style.selected}}
+
+      Palette generator description
+
+      {{generator.description}}
+
+      Propesed palette generator configs:
+  - type: ask
+    selected: false
+    param: generator.config
+    message: >-
+      Please ENTER your preferred palette generator config from the above
+      options (example: Monochrome & Vibrant).
+  - type: gpt
+    selected: false
+    prompt: >-
+      Normalizar {{generator.config}} usando el formato de referencia como
+      respuesta sin añadir ningún comentario.
+
+
+      Respuesta en inglés.
+
+      Formato de referencia:
+
+      Monochrome & Vibrant
+
+      Normalized palette generator config:
+    param: generator.config
+  - type: say
+    selected: false
+    message: 'Proposed typographies:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Considering the style premises and selected style, give me 3 proposals
+      choosing one of above propposed fonts for the titles and another for the
+      rest of the texts. You can choose to use the same font or combine them.
+      Justify your decision.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Selected Style:
+
+      {{style.selected}}
+
+      Proposed typographies:
+  - type: ask
+    selected: false
+    param: style.typos
+    message: >-
+      Please ENTER your preferred typos from the above options (example: Titles:
+      Roboto, Text: Open Sans).
+  - type: gpt
+    selected: false
+    prompt: >-
+      Normalizar {{style.typos}} usando el formato de referencia como respuesta
+      sin añadir ningún comentario.
+
+
+      Respuesta en inglés.
+
+      Formato de referencia:
+
+      Title: Didot / Text: Garamond
+
+      Normalized selected typos:
+    param: style.typos
+  - type: say
+    selected: false
+    message: 'Writer tone config nuances:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Please add this fictional role to your abilities: You are a Web Content
+      Writer whose tone is defined by these four different nuances:
+
+
+      Tone configuration:
+
+      - Funny vs Serious
+
+      - Casual vs Formal
+
+      - Irreverent vs Respectful
+
+      - Enthusiastic vs Matter-of-Fact
+
+
+      Each nuance of the tone configuration is adjusted according to the
+      following example:
+
+
+      Funny vs Serious = Funny: A humorous tone is selected.
+
+      Funny vs Serious = Neutral: This tone does not apply.
+
+      Funny vs Serious = Serious: A serious tone is selected.
+
+
+      Valid tone configuration example:
+
+      - Funny vs Serious = Funny
+
+      - Casual vs Formal = Casual
+
+      - Irreverent vs Respectful = Neutral
+
+      - Enthusiastic vs Matter-of-Fact = Neutral
+
+
+      If you've understood these instructions, please respond with the list of
+      tone nuances, separated by commas.
+
+
+      Answer in English:
+
+
+      Writer's tone scales:
+    param: writer.config
+  - type: say
+    selected: false
+    message: 'Related writer tone configs:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Considering the style premises, selected style, selected typographies,
+      {{language}} as the current language and your Web Content Writer role,
+      please provide 6 suitable tone configurations. Justify your selections.
+
+
+      Valid tone configuration example:
+
+      - Funny vs Serious = Funny
+
+      - Casual vs Formal = Casual
+
+      - Irreverent vs Respectful = Neutral
+
+      - Enthusiastic vs Matter-of-Fact = Neutral
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Selected style:
+
+      {{style.selected}}
+
+      Selected typographies:
+
+      {{style.typos}}
+
+      Writer tone config nuances:
+
+      {{writer.config}}
+
+      Related writer tone configs:
+  - type: say
+    selected: false
+    message: 'Proposed writer tone configs:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Considering the style premises, selected, selected typographies style,
+      {{language}} as the current language and the above related writer tone
+      configs, provide the 3 configurations you believe to be the most
+      appropriate. Justify your decision.
+
+
+      Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists.
+
+
+      Answer in {{language}}
+
+      Style premises:
+
+      {{style.premises}}
+
+      Selected Style:
+
+      {{style.selected}}
+
+      Selected typographies:
+
+      {{style.typos}}
+
+      Writer tone config nuances:
+
+      {{writer.config}}
+
+      Propesed writer tone configs:
+  - type: ask
+    selected: false
+    param: writer.tone
+    message: |-
+      Please ENTER your preferred writer tone from the above options. Example:
+      - Funny vs Serious = Funny
+      - Casual vs Formal = Casual
+      - Irreverent vs Respectful = Neutral
+      - Enthusiastic vs Matter-of-Fact = Neutral
+  - type: gpt
+    selected: false
+    prompt: >-
+      Normalizar {{writer.tone}} usando el formato de referencia como respuesta
+      sin añadir ningún comentario.
+
+
+      Respuesta en inglés.
+
+      Formato de referencia:
+
+      - Funny vs Serious = Funny
+
+      - Casual vs Formal = Casual
+
+      - Irreverent vs Respectful = Neutral
+
+      - Enthusiastic vs Matter-of-Fact = Neutral
+
+      Normalized writer tone:
+    param: writer.tone
+version: 1

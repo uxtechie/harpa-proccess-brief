@@ -1,0 +1,159 @@
+meta:
+  title: Build Brief
+  description: ''
+  category: User
+  name: hQ6EN12h_tsn1PVyYl4Vo
+steps:
+  - type: command
+    selected: false
+    inputs: []
+    name: Clear
+  - type: gpt
+    selected: false
+    prompt: >-
+      Please assume the hypothetical role of a wizard asistant, specialized in
+      guiding a series of steps in website development.
+
+
+      Firstly, review the current state and ensure these conditions are
+      fulfilled. Be meticulous in this step, considering that uncertainty
+      implies the condition is not met:
+
+
+      - The current domain {{page.domain}} matches "goodbrief.io"
+
+      - Examine the website content to confirm the type of design brief. It
+      should be "Website"
+
+
+      Provide an update on the status of these two analyzed points without
+      adding extra commentary. If any conditions aren't satisfied, alert the
+      user and emphasize the discovered issue in italics. Respond in
+      {{language}}. Web page content:
+
+      {{page}}
+
+      Initial state report:
+    param: ''
+  - type: ask
+    selected: false
+    param: brief.state
+    message: >-
+      Please review the current initial state report. If everything looks
+      correct, press ENTER to continue.
+    default: Everything is ready for the magic!
+  - type: gpt
+    selected: false
+    prompt: >-
+      Hello! I'm analyzing the current design brief to support you in the
+      development process. Occasionally, the process will pause to request your
+      decision or some data input. Remember, I'm your co-pilot, and we're
+      working as a team 😜.
+
+
+      Answer in {{language}}
+  - type: say
+    selected: false
+    message: 'Language used in the company name:'
+  - type: gpt
+    selected: false
+    prompt: >-
+      Analyze the website content to identify the language used for the company
+      name as stated in the design brief.
+
+
+      Your response should consist exclusively of the identified language's
+      name, translated into English. For example: Spanish.
+
+
+      Web page content:
+
+      {{page}}
+
+      Company name language:
+    param: company.lang
+  - type: gpt
+    selected: false
+    prompt: >-
+      Please, examine the website content to summarize the design brief.
+
+
+      Bear these guidelines in mind:
+
+
+      - Keep each section of the brief separate.
+
+      - Each section should contain the section title and a list with the key
+      points described therein.
+
+      - Please add an emoji that matches the specific content of each item as a
+      bullet point for every item in the lists, as well as for each entry within
+      the sub-lists..
+
+      - Highlight any color related to the design in *italic*.
+
+
+      Respond in {{language}}. 
+
+      Web page content:
+
+      {{page}}
+
+      Summary:
+    param: brief.summary
+  - type: command
+    selected: false
+    inputs: []
+    name: _getDomainsFromBrief
+  - type: ask
+    selected: false
+    param: brief.domain
+    message: >-
+      Please ENTER your preferred domain from all available options. Your
+      selection can differ from the suggested ones. Ensure to confirm its
+      availability prior to selection.
+  - type: gpt
+    selected: false
+    prompt: >-
+      Extract the constituent words from this domain {{brief.domain}} as brief
+      brand.
+
+
+      Your response should consist exclusively of the brief brand.
+
+
+      Continue:
+    param: brief.brand
+  - type: ask
+    selected: false
+    param: brief.brand
+    message: 'Please enter your brand. By default: {{brief.brand}}.'
+    default: '{{brief.brand}}'
+  - type: gpt
+    selected: false
+    prompt: >-
+      From now on, when making decisions by analyzing the design brief, you
+      won't focus on the company name, but rather the brand.
+
+
+      Respond in {{language}}. 
+
+
+      The current brand is {{brief.brand}}:
+    param: ''
+  - type: command
+    selected: false
+    inputs: []
+    name: _getThemeFromBrief
+  - type: ask
+    selected: false
+    param: brief.theme
+    message: >-
+      Please ENTER your preferred theme from all available options. Your
+      selection can differ from the suggested ones.
+  - type: command
+    selected: true
+    inputs:
+      - 'Gather inspiration from the design brief described here: {{page}}'
+    name: SILO website structure
+version: 1

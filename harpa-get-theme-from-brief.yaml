@@ -1,0 +1,140 @@
+meta:
+  title: _getThemeFromBrief
+  description: ''
+  category: User
+  name: t6V7S_aXeaEMzjXsbkK8M
+steps:
+  - type: gpt
+    prompt: >-
+      Please assume this fictional role: You're a web design expert,
+      specializing in proposing color themes for a website using Tailwind CSS
+      v3.
+
+
+      Are you acquainted with these guiding principles:
+
+
+      - What are the key factors to consider when choosing a color theme for a
+      website?
+
+      - What strategies can assist in discovering an attractive and
+      brand-appropriate color palette?
+
+      - How can the use of color in a website enhance user experience and
+      engagement?
+
+      - What alternative color combinations can be used if the primary colors
+      are not suitable?
+
+      - How can brainstorming a list of potential color schemes aid in
+      discovering a suitable theme?
+
+      - How important is it to maintain consistency across all online presence
+      regarding the color theme?
+
+      - How can a color theme capture the essence of a business or brand?
+
+      - How can a color theme be a valuable asset for a website?
+
+      - How can tools like color wheel and color harmony theories assist in
+      finding an apt color theme?
+
+      - Can you provide an example of using a season-specific color theme for a
+      website?
+
+      - How can a business's logo or existing brand colors be incorporated into
+      a website's color theme?
+
+      - Can you provide an example of using a minimalistic color scheme for a
+      website?
+
+      - How can a color theme enhance a website's accessibility for users with
+      visual impairments?
+
+      - Can you provide an example of using a bold, contrasting color theme for
+      a website?
+
+      - How can a color theme be adapted for different types of web pages (e.g.,
+      home page, product page, contact page)?
+
+      - How can an analog, complementary, or monochromatic color scheme be used
+      in a website's design?
+
+      - How can color psychology be considered when choosing a color theme?
+
+      - How can a color theme generator tool be employed to spawn new ideas?
+
+      - How can you ensure that your color theme is versatile and long-term?
+
+
+      Please, if you have understood this instruction, respond with:
+      "Processing..."
+
+
+      Answer in {{language}}
+
+
+      Processing...:
+    selected: true
+  - type: gpt
+    selected: false
+    prompt: >-
+      Alright, in line with your current role suggest 5 different Tailwind v3
+      color themes.
+
+
+      Analyze the website content to comprehend the design brief.
+
+
+      The color theme should resonate with the company's brand identity as
+      stated in the design brief, considering their main color.
+
+
+      Use the design brief as a guide for suggesting color shades. You may be
+      creative, for example, propose a combination of analogous, monochromatic,
+      or complementary colors.
+
+
+      The primary, secondary, and accent colors should be chosen considering the
+      brand's target audience, product nature, and the emotion they want to
+      convey.
+
+
+      Please present only the list of suggested color themes without any further
+      explanation."
+
+
+      Web page content:
+
+      {{page}}
+
+
+      Proposed themes:
+  - type: gpt
+    selected: false
+    prompt: >-
+      Good, in line with your current role:
+
+
+      Review the website content to comprehend the design brief.
+
+
+      From the list of suggested themes, pick the top 3 themes that most closely
+      adhere to the design brief.
+
+
+      Feel free to add commentary on your selections.
+
+
+      Answer in {{language}}.
+
+      Web page content:
+
+      {{page}}
+
+      List of suggested themes:
+
+      {{gpt}}
+
+      Chosen themes:
+version: 1
