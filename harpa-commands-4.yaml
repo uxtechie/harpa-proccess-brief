@@ -1,18 +1,14 @@
 - meta:
-    title: _getMockups
+    title: /_getBriefContext
     description: ""
     category: User
-    name: IObzdQtVQggUR9CfQiBO4
+    name: rUcS29e4SijcNrHfIzzv-
   steps:
     - type: gpt
       prompt: >-
-        Taking into consideration the style premises, chosen style, selected fonts, {{language}} as the chosen language, logo title, and the tone settings for the writer, please provide the 3 prompts that you believe are the most suitable. Support your choices with reasoning.
+        Please format the following data as a JSON structure. Expand the variables
+        in nested structures. Answer in English:
 
-        Use the following example prompt as a guide:
-
-        Imagine a Web Design for a [Product][Industry] aimed at [target audience] who value [target audience values]. The aesthetic is based on [color related premises] with a color palette of [Color palette config], incorporating a [selected style] and fonts of [selected typographies]. The text tone is [content writer tone], the logo title is [title ], the product values are [product values], and the company values are [company values] --aspect ratio 4:3
-
-        Answer in English.
 
         Style premises:
 
@@ -33,6 +29,48 @@
         Logo title:
 
         {{logo.title}}
+
+        Color palette configuration:
+
+        {{generator.config}}
+
+        Brief context:
+      selected: true
+  version: 1
+- meta:
+    title: _getMockups
+    description: ""
+    category: User
+    name: IObzdQtVQggUR9CfQiBO4
+  steps:
+    - type: gpt
+      prompt: >-
+        Taking into consideration the style premises, chosen style, selected fonts, {{language}} as the chosen language, "{{logo.title}}" as logo a title, and the tone settings for the writer, please provide the 3 prompts that you believe are the most suitable. Support your choices with reasoning.
+
+
+        Use the following example prompt as a guide:
+
+
+        Imagine a Web Design for a [Product][Industry] aimed at [target audience] who value [target audience values]. The aesthetic is based on [color related premises] with a color palette of [Color palette config], incorporating a [selected style] and fonts of [selected typographies]. The text tone is [content writer tone], the logo title is "{{logo.title}}", the product values are [product values], and the company values are [company values] --aspect ratio 4:3
+
+
+        Answer in English.
+
+        Style premises:
+
+        {{brief.summary}}
+
+        Selected Style:
+
+        {{style.selected}}
+
+        Selected fonts:
+
+        {{style.typos}}
+
+        Writer's tone settings:
+
+        {{writer.tone}}
 
         Color palette configuration:
 
@@ -123,19 +161,17 @@
     - type: gpt
       selected: false
       prompt: >-
-        Taking into account the style premises and logo title, choose the 6 styles from the list {{styles}} that you think best align. Justify your choices.
+        Taking into account the style premises and logo title "{{logo.title}}", selected the 6 styles from the list {{styles}} that you think best align. Justify your choices.
+
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
         Style premises:
 
         {{brief.summary}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Related styles:
     - type: say
@@ -144,21 +180,20 @@
     - type: gpt
       selected: false
       prompt: >-
-        Now, revisiting the style premises and logo title, make 3 proposals from the options above about the styles that you think are most appropriate.
+        Now, revisiting the style premises and logo title "{{logo.title}}", make 3 proposals from the options above about the styles that you think are most appropriate.
+
 
         You can choose unique styles or mix them. Please explain your choice.
 
+
         Include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
         Style premises:
 
         {{brief.summary}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Proposed styles:
     - type: ask
@@ -171,7 +206,9 @@
       prompt: >-
         Normalize {{style.selected}} using the style list as a reference.
 
+
         Use the reference format as your answer without adding any comments.
+
 
         Answer in English.
 
@@ -193,7 +230,9 @@
       prompt: >-
         This is the description of the configuration parameters for a color palette generator.
 
+
         The first parameter is the type of color palette to generate:
+
 
         - Magazine
         - Monochrome
@@ -201,7 +240,9 @@
         - 2 colors accent
         - 3 colors accent
 
+
         The second parameter is the preset for the range of colors to generate:
+
 
         - Default
         - High Contrast
@@ -211,9 +252,12 @@
         - Dark
         - Hyper Color
 
+
         Premise: Throughout the entire process, the names of the configuration parameters should remain in English.
 
+
         If you have understood this instruction, please respond solely with the description of the palette generator configuration.
+
 
         Answer in English.
 
@@ -225,19 +269,17 @@
     - type: gpt
       selected: false
       prompt: >-
-        Given the style premises, logo title, selected style, and palette generator description, provide 6 palette generator configurations. Justify your choices.
+        Given the style premises, logo title "{{logo.title}}", selected style, and palette generator description, provide 6 palette generator configurations. Justify your choices.
+
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, and for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
         Style premises:
 
         {{brief.summary}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Selected Style:
 
@@ -254,19 +296,17 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title, selected style, and the above related palette configurations, please provide the 3 configurations you believe to be the most appropriate. Justify your decision.
+        Considering the style premises, logo title "{{logo.title}}", selected style, and the above related palette configurations, please provide the 3 configurations you believe to be the most appropriate. Justify your decision.
+
 
         Include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, and for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
         Style premises:
 
         {{brief.summary}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Selected Style:
 
@@ -287,6 +327,7 @@
       prompt: >-
         Normalize {{generator.config}} using the reference format as your answer, without adding any comments.
 
+
         Answer in English.
 
         Reference format:
@@ -301,19 +342,17 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title, and selected style, choose the 8 typographies that you think best fit. Justify your decision.
+        Considering the style premises, logo title "{{logo.title}}", and selected style, choose the 8 typographies that you think best fit. Justify your decision.
+
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
         Style premises:
 
         {{brief.summary}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Selected Style:
 
@@ -326,19 +365,17 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title, and selected style, provide 3 proposals by choosing one of the above suggested fonts for the titles and another for the rest of the texts. You can choose to use the same font or mix them. Justify your decision.
+        Considering the style premises, logo title "{{logo.title}}", and selected style, provide 3 proposals by choosing one of the above suggested fonts for the titles and another for the rest of the texts. You can choose to use the same font or mix them. Justify your decision.
+
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
         Style premises:
 
         {{brief.summary}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Selected Style:
 
@@ -355,11 +392,14 @@
       prompt: >-
         Normalize {{style.typos}} using the reference format as your answer, without adding any comments.
 
+
         Answer in English.
+
 
         Reference format:
 
         Titles: Didot / Text: Garamond
+
 
         Normalized selected typos:
       param: style.typos
@@ -371,27 +411,43 @@
       prompt: >-
         Please incorporate this fictional role into your capabilities: You are a Web Content Writer whose tone is characterized by the following four nuances:
 
+
         Tone configuration:
 
+
         - Funny vs Serious
+
         - Casual vs Formal
+
         - Irreverent vs Respectful
+
         - Enthusiastic vs Matter-of-Fact
+
 
         Each nuance of the tone configuration is adjusted according to the following example:
 
+
         Funny vs Serious = Funny: A humorous tone is chosen.
+
         Funny vs Serious = Neutral: This tone does not apply.
+
         Funny vs Serious = Serious: A serious tone is chosen.
+
 
         Valid tone configuration example:
 
+
         - Funny vs Serious = Funny
+
         - Casual vs Formal = Casual
+
         - Irreverent vs Respectful = Neutral
+
         - Enthusiastic vs Matter-of-Fact = Neutral
 
+
         If you have understood these instructions, please respond with the list of tone nuances, separated by commas.
+
 
         Answer in English.
 
@@ -403,16 +459,22 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title, selected style, chosen typographies, {{language}} as the current language, and your role as a Web Content Writer, please provide 6 suitable tone configurations. Justify your selections.
+        Considering the style premises, logo title {{logo.title}}, selected style, chosen typographies, {{language}} as the current language, and your role as a Web Content Writer, please provide 6 suitable tone configurations. Justify your selections.
+
 
         Valid tone configuration example:
 
         - Funny vs Serious = Funny
+
         - Casual vs Formal = Casual
+
         - Irreverent vs Respectful = Neutral
+
         - Enthusiastic vs Matter-of-Fact = Neutral
 
+
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, and for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
@@ -423,10 +485,6 @@
         Selected style:
 
         {{style.selected}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Selected typographies:
 
@@ -443,9 +501,11 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title, selected style, chosen typographies, {{language}} as the current language, and the above related writer tone configurations, provide the 3 configurations you believe to be the most appropriate. Justify your decision.
+        Considering the style premises, logo title {{logo.title}}, selected style, chosen typographies, {{language}} as the current language, and the above related writer tone configurations, provide the 3 configurations you believe to be the most appropriate. Justify your decision.
+
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, and for each entry within the sub-lists.
+
 
         Answer in {{language}}.
 
@@ -456,10 +516,6 @@
         Selected Style:
 
         {{style.selected}}
-
-        Logo title:
-
-        {{logo.title}}
 
         Selected typographies:
 
@@ -475,23 +531,33 @@
       param: writer.tone
       message: |-
         Please ENTER your preferred writer tone from the options provided. Example:
+
         - Funny vs Serious = Funny
+
         - Casual vs Formal = Casual
+
         - Irreverent vs Respectful = Neutral
+
         - Enthusiastic vs Matter-of-Fact = Neutral
     - type: gpt
       selected: true
       prompt: >-
         Normalize {{writer.tone}} using the reference format as your answer, without adding any comments. Remove any emojis.
 
+
         Answer in English.
+
 
         Reference format:
 
         - Funny vs Serious = Funny
+
         - Casual vs Formal = Casual
+
         - Irreverent vs Respectful = Neutral
+
         - Enthusiastic vs Matter-of-Fact = Neutral
+
 
         Normalized writer tone:
       param: writer.tone
@@ -524,31 +590,54 @@
       prompt: >-
         Please assume this fictional role: You are an SEO expert, specializing in proposing appropriate domain names for a website.
 
+
         Are you familiar with these guiding principles:
 
+
         - What are the critical factors to consider when choosing a domain name?
+
         - What strategies can help in finding a memorable and easily spelled domain name?
+
         - How can the inclusion of keywords in a domain name improve search engine rankings?
+
         - What alternative extensions can be used if the desired .com domain name is unavailable?
+
         - How can brainstorming a list of potential names aid in finding a suitable domain name?
+
         - How important is it to maintain consistency across all online presence regarding the domain name?
+
         - How can a domain name capture the essence of a business or brand?
+
         - How can a domain name be a valuable asset for a business?
+
         - How can tools like a thesaurus and rhyming dictionary assist in finding a suitable domain name?
+
         - Can you provide an example of using a location-specific keyword in a domain name?
+
         - How can a personal name or nickname be incorporated into a domain name?
+
         - Can you provide an example of using a misspelling of a common word in a domain name?
+
         - How can a pun or play on words be used in a domain name?
+
         - Can you provide an example of using an acronym in a domain name?
+
         - How can a pun be used in a domain name?
+
         - How can an abbreviation be included in a domain name?
+
         - How can a catchy, short phrase be used in a domain name?
+
         - How can a domain name generator tool be used to generate new ideas?
+
         - How can two words be combined to create a new word for a domain name?
+
         - How can you ensure that your domain name is a long-term investment?
+
         - Is the entire domain name composed of words from the same language?
 
         Please, if you have understood this instruction, respond with: "Processing..."
+
 
         Answer in {{language}}
 
@@ -557,15 +646,21 @@
       prompt: >-
         Alright, in line with your current role, suggest {{domains.length}} different domain names.
 
+
         Analyze the website content to understand the design brief.
+
 
         The domain name should include all words from the company's name as stated in the design brief, preferably in the order they appear.
 
+
         Use the design brief as a guide for suggesting domains. The words you add to the company name to create the domain must be in the {{domains.lang}} language. You may be creative, for example, write half of the domains using abbreviated forms of the words.
+
 
         The top-level domain should be selected from this list {{domains.top}}.
 
+
         Please only provide the list of suggested domains without any additional explanation.
+
 
         Web page content:
 
@@ -578,11 +673,15 @@
       prompt: >-
         Good, in line with your current role:
 
+
         Review the website content to understand the design brief.
+
 
         From the list of suggested domains, pick the top 6 domains that most closely adhere to the design brief.
 
+
         Feel free to add commentary on your selections.
+
 
         Answer in {{language}}.
 
@@ -611,12 +710,19 @@
       prompt: >-
         Please assume the hypothetical role of a wizard assistant, specialized in guiding a series of steps in website development.
 
+
         Firstly, review the current state and ensure these conditions are fulfilled. Be meticulous in this step, considering that uncertainty implies the condition is not met:
 
+
         - The current domain {{page.domain}} matches "goodbrief.io"
+
         - Examine the website content to confirm the type of design brief. It should be "Website"
 
-        Provide an update on the status of these two analyzed points without adding extra commentary. If any conditions aren't satisfied, alert the user and emphasize the discovered issue in italics. Respond in {{language}}. 
+
+        Provide an update on the status of these two analyzed points without adding extra commentary. If any conditions aren't satisfied, alert the user and emphasize the discovered issue in italics.
+
+
+        Respond in {{language}}. 
 
         Web page content:
 
@@ -636,6 +742,7 @@
       prompt: >-
         Hello! I'm analyzing the current design brief to assist you in the development process. Occasionally, the process will pause to request your decision or some data input. Remember, I'm your co-pilot, and we're working as a team 😜.
 
+
         Answer in {{language}}
     - type: say
       selected: false
@@ -645,11 +752,15 @@
       prompt: >-
         Analyze the content of the website to identify the language used for the company name, as mentioned in the design brief.
 
+
         Your answer should only contain the name of the identified language, translated into English. For example: Spanish.
+
 
         Content of the web page:
 
+
         {{page}}
+
 
         Language of the company name:
       param: company.lang
@@ -658,12 +769,18 @@
       prompt: >-
         Please, review the content of the website to summarize the design brief.
 
+
         Keep in mind the following guidelines:
 
+
         - Keep each section of the brief separate.
+
         - Each section should include the section title and a list of key points described in it.
+
         - Please add an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
+
         - Highlight any color related to the design in *italic*.
+
 
         Respond in English.
 

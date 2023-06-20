@@ -1,0 +1,39 @@
+meta:
+  title: /_getBriefContext
+  description: ''
+  category: User
+  name: rUcS29e4SijcNrHfIzzv-
+steps:
+  - type: gpt
+    prompt: >-
+      Please format the following data as a JSON structure. Expand the variables
+      in nested structures. Answer in English:
+
+
+      Style premises:
+
+      {{brief.summary}}
+
+      Selected Style:
+
+      {{style.selected}}
+
+      Selected fonts:
+
+      {{style.typos}}
+
+      Writer's tone settings:
+
+      {{writer.tone}}
+
+      Logo title:
+
+      {{logo.title}}
+
+      Color palette configuration:
+
+      {{generator.config}}
+
+      Brief context:
+    selected: true
+version: 1
