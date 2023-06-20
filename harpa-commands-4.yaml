@@ -43,15 +43,18 @@
     category: User
     name: IObzdQtVQggUR9CfQiBO4
   steps:
+    - type: say
+      selected: false
+      message: "Web design rendering prompts:"
     - type: gpt
       prompt: >-
-        Taking into consideration the style premises, chosen style, selected fonts, {{language}} as the chosen language, "{{logo.title}}" as logo a title, and the tone settings for the writer, please provide the 3 prompts that you believe are the most suitable. Support your choices with reasoning.
+        Taking into consideration the style premises, chosen style, selected fonts, {{language}} as the chosen language, {{logo.title}} as logo a title, and the tone settings for the writer, please provide the 3 prompts that you believe are the most suitable. Support your choices with reasoning.
 
 
         Use the following example prompt as a guide:
 
 
-        Imagine a Web Design for a [Product][Industry] aimed at [target audience] who value [target audience values]. The aesthetic is based on [color related premises] with a color palette of [Color palette config], incorporating a [selected style] and fonts of [selected typographies]. The text tone is [content writer tone], the logo title is "{{logo.title}}", the product values are [product values], and the company values are [company values] --aspect ratio 4:3
+        Imagine a Web Design for a [Product][Industry] aimed at [target audience] who value [target audience values]. The aesthetic is based on [color related premises] with a color palette of [Color palette config], incorporating a [selected style] and fonts of [selected typographies]. The text tone is [content writer tone], the logo title is {{logo.title}}, the product values are [product values], and the company values are [company values] --aspect ratio 4:3
 
 
         Answer in English.
@@ -161,7 +164,7 @@
     - type: gpt
       selected: false
       prompt: >-
-        Taking into account the style premises and logo title "{{logo.title}}", selected the 6 styles from the list {{styles}} that you think best align. Justify your choices.
+        Taking into account the style premises and logo title {{logo.title}}, selected the 6 styles from the list {{styles}} that you think best align. Justify your choices.
 
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
@@ -180,7 +183,7 @@
     - type: gpt
       selected: false
       prompt: >-
-        Now, revisiting the style premises and logo title "{{logo.title}}", make 3 proposals from the options above about the styles that you think are most appropriate.
+        Now, revisiting the style premises and logo title {{logo.title}}, make 3 proposals from the options above about the styles that you think are most appropriate.
 
 
         You can choose unique styles or mix them. Please explain your choice.
@@ -269,7 +272,7 @@
     - type: gpt
       selected: false
       prompt: >-
-        Given the style premises, logo title "{{logo.title}}", selected style, and palette generator description, provide 6 palette generator configurations. Justify your choices.
+        Given the style premises, logo title {{logo.title}}, selected style, and palette generator description, provide 6 palette generator configurations. Justify your choices.
 
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, and for each entry within the sub-lists.
@@ -296,7 +299,7 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title "{{logo.title}}", selected style, and the above related palette configurations, please provide the 3 configurations you believe to be the most appropriate. Justify your decision.
+        Considering the style premises, logo title {{logo.title}}, selected style, and the above related palette configurations, please provide the 3 configurations you believe to be the most appropriate. Justify your decision.
 
 
         Include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, and for each entry within the sub-lists.
@@ -342,7 +345,7 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title "{{logo.title}}", and selected style, choose the 8 typographies that you think best fit. Justify your decision.
+        Considering the style premises, logo title {{logo.title}}, and selected style, choose the 8 typographies that you think best fit. Justify your decision.
 
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
@@ -365,7 +368,7 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the style premises, logo title "{{logo.title}}", and selected style, provide 3 proposals by choosing one of the above suggested fonts for the titles and another for the rest of the texts. You can choose to use the same font or mix them. Justify your decision.
+        Considering the style premises, logo title {{logo.title}}, and selected style, provide 3 proposals by choosing one of the above suggested fonts for the titles and another for the rest of the texts. You can choose to use the same font or mix them. Justify your decision.
 
 
         Please include an emoji that corresponds to the specific content of each item as a bullet point for every item in the lists, as well as for each entry within the sub-lists.
@@ -820,7 +823,7 @@
       selected: true
       param: logo.title
       message: "Please enter your logo title. By default: {{logo.title}}."
-      default: "{{logo.title}}"
+      default: { { logo.title } }
     - type: command
       selected: false
       inputs: []
