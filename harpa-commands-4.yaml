@@ -59,7 +59,7 @@
   steps:
     - type: say
       selected: false
-      message: 'Web design rendering prompts:'
+      message: 'Web design rendering prompt:'
     - type: gpt
       prompt: >-
         Taking into consideration the web title, design premises, selected style, selected fonts,
@@ -70,13 +70,12 @@
         Premises:
 
         - Use the following example prompt as a template:
-          a Web Design for a landing page of a [Product][Industry] aimed at [target
+          a Web Design for a landing page of a [product values][company values] aimed at [target
           audience] who value [target audience values]. The aesthetic is based on [selected style].
           Use the brand color [brand color] with a color palette of [Color palette config]. The
           brand is [company name]. The titles typography is [selected typographies] and the text
           typography is [selected typographies]. The text is written in {{language}} using a
-          [content writer tone] tone. The product values are [product values] and the company values
-          are [company values]. The web title is [web title] --ar 2:3
+          [content writer tone] tone. --ar 2:3
 
         - Text inside square brackets is a placeholder.
 
@@ -86,10 +85,6 @@
 
 
         Answer in English.
-
-        Web title:
-
-        {{web.title}}
 
         Design premises:
 
@@ -111,7 +106,7 @@
 
         {{generator.config}}
 
-        Proposed rendering prompts:
+        Proposed rendering prompt:
       selected: true
   version: 1
 - meta:
@@ -330,7 +325,7 @@
       selected: false
       prompt: >-
         Given the web title, design premises, selected style, and palette generator description,
-        provide 8 palette generator configurations.
+        provide 6 palette generator configurations.
 
 
         Please, no include emojis and no justify your choices.
@@ -557,7 +552,7 @@
       prompt: >-
         Considering the web title, design premises, selected style, chosen typographies,
         {{language}} as the current language, and your role as a Web Content Writer, please provide
-        8 suitable tone configurations.
+        6 suitable tone configurations.
 
 
         Please, no include emojis and no justify your choices.
@@ -683,8 +678,8 @@
     - type: ask
       selected: false
       param: domains.length
-      message: 'How many domain suggestions would you like to receive? *Default: 30*'
-      default: '30'
+      message: 'How many domain suggestions would you like to receive? *Default: 20*'
+      default: '20'
     - type: ask
       selected: false
       param: domains.top
@@ -795,7 +790,7 @@
         Good, in line with your current role:
 
 
-        From the list of related domains, pick the top 6 domains that most closely adhere to the
+        From the list of related domains, pick the top 4 domains that most closely adhere to the
         design premises. Justify each decision.
 
         Please include an emoji that matches to the specific content of each item as a bullet point
@@ -902,17 +897,18 @@
       param: design.premises
     - type: say
       selected: false
-      message: 'Translated design premises:'
+      message: 'Locale design premises:'
     - type: gpt
       selected: false
       prompt: >-
         The current language is {{language}}. If it's not English, please translate
-        {{design.premises}} to the current language.
+        {{design.premises}} to the current language, otherwise, please just respond with the next
+        sentence: "The current language is already English.".
 
 
         Respond in {{language}}.
 
-        Design premises:
+        Locale design premises:
     - type: say
       selected: false
       message: 'The language utilized in the company name is:'
