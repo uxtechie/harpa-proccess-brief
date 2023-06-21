@@ -20,8 +20,8 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Please assume this fictional role: You're a Web Designer whizz with the
-      ability to work with the following design styles:
+      Please assume this fictional role: You're a Web Designer whizz with the ability to work with
+      the following design styles:
 
 
       - Minimalistic
@@ -75,8 +75,8 @@ steps:
       - Retro
 
 
-      Please, if you have understood this instruction, respond just with the
-      comma separated style list.
+      Please, if you have understood this instruction, respond just with the comma separated style
+      list.
 
 
       Answer in English
@@ -92,14 +92,13 @@ steps:
       Analyze the website content to identify design brief.
 
 
-      Does the brief or the brand suggest premises related to the following
-      aspects?: aesthetics, target audience values, accessibility, company
-      values, product values, design format, layout, colors, typography, etc.
+      Does the brief or the brand suggest premises related to the following aspects?: aesthetics,
+      target audience values, accessibility, company values, product values, design format, layout,
+      colors, typography, etc.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in English
@@ -127,18 +126,17 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Considering the style premises, choose the 6 styles from the list
-      {{styles}} that best fit. Justify your decision.
+      Considering the design premises, choose the 6 styles from the list {{styles}} that best fit.
+      Justify your decision.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -149,21 +147,20 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Well, now review the style premises to make 3 proposals from the above
-      options about the styles that you think are most suitable.
+      Well, now review the design premises to make 3 proposals from the above options about the
+      styles that you think are most suitable.
 
 
       You can choose unique styles or combine them. Explain the choice.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -172,8 +169,7 @@ steps:
     selected: false
     param: style.selected
     message: >-
-      Please ENTER your preferred style from the above options (example: Clean &
-      Vibrant).
+      Please ENTER your preferred style from the above options (example: Clean & Vibrant).
   - type: gpt
     selected: false
     prompt: |-
@@ -194,8 +190,7 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      This is the description about the config parameters of a color palette
-      generator.
+      This is the description about the config parameters of a color palette generator.
 
 
       The first parameter is the type of color palette to process:
@@ -228,12 +223,12 @@ steps:
       - Hyper Color.
 
 
-      Premise: throughout the entire process, the name of the config parameters
-      should remain in English.
+      Premise: throughout the entire process, the name of the config parameters should remain in
+      English.
 
 
-      Please, if you have understood this instruction, respond just with the
-      palette generator config description.
+      Please, if you have understood this instruction, respond just with the palette generator
+      config description.
 
 
       Answer in English
@@ -247,18 +242,17 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Considering the style premises, selected style and palette generator
-      description, give me 6 palette generator config. Justify your decision.
+      Considering the design premises, selected style and palette generator description, give me 6
+      palette generator config. Justify your decision.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -277,18 +271,17 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Considering the style premises and the selected style, choose the 8
-      typographies that best fit. Justify your decision.
+      Considering the design premises and the selected style, choose the 8 typographies that best
+      fit. Justify your decision.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -303,19 +296,17 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Considering the style premises, selected style and the above related
-      palette configs, please provide the 3 configurations you believe to be the
-      most appropriate. Justify your decision.
+      Considering the design premises, selected style and the above related palette configs, please
+      provide the 3 configurations you believe to be the most appropriate. Justify your decision.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -332,13 +323,13 @@ steps:
     selected: false
     param: generator.config
     message: >-
-      Please ENTER your preferred palette generator config from the above
-      options (example: Monochrome & Vibrant).
+      Please ENTER your preferred palette generator config from the above options (example:
+      Monochrome & Vibrant).
   - type: gpt
     selected: false
     prompt: >-
-      Normalizar {{generator.config}} usando el formato de referencia como
-      respuesta sin añadir ningún comentario.
+      Normalizar {{generator.config}} usando el formato de referencia como respuesta sin añadir
+      ningún comentario.
 
 
       Respuesta en inglés.
@@ -355,20 +346,18 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Considering the style premises and selected style, give me 3 proposals
-      choosing one of above propposed fonts for the titles and another for the
-      rest of the texts. You can choose to use the same font or combine them.
-      Justify your decision.
+      Considering the design premises and selected style, give me 3 proposals choosing one of above
+      propposed fonts for the titles and another for the rest of the texts. You can choose to use
+      the same font or combine them. Justify your decision.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -381,13 +370,13 @@ steps:
     selected: false
     param: style.typos
     message: >-
-      Please ENTER your preferred typos from the above options (example: Titles:
-      Roboto, Text: Open Sans).
+      Please ENTER your preferred typos from the above options (example: Titles: Roboto, Text: Open
+      Sans).
   - type: gpt
     selected: false
     prompt: >-
-      Normalizar {{style.typos}} usando el formato de referencia como respuesta
-      sin añadir ningún comentario.
+      Normalizar {{style.typos}} usando el formato de referencia como respuesta sin añadir ningún
+      comentario.
 
 
       Respuesta en inglés.
@@ -404,8 +393,8 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Please add this fictional role to your abilities: You are a Web Content
-      Writer whose tone is defined by these four different nuances:
+      Please add this fictional role to your abilities: You are a Web Content Writer whose tone is
+      defined by these four different nuances:
 
 
       Tone configuration:
@@ -419,8 +408,7 @@ steps:
       - Enthusiastic vs Matter-of-Fact
 
 
-      Each nuance of the tone configuration is adjusted according to the
-      following example:
+      Each nuance of the tone configuration is adjusted according to the following example:
 
 
       Funny vs Serious = Funny: A humorous tone is selected.
@@ -441,8 +429,8 @@ steps:
       - Enthusiastic vs Matter-of-Fact = Neutral
 
 
-      If you've understood these instructions, please respond with the list of
-      tone nuances, separated by commas.
+      If you've understood these instructions, please respond with the list of tone nuances,
+      separated by commas.
 
 
       Answer in English:
@@ -456,9 +444,9 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Considering the style premises, selected style, selected typographies,
-      {{language}} as the current language and your Web Content Writer role,
-      please provide 6 suitable tone configurations. Justify your selections.
+      Considering the design premises, selected style, selected typographies, {{language}} as the
+      current language and your Web Content Writer role, please provide 6 suitable tone
+      configurations. Justify your selections.
 
 
       Valid tone configuration example:
@@ -472,14 +460,13 @@ steps:
       - Enthusiastic vs Matter-of-Fact = Neutral
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -502,20 +489,18 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Considering the style premises, selected, selected typographies style,
-      {{language}} as the current language and the above related writer tone
-      configs, provide the 3 configurations you believe to be the most
-      appropriate. Justify your decision.
+      Considering the design premises, selected, selected typographies style, {{language}} as the
+      current language and the above related writer tone configs, provide the 3 configurations you
+      believe to be the most appropriate. Justify your decision.
 
 
-      Please add an emoji that matches the specific content of each item as a
-      bullet point for every item in the lists, as well as for each entry within
-      the sub-lists.
+      Please add an emoji that matches the specific content of each item as a bullet point for every
+      item in the lists, as well as for each entry within the sub-lists.
 
 
       Answer in {{language}}
 
-      Style premises:
+      Design premises:
 
       {{style.premises}}
 
@@ -544,8 +529,8 @@ steps:
   - type: gpt
     selected: false
     prompt: >-
-      Normalizar {{writer.tone}} usando el formato de referencia como respuesta
-      sin añadir ningún comentario.
+      Normalizar {{writer.tone}} usando el formato de referencia como respuesta sin añadir ningún
+      comentario.
 
 
       Respuesta en inglés.

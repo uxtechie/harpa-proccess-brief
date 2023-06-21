@@ -6,13 +6,13 @@ meta:
 steps:
   - type: gpt
     prompt: >-
-      Please format the following data as a JSON structure. Expand the variables
-      in nested structures. Answer in English:
+      Please format the following data as a JSON structure. Expand the variables in nested
+      structures. Answer in English:
 
 
-      Style premises:
+      Design premises:
 
-      {{brief.summary}}
+      {{design.premises}}
 
       Selected Style:
 
@@ -26,9 +26,9 @@ steps:
 
       {{writer.tone}}
 
-      Logo title:
+      Web title:
 
-      {{logo.title}}
+      {{web.title}}
 
       Color palette configuration:
 

@@ -14,23 +14,20 @@ steps:
     param: gpt
     message: Press ENTER
     default: >-
-      Estructura SILO:  1. **Inicio**    - Breve descripción de la empresa:
-      "Whisper Market"    - Llamado a la acción: "Suscríbete al boletín" 2.
-      **Tienda**    - Productos Electrónicos      - Producto Principal      -
-      Productos Adicionales    - Cesta de la Compra 3. **Página de Contacto**   
-      - Formulario de Contacto    - Información de Contacto 4. **Blog**    -
-      Entradas Recientes    - Categorías 5. **Acerca de**    - El Equipo    -
-      Historia de la Empresa 6. **Política de Privacidad** 7. **Términos y
-      Condiciones**  Palabras clave a considerar a partir del texto
-      proporcionado pueden incluir "Whisper Market", "tienda de electrónica",
-      "calidad superior", "auténtico", "diseño antiguo", "color blanco", "fácil
-      navegación", "suscripción al boletín", "productos asequibles". Estas
-      palabras
+      Estructura SILO:  1. **Inicio**    - Breve descripción de la empresa: "Whisper Market"    -
+      Llamado a la acción: "Suscríbete al boletín" 2. **Tienda**    - Productos Electrónicos      -
+      Producto Principal      - Productos Adicionales    - Cesta de la Compra 3. **Página de
+      Contacto**   
+      - Formulario de Contacto    - Información de Contacto 4. **Blog**    - Entradas Recientes    -
+      Categorías 5. **Acerca de**    - El Equipo    - Historia de la Empresa 6. **Política de
+      Privacidad** 7. **Términos y Condiciones**  Palabras clave a considerar a partir del texto
+      proporcionado pueden incluir "Whisper Market", "tienda de electrónica", "calidad superior",
+      "auténtico", "diseño antiguo", "color blanco", "fácil navegación", "suscripción al boletín",
+      "productos asequibles". Estas palabras
   - type: gpt
     prompt: >-
-      Please derive inspiration from the Website Domain and the design brief
-      outlined in the website content to populate the current SILO Page
-      structure accordingly.
+      Please derive inspiration from the Website Domain and the design brief outlined in the website
+      content to populate the current SILO Page structure accordingly.
 
 
       Answer in {{language}}. 
@@ -51,9 +48,8 @@ steps:
     selected: true
     chunkify:
       text: >-
-        Please analyze the SILO Website structure to extract solely the
-        structure definition. Exclude the keywords section and the structure
-        title. 
+        Please analyze the SILO Website structure to extract solely the structure definition.
+        Exclude the keywords section and the structure title. 
 
 
         SILO Website Structure:

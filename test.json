@@ -1,43 +1,43 @@
 {
-    "Style premises": {
-        "Company Name": "Hungry Whim",
-        "Company Description": {
-            "Products": "Makes and distributes finger-food",
-            "Availability": "Main product available worldwide",
-            "Target Audience": "Young adults",
-            "Brand Perception": {
-                "Security": "Wants to convey a sense of security",
-                "Old-fashioned": "Wishes to convey an old-fashioned feel"
-            }
-        },
-        "Job Description": {
-            "Goal": "Create a website primarily for information",
-            "User Experience": "Provide a great user experience",
-            "Website Sections": {
-                "Landing Page": "Needs a landing page with an 'About the Team' section",
-                "Information Page": "Needs an information page",
-                "Product Pages": "Needs product pages",
-                "Privacy Policy Page": "Needs a privacy policy page"
-            },
-            "Call to Action": "There should be a call to action to order a free sample",
-            "Design Preferences": {
-                "Color": "Prefers a monochromatic design in black"
-            }
-        },
-        "Deadline": "5 days"
+  "Design premises": {
+    "Company Name": "Hungry Whim",
+    "Company Description": {
+      "Products": "Makes and distributes finger-food",
+      "Availability": "Main product available worldwide",
+      "Target Audience": "Young adults",
+      "Brand Perception": {
+        "Security": "Wants to convey a sense of security",
+        "Old-fashioned": "Wishes to convey an old-fashioned feel"
+      }
     },
-    "Selected Style": "Vintage & Elegant",
-    "Selected fonts": {
-        "Titles": "Baskerville",
-        "Text": "Century Gothic"
+    "Job Description": {
+      "Goal": "Create a website primarily for information",
+      "User Experience": "Provide a great user experience",
+      "Website Sections": {
+        "Landing Page": "Needs a landing page with an 'About the Team' section",
+        "Information Page": "Needs an information page",
+        "Product Pages": "Needs product pages",
+        "Privacy Policy Page": "Needs a privacy policy page"
+      },
+      "Call to Action": "There should be a call to action to order a free sample",
+      "Design Preferences": {
+        "Color": "Prefers a monochromatic design in black"
+      }
     },
-    "Writer's tone settings": {
-        "Funny vs Serious": "Neutral",
-        "Casual vs Formal": "Casual",
-        "Irreverent vs Respectful": "Neutral",
-        "Enthusiastic vs Matter-of-Fact": "Enthusiastic"
-    },
-    "Logo title": "Hungry Whim",
-    "Color palette configuration": "Monochrome & Dark",
-    "Brief context": ""
+    "Deadline": "5 days"
+  },
+  "Selected Style": "Vintage & Elegant",
+  "Selected fonts": {
+    "Titles": "Baskerville",
+    "Text": "Century Gothic"
+  },
+  "Writer's tone settings": {
+    "Funny vs Serious": "Neutral",
+    "Casual vs Formal": "Casual",
+    "Irreverent vs Respectful": "Neutral",
+    "Enthusiastic vs Matter-of-Fact": "Enthusiastic"
+  },
+  "Web title": "Hungry Whim",
+  "Color palette configuration": "Monochrome & Dark",
+  "Brief context": ""
 }
