@@ -6,13 +6,23 @@
   steps:
     - type: gpt
       prompt: >-
-        Taking into consideration the web title, design premises, selected style, selected fonts,
-        {{language}} as the selected language, the tone settings for the writer, and the color
-        palette configuration, please format the following data as a JSON structure. Expand the
-        variables in nested structures.
+        Please format the following data as a JSON structure. Expand thevariables in nested
+        structures.
 
 
         Answer in English.
+
+        Company lang:
+          
+        {{company.lang}}
+
+        Domain lang:
+          
+        {{domain.lang}}
+
+        Brief domain:
+
+        {{brief.domain}}
 
         Web title:
 
@@ -683,7 +693,7 @@
       default: .com
     - type: ask
       selected: false
-      param: domains.lang
+      param: domain.lang
       message: >-
         In which language would you like to compose the domain name? *Default: {{company.lang}}*
       default: '{{company.lang}}'
@@ -754,13 +764,13 @@
 
         Premises:
 
-        - The domain name should include all words from the company's name. preferably in the order
+        - The domain name should include all words from the company name preferably in the order
           they appear.
 
         - Use the design premises as a guide for suggesting domains.
 
-        - The words you append to the company name to formulate the domain should be in the Domain
-          Language.
+        - The words you append to the company name to formulate the domain should be in
+          the {{domain.lang}} language.
 
         - You may be creative, for example, write half of the domains using abbreviated forms of the
           words.
@@ -771,13 +781,11 @@
         Please only provide the list of suggested domains without any additional explanation.
 
 
+        Respond in {{domain.lang}}.
+
         Design premises:
 
         {{design.premises}}
-
-        Domain Language:
-
-        {{domains.lang}}
 
         Related Domains:
       selected: false
@@ -858,29 +866,7 @@
         I'm your co-pilot, and we're working as a team 😜.
 
 
-        Answer in {{language}}
-    - type: say
-      selected: false
-      message: 'The language utilized in the company name is:'
-    - type: gpt
-      selected: false
-      prompt: >-
-        Analyze the content of the website to identify the language used for the company name, as
-        mentioned in the design brief.
-
-
-        Your answer should only contain the name of the identified language, translated into
-        English. For example: Spanish.
-
-
-        Content of the web page:
-
-
-        {{page}}
-
-
-        Language of the company name:
-      param: company.lang
+        Respond in {{language}}
     - type: gpt
       selected: false
       prompt: >-
@@ -927,6 +913,27 @@
         Respond in {{language}}.
 
         Design premises:
+    - type: say
+      selected: false
+      message: 'The language utilized in the company name is:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        Analyze design premises to identify the language used for the company name, as mentioned in
+        the design brief.
+
+
+        Your answer should only contain the name of the identified language, translated into
+        English. For example: Spanish.
+
+        Respond in English.
+
+        Design premises:
+
+        {{design.premises}}
+
+        Language of the company name:
+      param: company.lang
     - type: command
       selected: false
       inputs: []
