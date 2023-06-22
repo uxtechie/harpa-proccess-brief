@@ -1,0 +1,138 @@
+- meta:
+    title: _getDomainsFromBrief
+    description: ''
+    category: User
+    name: 6heIHCY3-T0RcGD_prwKY
+  steps:
+    - type: ask
+      selected: false
+      param: domains.length
+      message: 'How many domain suggestions would you like to receive? *Default: 20*'
+      default: '20'
+    - type: ask
+      selected: false
+      param: domains.top
+      message: >-
+        Which top-level domains would you like to use? (For example: .com, .net) *Default: .com*
+      default: .com
+    - type: ask
+      selected: false
+      param: domain.lang
+      message: >-
+        In which language would you like to compose the domain name? *Default: {{company.lang}}*
+      default: '{{company.lang}}'
+    - type: gpt
+      selected: true
+      prompt: >-
+        Please assume this fictional role: You are an SEO expert, specializing in proposing
+        appropriate domain names for a website.
+
+
+        Are you familiar with these guiding principles:
+
+
+        - What are the critical factors to consider when choosing a domain name?
+
+        - What strategies can help in finding a memorable and easily spelled domain name?
+
+        - How can the inclusion of keywords in a domain name improve search engine rankings?
+
+        - What alternative extensions can be used if the desired .com domain name is unavailable?
+
+        - How can brainstorming a list of potential names aid in finding a suitable domain name?
+
+        - How important is it to maintain consistency across all online presence regarding the
+        domain name?
+
+        - How can a domain name capture the essence of a business or brand?
+
+        - How can a domain name be a valuable asset for a business?
+
+        - How can tools like a thesaurus and rhyming dictionary assist in finding a suitable domain
+        name?
+
+        - Can you provide an example of using a location-specific keyword in a domain name?
+
+        - How can a personal name or nickname be incorporated into a domain name?
+
+        - Can you provide an example of using a misspelling of a common word in a domain name?
+
+        - How can a pun or play on words be used in a domain name?
+
+        - Can you provide an example of using an acronym in a domain name?
+
+        - How can a pun be used in a domain name?
+
+        - How can an abbreviation be included in a domain name?
+
+        - How can a catchy, short phrase be used in a domain name?
+
+        - How can a domain name generator tool be used to generate new ideas?
+
+        - How can two words be combined to create a new word for a domain name?
+
+        - How can you ensure that your domain name is a long-term investment?
+
+        - Is the entire domain name composed of words from the same language?
+
+        Please, if you have understood this instruction, respond with: "Processing..."
+
+
+        Answer in {{language}}
+
+        Processing...:
+    - type: gpt
+      prompt: >-
+        Alright, in line with your current role, suggest {{domains.length}} different domain names.
+
+
+        Premises:
+
+        - The domain name should include all words from the company name preferably in the order
+          they appear.
+
+        - Use the design premises as a guide for suggesting domains.
+
+        - The words you append to the company name to formulate the domain should be in
+          the {{domain.lang}} language.
+
+        - You may be creative, for example, write half of the domains using abbreviated forms of the
+          words.
+
+        - The top-level domain should be selected from this list {{domains.top}}.
+
+
+        Please only provide the list of suggested domains without any additional explanation.
+
+
+        Respond in {{domain.lang}}.
+
+        Design premises:
+
+        {{design.premises}}
+
+        Related Domains:
+      selected: false
+    - type: gpt
+      selected: false
+      prompt: >-
+        Good, in line with your current role:
+
+
+        From the list of related domains, pick the top 4 domains that most closely adhere to the
+        design premises. Justify each decision.
+
+        Please include an emoji that matches to the specific content of each item as a bullet point
+        for every item in the lists, as well as for each entry within the sub-lists. Please try to
+        maintain the same emoji for the same concepts and use different emojis for those that are
+        different.
+
+
+        Answer in {{language}}.
+
+        Design premises:
+
+        {{design.premises}}
+
+        Proposed Domains:
+  version: 1

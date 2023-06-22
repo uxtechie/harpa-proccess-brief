@@ -1,0 +1,157 @@
+- meta:
+    title: Build Brief
+    description: ''
+    category: User
+    name: hQ6EN12h_tsn1PVyYl4Vo
+  steps:
+    - type: command
+      selected: false
+      inputs: []
+      name: Clear
+    - type: gpt
+      selected: false
+      prompt: >-
+        Please assume the hypothetical role of a wizard assistant, specialized in guiding a series
+        of steps in website development.
+
+
+        Firstly, review the current state and ensure these conditions are fulfilled. Be meticulous
+        in this step, considering that uncertainty implies the condition is not met:
+
+
+        - The current domain {{page.domain}} matches "goodbrief.io"
+
+        - Examine the website content to confirm the type of design brief. It should be "Website"
+
+
+        Provide an update on the status of these two analyzed points without adding extra
+        commentary. If any conditions aren't satisfied, alert the user and emphasize the discovered
+        issue in italics.
+
+
+        Respond in {{language}}. 
+
+        Web page content:
+
+        {{page}}
+
+        Initial state report:
+      param: ''
+    - type: ask
+      selected: false
+      param: brief.state
+      message: >-
+        Please review the current initial state report. If everything looks correct, press ENTER to
+        continue.
+      default: Great! Everything is set for the magic to begin! Let's proceed.
+    - type: gpt
+      selected: false
+      prompt: >-
+        Hello! I'm analyzing the current design brief to assist you in the development process.
+        Occasionally, the process will pause to request your decision or some data input. Remember,
+        I'm your co-pilot, and we're working as a team 😜.
+
+
+        Respond in {{language}}
+    - type: gpt
+      selected: false
+      prompt: >-
+        Please, review the content of the website to summarize the design brief text right section.
+
+        Please, disregard the "Type" and "Industry" fields that are not defined in the content of
+        the design brief.
+
+
+        Keep in mind the following guidelines:
+
+
+        - Keep each section of the brief separate.
+
+        - Each section should include the section title and a list of key points described in it.
+
+        - Please add an emoji that matches to the specific content of each item as a bullet point
+        for every item in the lists, as well as for each entry within the sub-lists. Try to maintain
+        the same emoji for the same concepts and use different emojis for those that are different.
+
+        - Highlight any color related to the design in *italic*.
+
+        - Remove the "DESIGN BRIEF" title from the response.
+
+
+        Respond in English.
+
+        Web page content:
+
+        {{page}}
+
+        Summary:
+      param: design.premises
+    - type: say
+      selected: false
+      message: 'Locale design premises:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        The current language is {{language}}. If it's not English, please translate
+        {{design.premises}} to the current language, otherwise, please just respond with the next
+        sentence: "The current language is already English.".
+
+
+        Respond in {{language}}.
+
+        Locale design premises:
+    - type: say
+      selected: false
+      message: 'The language utilized in the company name is:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        Analyze design premises to identify the language used for the company name, as mentioned in
+        the design brief.
+
+
+        Your answer should only contain the name of the identified language, translated into
+        English. For example: Spanish.
+
+        Respond in English.
+
+        Design premises:
+
+        {{design.premises}}
+
+        Language of the company name:
+      param: company.lang
+    - type: command
+      selected: false
+      inputs: []
+      name: _getDomainsFromBrief
+    - type: ask
+      selected: false
+      param: brief.domain
+      message: >-
+        Please ENTER your preferred domain from the available options. You can choose a different
+        domain than the suggested ones. Make sure to confirm its availability before making a
+        selection.
+    - type: gpt
+      selected: false
+      prompt: >-
+        Extract the individual words from the {{brief.domain}} domain as the web title.
+
+        Your response should only include the web title.
+
+        Web title:
+      param: web.title
+    - type: ask
+      selected: true
+      param: web.title
+      message: 'Please enter your web title. By default: {{web.title}}.'
+      default: '{{web.title}}'
+    - type: command
+      selected: false
+      inputs: []
+      name: _getStyleFromBrief
+    - type: command
+      selected: false
+      inputs: []
+      name: _getMockups
+  version: 1

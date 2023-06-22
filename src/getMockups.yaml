@@ -1,0 +1,58 @@
+- meta:
+    title: _getMockups
+    description: ''
+    category: User
+    name: IObzdQtVQggUR9CfQiBO4
+  steps:
+    - type: say
+      selected: false
+      message: 'Web design rendering prompt:'
+    - type: gpt
+      prompt: >-
+        Taking into consideration the web title, design premises, selected style, selected fonts,
+        {{language}} as the selected language, the tone settings for the writer, and the color
+        palette configuration, please provide the a prompt that you believe is the most suitable.
+
+
+        Premises:
+
+        - Use the following example prompt as a template:
+          a Web Design for a landing page of a [product values][company values] aimed at [target
+          audience] who value [target audience values]. The aesthetic is based on [selected style].
+          Use the brand color [brand color] with a color palette of [Color palette config]. The
+          brand is [company name]. The titles typography is [selected typographies] and the text
+          typography is [selected typographies]. The text is written in {{language}} using a
+          [content writer tone] tone. --ar 2:3
+
+        - Text inside square brackets is a placeholder.
+
+        - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
+
+        - Please, no include emojis and no justify your choices.
+
+
+        Answer in English.
+
+        Design premises:
+
+        {{design.premises}}
+
+        Selected Style:
+
+        {{style.selected}}
+
+        Selected fonts:
+
+        {{style.typos}}
+
+        Writer's tone settings:
+
+        {{writer.tone}}
+
+        Color palette configuration:
+
+        {{generator.config}}
+
+        Proposed rendering prompt:
+      selected: true
+  version: 1
