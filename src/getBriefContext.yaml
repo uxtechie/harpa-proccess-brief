@@ -6,7 +6,7 @@
   steps:
     - type: gpt
       prompt: >-
-        Please format the following data as a JSON structure. Expand thevariables in nested
+        Please format the following data as a JSON structure. Expand the variables in nested
         structures.
 
 

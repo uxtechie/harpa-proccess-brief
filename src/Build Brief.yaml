@@ -64,18 +64,28 @@
 
         Keep in mind the following guidelines:
 
-
-        - Keep each section of the brief separate.
-
-        - Each section should include the section title and a list of key points described in it.
-
-        - Please add an emoji that matches to the specific content of each item as a bullet point
-        for every item in the lists, as well as for each entry within the sub-lists. Try to maintain
-        the same emoji for the same concepts and use different emojis for those that are different.
-
         - Highlight any color related to the design in *italic*.
 
-        - Remove the "DESIGN BRIEF" title from the response.
+        - Use this example as a reference:
+          🏢 Company Name: Big Memory
+
+          📝 Company Description: 
+            * 💼🌞 Offers a selection of luxury offices with solar power 
+            * 🎯💰 Targets people on a budget 
+            * 🌟🔄 Wants to convey a sense of importance, while being modern
+          
+          Job Description: 📋
+          * 💻 The task is to create a website that primarily provides information 
+          * 👩‍💻👍 The goal is to provide a great user experience 
+          * 📃📑🛍️🔏 The website will need a landing page, a contact page, a shop page, and a
+        privacy
+            policy page 
+          * 📃💡 The landing page should have an "Our Values" section 
+          * 📣📥 There should be a call to action to get users to order a free sample 
+          * 🎨🍊 The client prefers an old-fashioned design and wants to use the *brand color,
+            orange* 
+
+          Deadline 📅:  3 days
 
 
         Respond in English.
@@ -84,11 +94,11 @@
 
         {{page}}
 
-        Summary:
+        Design premises:
       param: design.premises
     - type: say
       selected: false
-      message: 'Locale design premises:'
+      message: 'Translate design premises:'
     - type: gpt
       selected: false
       prompt: >-
@@ -99,7 +109,7 @@
 
         Respond in {{language}}.
 
-        Locale design premises:
+        Translated design premises:
     - type: say
       selected: false
       message: 'The language utilized in the company name is:'
@@ -107,7 +117,7 @@
       selected: false
       prompt: >-
         Analyze design premises to identify the language used for the company name, as mentioned in
-        the design brief.
+        the design premises.
 
 
         Your answer should only contain the name of the identified language, translated into

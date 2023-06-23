@@ -13,7 +13,6 @@
         Please assume this fictional role: You're a Web Designer whizz with the ability to work with
         the following design styles:
 
-
         - Minimalistic
 
         - Modern
@@ -105,16 +104,22 @@
       selected: false
       prompt: >-
         Now, revisiting the web title and design premises, make 3 proposals from the options above
-        about the styles that you think are most appropriate.
+        about the styles that you think are most appropriate. Please explain each choice.
 
 
-        Each suggestion should include two styles. Please explain each choice.
+        Keep in mind the following guidelines:
 
+        - Each suggestion should include two styles.
 
-        Include an emoji that matches to the specific content of each item as a bullet point for
-        every item in the lists, as well as for each entry within the sub-lists. Please try to
-        maintain the same emoji for the same concepts and use different emojis for those that are
-        different.
+        - Use this example as a reference:
+          1. 🌟 **Modern and Clean Style:** The company description indicates a desire to convey
+            importance, while at the same time being modern. A modern and clean style can achieve
+            this by providing a visually appealing and easy to navigate design, thus enhancing the
+            user experience.
+          2. 💎 **High-End and Luxury Style:** The company offers luxury offices, suggesting a
+            preference for a sophisticated ambiance. A high-end and luxury style can convey this
+            feeling and appeal to their target audience: people with limited budget who still seek
+            quality.
 
 
         Answer in {{language}}.
@@ -158,7 +163,7 @@
       param: style.selected
     - type: say
       selected: false
-      message: 'Palette generator configuration:'
+      message: 'Palette generator:'
     - type: gpt
       selected: false
       prompt: >-
@@ -193,10 +198,6 @@
         - Dark
 
         - Hyper Color
-
-
-        Premise: Throughout the entire process, the names of the configuration parameters should
-        remain in English.
 
 
         If you have understood this instruction, please respond solely with the description of the
@@ -247,12 +248,19 @@
       prompt: >-
         Considering the web title, design premises, selected style, and the above related palette
         configurations, please provide the 3 configurations you believe to be the most appropriate.
-        Justify each decision.
+        Please explain each choice.
 
 
-        Include an emoji that matches to the specific content of each item as a bullet point for
-        every item in the lists, and for each entry within the sub-lists. Please try to maintain the
-        same emoji for the same concepts and use different emojis for those that are different.
+        Keep in mind the following guidelines:
+
+        - Use this example as a reference:
+          1. 🎨 Monochrome, Color Range: Vibrant - The vintage style is often
+            depicted with a monochromatic color range. The "Vibrant" setting will provide the modern
+            touch the client desires while maintaining a sense of antiquity.
+          2. 🌞 1 color accent, Color Range: High Contrast - The "1 color
+            accent" can be an effective way to highlight the brand's orange color on the web. The
+            "High Contrast" range will help this color stand out even more and can be perceived as
+            modern and important.
 
 
         Answer in {{language}}.
@@ -337,13 +345,22 @@
       prompt: >-
         Considering the web title, design premises, and selected style, provide 3 proposals by
         choosing one of the above suggested fonts for the titles and another for the rest of the
-        texts. You can choose to use the same font or mix them. Justify each decision.
+        texts. You can choose to use the same font or mix them. Please explain each choice.
 
 
-        Please include an emoji that matches to the specific content of each item as a bullet point
-        for every item in the lists, as well as for each entry within the sub-lists. Please try to
-        maintain the same emoji for the same concepts and use different emojis for those that are
-        different.
+        Keep in mind the following guidelines:
+
+        - Use this example as a reference:
+          1. 📚 Titles: Montserrat / Text: Open Sans. 
+            - Montserrat: with its geometric and modern look, is great for titles, aligning with the
+              minimalistic and modern design style
+            - Open Sans: is a clean and legible font, suitable for body text, and complements the
+              minimalistic and modern design well
+          2. 🌟 Titles: Avenir / Text: Avenir.
+            - Avenir: clean and balanced design works well for both titles and body text in a
+              minimalistic and modern design
+            - Avenir: Using the same font for both titles and text creates a consistent and harmonious look,
+              reinforcing the brand's sense of faithfulness and freshness
 
 
         Answer in {{language}}.
@@ -386,7 +403,7 @@
       param: style.typos
     - type: say
       selected: false
-      message: 'Subtle nuances in writer tone configuration:'
+      message: 'Writer's tone scales configuration:'
     - type: gpt
       selected: false
       prompt: >-
@@ -447,15 +464,13 @@
         Please, no include emojis and no justify your choices.
 
 
-        Example of a valid tone nuances configuration, please adhere to the list format:
+        Keep in mind the following guidelines:
 
-        - Funny vs Serious = Funny
-
-        - Casual vs Formal = Casual
-
-        - Irreverent vs Respectful = Neutral
-
-        - Enthusiastic vs Matter-of-Fact = Neutral
+        - Use this example as a reference:
+          * Funny vs Serious = Funny
+          * Casual vs Formal = Casual
+          * Irreverent vs Respectful = Neutral
+          * Enthusiastic vs Matter-of-Fact = Neutral
 
 
         Answer in {{language}}.
@@ -490,13 +505,30 @@
         Considering the web title, design premises, selected style, chosen typographies,
         {{language}} as the current language, and the above related writer tone configurations,
         provide the 3 configurations you believe to be the most appropriate. Each nuance should be
-        an item in the tone configuration list. Justify each decision.
+        an item in the tone configuration list. Please explain each choice.
 
 
-        Please include an emoji that matches to the specific content of each item as a bullet point
-        for every item in the lists, and for each entry within the sub-lists. Please try to maintain
-        the same emoji for the same concepts and use different emojis for those that are different.
+        Keep in mind the following guidelines:
 
+        - Use this example as a reference:
+          1. 🌐🚀
+            - Funny vs Serious = Serious
+            - Casual vs Formal = Casual
+            - Irreverent vs Respectful = Respectful
+            - Enthusiastic vs Matter-of-Fact = Enthusiastic
+            This configuration reflects the company's innovative approach and the balance between power and kindness. The serious, casual, and respectful tone conveys professionalism, while the enthusiastic tone adds engagement for readers.
+          2. 💡🌟
+            - Funny vs Serious = Serious
+            - Casual vs Formal = Casual
+            - Irreverent vs Respectful = Neutral
+            - Enthusiastic vs Matter-of-Fact = Enthusiastic
+            A serious and casual tone supports the smart & high-tech style while maintaining approachability. By staying neutral in respectfulness, this configuration allows for flexibility in content writing. The enthusiastic tone emphasizes the innovative nature of the company and product.
+          3. 🎯🔷 
+            - Funny vs Serious = Serious
+            - Casual vs Formal = Casual
+            - Irreverent vs Respectful = Neutral
+            - Enthusiastic vs Matter-of-Fact = Matter-of-Fact
+            This configuration also maintains professionalism through a serious and casual tone. By being neutral in respectfulness and adopting a matter-of-fact tone, the content can focus more on providing information about the product and support in a clear and concise manner.
 
         Answer in {{language}}.
 
