@@ -70,7 +70,6 @@
 
         Answer in English
 
-
         Styles:
       param: styles
     - type: say
@@ -103,34 +102,24 @@
     - type: gpt
       selected: false
       prompt: >-
-        Now, revisiting the web title and design premises, make 3 proposals from the options above
-        about the styles that you think are most appropriate. Please explain each choice.
+        Good, from the list of related styles, pick the top 3 styles combinations.
+        Please explain each choice.
 
 
         Keep in mind the following guidelines:
 
-        - Each suggestion should include two styles.
+        - Each option should include two styles.
 
-        - Use this example as a reference:
-          1. 🌟 **Modern and Clean Style:** The company description indicates a desire to convey
-            importance, while at the same time being modern. A modern and clean style can achieve
-            this by providing a visually appealing and easy to navigate design, thus enhancing the
-            user experience.
-          2. 💎 **High-End and Luxury Style:** The company offers luxury offices, suggesting a
-            preference for a sophisticated ambiance. A high-end and luxury style can convey this
-            feeling and appeal to their target audience: people with limited budget who still seek
-            quality.
+        - Respond using this example as a reference:
+          1. 🏢 Modern & Elegant:
+            * 💻 A modern design will align with the company's goal of conveying a sense of power, while an elegant touch will complement the luxury apartments they offer.
+            * 🎨 Combining modern and elegant styles will effectively portray the company's high-end image while maintaining a monochromatic design.
+          2. 🏠 High end & Urban:
+            * 🌆 An urban design style will resonate with the target audience of men while emphasizing the location of the luxury apartments.
+            * 🌟 A high-end design will reflect the company's luxury apartments and make the website more appealing to potential clients.
 
 
         Answer in {{language}}.
-
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
 
         Proposed styles:
     - type: ask
@@ -144,7 +133,12 @@
         Normalize {{style.selected}} using the style list as a reference.
 
 
-        Use the reference format as your answer without adding any comments.
+        Keep in mind the following guidelines:
+
+        - No justify your choices or include any other comments.
+
+        - Respond using this example as a reference:
+          Clean & Vibrant
 
 
         Answer in English.
@@ -153,21 +147,15 @@
 
         {{styles}}
 
-
-        Reference format:
-
-        Clean & Vibrant
-
-
         Normalized selected styles:
       param: style.selected
     - type: say
       selected: false
-      message: 'Palette generator:'
+      message: 'Palette generator specifications:'
     - type: gpt
       selected: false
       prompt: >-
-        This is the description of the configuration parameters for a color palette generator.
+        Specifications of the color palette generator.
 
 
         The first parameter is the type of color palette to generate:
@@ -200,21 +188,21 @@
         - Hyper Color
 
 
-        If you have understood this instruction, please respond solely with the description of the
-        palette generator configuration.
+        If you have understood this specifications, please respond with a summary of the
+        palette generator specifications without adding other any comments.
 
 
         Answer in English.
 
-        Palette configuration description:
-      param: generator.description
+        Palette generator specifications:
+      param: generator.specs
     - type: say
       selected: false
       message: 'Related palette configurations:'
     - type: gpt
       selected: false
       prompt: >-
-        Given the web title, design premises, selected style, and palette generator description,
+        Given the web title, design premises, selected style, and Palette generator specifications,
         provide 6 palette generator configurations.
 
 
@@ -235,9 +223,9 @@
 
         {{style.selected}}
 
-        Palette generator description:
+        Palette generator specifications:
 
-        {{generator.description}}
+        {{generator.specs}}
 
         Related palette generator configurations:
     - type: say
@@ -246,69 +234,58 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the web title, design premises, selected style, and the above related palette
-        configurations, please provide the 3 configurations you believe to be the most appropriate.
+        Good, from the list of related palette generator configurations, pick the top 3 configurations.
         Please explain each choice.
 
 
         Keep in mind the following guidelines:
 
-        - Use this example as a reference:
-          1. 🎨 Monochrome, Color Range: Vibrant - The vintage style is often
-            depicted with a monochromatic color range. The "Vibrant" setting will provide the modern
-            touch the client desires while maintaining a sense of antiquity.
-          2. 🌞 1 color accent, Color Range: High Contrast - The "1 color
-            accent" can be an effective way to highlight the brand's orange color on the web. The
-            "High Contrast" range will help this color stand out even more and can be perceived as
-            modern and important.
+        - Respond using this example as a reference:
+          1. 🎨 Monochrome & Vibrant:
+            * The vintage style is often depicted with a monochromatic color range.
+            *  The "Vibrant" setting will provide the modern touch the client desires while maintaining a sense of antiquity.
+          2. 🌞 1 color accent & High Contrast:
+            * The "1 color accent" can be an effective way to highlight the brand's orange color on the web.
+            * The "High Contrast" range will help this color stand out even more and can be perceived as
+              modern and important.
 
 
         Answer in {{language}}.
 
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
-
-        Palette generator description:
-
-        {{generator.description}}
-
         Proposed palette generator configurations:
     - type: ask
       selected: false
-      param: generator.config
+      param: palette.config
       message: >-
-        Please ENTER your preferred palette generator config from the options above (e.g.,
-        Monochrome & Vibrant).
+        Please ENTER your preferred color palette config from the options provided. Example:
+
+        - Type: Monochrome
+        
+        - Color range: Vibrant
     - type: gpt
       selected: false
       prompt: >-
-        Normalize {{generator.config}} considering the palette generator description and the
-        reference format as your answer, without adding any comments.
+        Normalize the following palette config using the palette generator specifications as a reference.
+        {{palette.config}}
+
+
+        Keep in mind the following guidelines:
+
+        - No justify your choices or include any other comments.
+
+        - Respond using this example as a reference:
+          - Type: Monochrome,
+          - Color range: Vibrant
 
 
         Answer in English.
 
-        Palette generator description:
+        Palette generator specifications:
 
-        {{generator.description}}
+        {{generator.specs}}
 
-
-        Reference format:
-
-        Monochrome & Vibrant
-
-
-        Normalized palette generator config:
-      param: generator.config
+        Normalized color palette config:
+      param: palette.config
     - type: say
       selected: false
       message: 'Related typographies:'
@@ -343,39 +320,27 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the web title, design premises, and selected style, provide 3 proposals by
-        choosing one of the above suggested fonts for the titles and another for the rest of the
-        texts. You can choose to use the same font or mix them. Please explain each choice.
+        Good, from the list of related typographies, provide 3 proposals by
+        choosing one for the titles and another for the rest of the texts. You
+        can choose to use the same font or mix them. Please explain each choice.
 
 
         Keep in mind the following guidelines:
 
-        - Use this example as a reference:
-          1. 📚 Titles: Montserrat / Text: Open Sans. 
-            - Montserrat: with its geometric and modern look, is great for titles, aligning with the
-              minimalistic and modern design style
-            - Open Sans: is a clean and legible font, suitable for body text, and complements the
-              minimalistic and modern design well
-          2. 🌟 Titles: Avenir / Text: Avenir.
-            - Avenir: clean and balanced design works well for both titles and body text in a
-              minimalistic and modern design
-            - Avenir: Using the same font for both titles and text creates a consistent and harmonious look,
-              reinforcing the brand's sense of faithfulness and freshness
+        - Respond using this example as a reference:
+          1. 📚 Titles: Montserrat & Text: Open Sans: 
+            * Montserrat: with its geometric and modern look, is great for titles, aligning with the
+              minimalistic and modern design style.
+            * Open Sans: is a clean and legible font, suitable for body text, and complements the
+              minimalistic and modern design well.
+          2. 🌟 Titles: Avenir & Text: Avenir:
+            * Avenir: clean and balanced design works well for both titles and body text in a
+              minimalistic and modern design.
+            * Avenir: Using the same font for both titles and text creates a consistent and harmonious look,
+              reinforcing the brand's sense of faithfulness and freshness.
 
 
         Answer in {{language}}.
-
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
 
         Proposed typographies:
     - type: ask
@@ -387,17 +352,19 @@
     - type: gpt
       selected: false
       prompt: >-
-        Normalize {{style.typos}} using the reference format as your answer, without adding any
-        comments.
+        Please, normalize this typography style config:
+        {{style.typos}}.
 
+
+        Keep in mind the following guidelines:
+
+        - No justify your choices or include any other comments.
+
+        - Respond using this example as a reference:
+          Titles: Didot / Text: Garamond
+        
 
         Answer in English.
-
-
-        Reference format:
-
-        Titles: Didot / Text: Garamond
-
 
         Normalized selected typos:
       param: style.typos
@@ -414,31 +381,23 @@
         Tone configuration:
 
         - Funny vs Serious
-
         - Casual vs Formal
-
         - Irreverent vs Respectful
-
         - Enthusiastic vs Matter-of-Fact
 
 
         Each nuance of the tone configuration is adjusted according to the following example:
 
-        Funny vs Serious = Funny: A humorous tone is chosen.
-
-        Funny vs Serious = Neutral: This tone does not apply.
-
-        Funny vs Serious = Serious: A serious tone is chosen.
+        - Funny vs Serious = Funny: A humorous tone is chosen.
+        - Funny vs Serious = Neutral: This tone does not apply.
+        - Funny vs Serious = Serious: A serious tone is chosen.
 
 
         Valid tone configuration example:
 
         - Funny vs Serious = Funny
-
         - Casual vs Formal = Casual
-
         - Irreverent vs Respectful = Neutral
-
         - Enthusiastic vs Matter-of-Fact = Neutral
 
 
@@ -466,7 +425,7 @@
 
         Keep in mind the following guidelines:
 
-        - Use this example as a reference:
+        - Respond using this example as a reference:
           * Funny vs Serious = Funny
           * Casual vs Formal = Casual
           * Irreverent vs Respectful = Neutral
@@ -502,61 +461,27 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the web title, design premises, selected style, chosen typographies,
-        {{language}} as the current language, and the above related writer tone configurations,
-        provide the 3 configurations you believe to be the most appropriate. Each nuance should be
-        an item in the tone configuration list. Please explain each choice.
+        Good, from the list of related writer tone configurations, pick the top 3 configurations.
+        Please explain each choice.
 
 
         Keep in mind the following guidelines:
 
-        - Use this example as a reference:
-          1. 🌐🚀
-            - Funny vs Serious = Serious
-            - Casual vs Formal = Casual
-            - Irreverent vs Respectful = Respectful
-            - Enthusiastic vs Matter-of-Fact = Enthusiastic
-            This configuration reflects the company's innovative approach and the balance between power and kindness. The serious, casual, and respectful tone conveys professionalism, while the enthusiastic tone adds engagement for readers.
-          2. 💡🌟
-            - Funny vs Serious = Serious
-            - Casual vs Formal = Casual
-            - Irreverent vs Respectful = Neutral
-            - Enthusiastic vs Matter-of-Fact = Enthusiastic
-            A serious and casual tone supports the smart & high-tech style while maintaining approachability. By staying neutral in respectfulness, this configuration allows for flexibility in content writing. The enthusiastic tone emphasizes the innovative nature of the company and product.
-          3. 🎯🔷 
-            - Funny vs Serious = Serious
-            - Casual vs Formal = Casual
-            - Irreverent vs Respectful = Neutral
-            - Enthusiastic vs Matter-of-Fact = Matter-of-Fact
-            This configuration also maintains professionalism through a serious and casual tone. By being neutral in respectfulness and adopting a matter-of-fact tone, the content can focus more on providing information about the product and support in a clear and concise manner.
+        - Respond using this example as a reference:
+          1. 📚 Serious, Casual & Respectful:
+            * 🏢 A serious tone aligns with the company's high-end and urban style, targeting a male audience looking for luxury apartments.
+            * 🌟 A casual approach ensures that the content remains approachable and engaging for the audience, while still highlighting the luxurious aspect.
+            * 💼 A respectful tone emphasizes the company's professionalism and commitment to quality.
+          2. 💬 Serious, Casual, Respectful & Enthusiastic:
+            * 🏡 A serious and casual tone, combined with enthusiasm, creates a balance between emphasizing the company's high-end offering and making the content engaging and enjoyable.
+            * 🎉 An enthusiastic tone enhances the overall experience and helps convey the company's dedication to providing an excellent product and service.
 
-        Answer in {{language}}.
-
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
-
-        Selected typographies:
-
-        {{style.typos}}
-
-        Writer tone config nuances:
-
-        {{writer.config}}
 
         Proposed writer tone configurations:
     - type: ask
       selected: false
       param: writer.tone
-      message: |-
+      message: >-
         Please ENTER your preferred writer tone from the options provided. Example:
 
         - Funny vs Serious = Funny

@@ -46,7 +46,7 @@
 
         Color palette configuration:
 
-        {{generator.config}}
+        {{palette.config}}
 
         JSON structure:
       selected: true

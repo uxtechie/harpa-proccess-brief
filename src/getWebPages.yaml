@@ -1,0 +1,67 @@
+- meta:
+    title: _getWebPages
+    description: ''
+    category: User
+    name: euFOoVbKpW_cpJfaxTfkQ
+  steps:
+    - type: say
+      selected: false
+      message: 'Proposed Web pages:'
+    - type: gpt
+      selected: true
+      prompt: >-
+        Taking into consideration the design premises, please provide a list of the requested pages
+        along with the sections each should include. Please explain each choice.
+
+
+        Keep in mind the following guidelines:
+
+        - Respond using this example as a reference:
+          1. 📃 Landing Page:
+            - Overview: Communicates the key features and benefits of luxury apartments at Hive
+              Residences.
+              * Visuals: A captivating banner image showcasing the high-end and urban vibe of the
+                apartment complex.
+              * Written Content: A brief paragraph summarizing Hive Residences and its commitment to
+                providing luxury living spaces.
+            - Featured Apartments: Highlights a selection of available apartments, with images and
+              essential details.
+              * Visuals: High-quality photos of luxury apartments, emphasizing their unique features
+                and designs.
+              * Written Content: Short descriptions, pricing, and highlights for each apartment.
+            - 📣📥 Call to Action: Encourages users to explore available apartments and get in touch
+              for more information.
+              * Visuals: A prominent button that grabs attention, in line with the color palette.
+                Clicking this button opens a simple, user-friendly contact form.
+              * Written Content: An enticing sentence persuading users to check out the Apartment
+                Listings page and encouraging them to contact Hive Residences for inquiries. The
+                contact form should include fields for the user's name, email address, subject, and
+                message. An accompanying short message should further motivate users to reach out
+                with any questions or remarks they might have.
+
+
+        Answer in English.
+
+        Design premises:
+
+        {{design.premises}}
+
+        Selected Style:
+
+        {{style.selected}}
+
+        Selected fonts:
+
+        {{style.typos}}
+
+        Writer's tone settings:
+
+        {{writer.tone}}
+
+        Color palette configuration:
+
+        {{palette.config}}
+
+        Proposed web pages:
+      param: web.pages
+  version: 1
