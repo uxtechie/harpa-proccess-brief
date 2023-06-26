@@ -15,12 +15,13 @@
         of steps in website development.
 
 
-        Firstly, review the current state and ensure these conditions are fulfilled. Be meticulous
-        in this step, considering that uncertainty implies the condition is not met:
+        Firstly, review the current state and ensure the following conditions are fulfilled. Be
+        meticulous considering that uncertainty implies the condition is not met:
 
-        - The current domain "{{page.domain}}" matches "goodbrief.io"
+        1. The current domain "{{page.domain}}" matches "goodbrief.io".
 
-        - Review the web page content to confirm the type of design brief. It should be "Website"
+        2. review design brief description under "Job description" to check the type of design
+          brief. It should be "Website".
 
 
         If any conditions aren't satisfied, alert the user and emphasize the discovered issue in
@@ -60,27 +61,39 @@
 
         - Highlight any color related to the design in *italic*.
 
-        - Respond using this example as a reference:
+        - Respond using this example as a format reference:
           🏢 Company Name: Big Memory
 
           📝 Company Description: 
+
             * 💼🌞 Offers a selection of luxury offices with solar power 
+
             * 🎯💰 Targets people on a budget 
+
             * 🌟🔄 Wants to convey a sense of importance, while being modern
           
           📋 Job Description: 
+
             * 💻 The task is to create a website that primarily provides information 
+
             * 👩‍💻👍 The goal is to provide a great user experience 
+
             * 📃📑🛍️🔏 The website will need a landing page, a contact page, a shop page, and a
               privacy policy page 
+
             * 📃💡 The landing page should have an "Our Values" section 
+
             * 📣📥 There should be a call to action to get users to order a free sample 
+
             * 🎨🍊 The client prefers an old-fashioned design and wants to use the *brand color,
                 orange* 
 
           📅 Deadline: 3 days
 
         - No justify your choices or include any other comments.
+
+
+        Respond just with the design premises summary.
 
 
         Respond in English.

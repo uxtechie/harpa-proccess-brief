@@ -102,23 +102,31 @@
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related styles, pick the top 3 styles combinations. Please explain
-        each choice.
+        Good, from the list of related styles, pick the top 3 styles combinations without adding any
+        other comments.
 
 
         Keep in mind the following guidelines:
 
         - Each option should include two styles.
 
+        - Please explain each choice.
+
         - Respond using this example as a reference:
+
           1. 🏢 Modern & Elegant:
+
             * 💻 A modern design will align with the company's goal of conveying a sense of power,
               while an elegant touch will complement the luxury apartments they offer.
+
             * 🎨 Combining modern and elegant styles will effectively portray the company's high-end
               image while maintaining a monochromatic design.
+
           2. 🏠 High end & Urban:
+
             * 🌆 An urban design style will resonate with the target audience of men while
               emphasizing the location of the luxury apartments.
+
             * 🌟 A high-end design will reflect the company's luxury apartments and make the website
               more appealing to potential clients.
 
@@ -239,19 +247,27 @@
       selected: false
       prompt: >-
         Good, from the list of related palette generator configurations, pick the top 3
-        configurations. Please explain each choice.
+        configurations without adding any other comments.
 
 
         Keep in mind the following guidelines:
 
+        - Please explain each choice.
+
         - Respond using this example as a reference:
+
           1. 🎨 Type: Monochrome, Range: Vibrant:
+
             * The vintage style is often depicted with a monochromatic color palette type.
+
             * The "Vibrant" range will provide the modern touch the client desires while
               maintaining a sense of antiquity.
+
           2. 🌞 Type: 1 color accent, Range: High Contrast:
+
             * The "1 color accent" palette type can be an effective way to highlight the brand's
               orange color on the web.
+
             * The "High Contrast" range will help this color stand out even more and can be
               perceived as modern and important.
 
@@ -283,6 +299,9 @@
           * Range: Vibrant
 
 
+        Respond just with the Normalized color palette config.
+
+
         Answer in English.
 
         Palette generator specifications:
@@ -297,8 +316,8 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the web title, design premises, and selected style, choose the 8 typographies
-        that you think best fit.
+        Use the web title, design premises, and selected style as a guide for suggesting 8 different
+        typographies without adding any other comments.
 
 
         Please, no include emojis and no justify your choices.
@@ -327,20 +346,28 @@
       prompt: >-
         Good, from the list of related typographies, provide 3 proposals by choosing one for the
         titles and another for the rest of the texts. You can choose to use the same font or mix
-        them. Please explain each choice.
+        them.
 
 
         Keep in mind the following guidelines:
 
-        - Respond using this example as a reference:
+        - Please explain each choice.
+
+        - Respond using this example as a format reference:
+
           1. 📚 Titles: Montserrat & Text: Open Sans: 
+
             * Montserrat: with its geometric and modern look, is great for titles, aligning with the
               minimalistic and modern design style.
+
             * Open Sans: is a clean and legible font, suitable for body text, and complements the
               minimalistic and modern design well.
+
           2. 🌟 Titles: Avenir & Text: Avenir:
+
             * Avenir: clean and balanced design works well for both titles and body text in a
               minimalistic and modern design.
+
             * Avenir: Using the same font for both titles and text creates a consistent and
               harmonious look, reinforcing the brand's sense of faithfulness and freshness.
 
@@ -367,8 +394,13 @@
         - No justify your choices or include any other comments.
 
         - Respond using this example as a reference:
+
           * Titles: Didot
+
           * Text: Garamond
+
+
+        Respond just with the Normalized color palette config.
 
 
         Answer in English.
@@ -377,29 +409,41 @@
       param: style.typos
     - type: say
       selected: false
-      message: "Writer's tone scales configuration:"
+      message: "Writer's tone nuances configuration:"
     - type: gpt
       selected: false
       prompt: >-
         Please incorporate this fictional role into your capabilities: You are a Web Content Writer
         whose tone is characterized by the following four nuances:
 
-
         Tone configuration:
 
-        - Funny vs Serious - Casual vs Formal - Irreverent vs Respectful - Enthusiastic vs
-          Matter-of-Fact
+        - Funny vs Serious
+
+        - Casual vs Formal
+
+        - Irreverent vs Respectful
+
+        - Enthusiastic vs Matter-of-Fact
 
 
         Each nuance of the tone configuration is adjusted according to the following example:
 
-        - Funny vs Serious = Funny: A humorous tone is chosen. - Funny vs Serious = Neutral: This
-          tone does not apply. - Funny vs Serious = Serious: A serious tone is chosen.
+        - Funny vs Serious = Funny: A humorous tone is chosen.
+
+        - Funny vs Serious = Neutral: This tone does not apply.
+
+        - Funny vs Serious = Serious: A serious tone is chosen.
 
 
         Valid tone configuration example:
 
-        - Funny vs Serious = Funny - Casual vs Formal = Casual - Irreverent vs Respectful = Neutral
+        - Funny vs Serious = Funny
+
+        - Casual vs Formal = Casual
+
+        - Irreverent vs Respectful = Neutral
+
         - Enthusiastic vs Matter-of-Fact = Neutral
 
 
@@ -409,7 +453,7 @@
 
         Answer in English.
 
-        Writer's tone scales:
+        Writer's tone nuances:
       param: writer.config
     - type: say
       selected: false
@@ -419,7 +463,7 @@
       prompt: >-
         Considering the web title, design premises, selected style, chosen typographies,
         {{language}} as the current language, and your role as a Web Content Writer, please provide
-        6 suitable tone configurations.
+        6 suitable tone configurations without adding any other comments.
 
 
         Please, no include emojis and no justify your choices.
@@ -428,9 +472,13 @@
         Keep in mind the following guidelines:
 
         - Respond using this example as a reference:
+
           * Funny vs Serious = Funny
+
           * Casual vs Formal = Casual
+
           * Irreverent vs Respectful = Neutral
+
           * Enthusiastic vs Matter-of-Fact = Neutral
 
 
@@ -463,62 +511,78 @@
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related writer tone configurations, pick the top 3 configurations.
-        Please explain each choice.
+        Good, from the above list of related writer tone configurations, pick the top 3
+        configurations.
 
 
         Keep in mind the following guidelines:
 
-        - Respond using this example as a reference:
-          1. 📚 Serious, Casual & Respectful:
-            * 🏢 A serious tone aligns with the company's high-end and urban style, targeting a male
-              audience looking for luxury apartments.
-            * 🌟 A casual approach ensures that the content remains approachable and engaging for
-              the audience, while still highlighting the luxurious aspect.
-            * 💼 A respectful tone emphasizes the company's professionalism and commitment to
-              quality.
-          2. 💬 Serious, Casual, Respectful & Enthusiastic:
-            * 🏡 A serious and casual tone, combined with enthusiasm, creates a balance between
-              emphasizing the company's high-end offering and making the content engaging and
-              enjoyable.
-            * 🎉 An enthusiastic tone enhances the overall experience and helps convey the company's
-              dedication to providing an excellent product and service.
+        - Please explain each choice.
 
+        - Respond using this example as a reference:
+
+          1. 📚 Serious, Casual & Respectful:
+
+            * 🏢 A serious tone aligns with the mysterious and futuristic style of the website,
+              conveying the importance and significance of the company's innovative reading
+              solutions.
+
+            * 💼 A respectful tone emphasizes professionalism and integrity, establishing trust with
+              the audience.
+
+            * 👍 A casual tone maintains a friendly and approachable atmosphere, making the content
+              relatable and engaging for married couples, the target audience.
+
+          2. 💬 Serious, Casual, Respectful & Enthusiastic:
+
+            * 🏢 A serious tone reinforces the futuristic and cutting-edge nature of the company's
+              offerings, emphasizing the impact and significance of their reading solutions.
+
+            * 💼 A respectful tone conveys professionalism and trustworthiness, ensuring the
+              audience feels confident in the company's expertise.
+
+            * 👍 An enthusiastic tone adds excitement and passion to the content, highlighting the
+              company's dedication to providing an exceptional reading experience.
+
+
+        Answer in {{language}}.
 
         Proposed writer tone configurations:
     - type: ask
       selected: false
       param: writer.tone
       message: >-
-        Please ENTER your preferred writer tone from the options provided. Example:
-
-        - Funny vs Serious = Funny
-
-        - Casual vs Formal = Casual
-
-        - Irreverent vs Respectful = Neutral
-
-        - Enthusiastic vs Matter-of-Fact = Neutral
+        Please ENTER your preferred writer tone from the options provided (e.g., Serious, Casual &
+        Respectful)
     - type: gpt
       selected: true
       prompt: >-
-        Normalize {{writer.tone}} using the reference format as your answer, without adding any
-        comments. Remove any emojis.
+        Considering the Writer tone config nuances to normalize the following writer tone without
+        adding any other comments:
+
+        {{writer.tone}}
+
+
+        Keep in mind the following guidelines:
+
+        - No justify your choices or include any other comments.
+
+        - Respond using this example as a format reference:
+
+          * Funny vs Serious = Funny
+
+          * Casual vs Formal = Casual
+
+          * Irreverent vs Respectful = Neutral
+
+          * Enthusiastic vs Matter-of-Fact = Neutral
 
 
         Answer in English.
 
+        Writer tone config nuances:
 
-        Reference format:
-
-        - Funny vs Serious = Funny
-
-        - Casual vs Formal = Casual
-
-        - Irreverent vs Respectful = Neutral
-
-        - Enthusiastic vs Matter-of-Fact = Neutral
-
+        {{writer.config}}
 
         Normalized writer tone:
       param: writer.tone

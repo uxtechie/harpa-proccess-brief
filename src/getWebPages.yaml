@@ -11,28 +11,40 @@
       selected: true
       prompt: >-
         Taking into consideration the design premises, please provide a list of the requested pages
-        along with the sections each should include. Please explain each choice.
+        along with the sections each should include.
 
 
         Keep in mind the following guidelines:
 
-        - Respond using this example as a reference:
+        - Please, explain each choice.
+
+        - Respond using this example as a format reference:
+
           1. 📃 Landing Page:
+
             - Overview: Communicates the key features and benefits of luxury apartments at Hive
               Residences.
+
               * Visuals: A captivating banner image showcasing the high-end and urban vibe of the
                 apartment complex.
+
               * Written Content: A brief paragraph summarizing Hive Residences and its commitment to
                 providing luxury living spaces.
+
             - Featured Apartments: Highlights a selection of available apartments, with images and
               essential details.
+
               * Visuals: High-quality photos of luxury apartments, emphasizing their unique features
                 and designs.
+
               * Written Content: Short descriptions, pricing, and highlights for each apartment.
+
             - 📣📥 Call to Action: Encourages users to explore available apartments and get in touch
               for more information.
+
               * Visuals: A prominent button that grabs attention, in line with the color palette.
                 Clicking this button opens a simple, user-friendly contact form.
+
               * Written Content: An enticing sentence persuading users to check out the Apartment
                 Listings page and encouraging them to contact Hive Residences for inquiries. The
                 contact form should include fields for the user's name, email address, subject, and

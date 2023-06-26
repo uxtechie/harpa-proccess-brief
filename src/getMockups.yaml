@@ -17,13 +17,14 @@
         Keep in mind the following guidelines:
 
         - Use the following example prompt as a template:
-          a [type of website] Website Design of a [company values][product][product values] called
-          [company name] aimed at [target audience] who value [target audience values]. The
-          aesthetic is based on [selected style] and brand's [brand color] color in tandem with a
-          [Color palette type] palette derived from a preset range of [Color range of palette
-          config] hues. The titles typography is [selected typographies] and the text typography is
-          [selected typographies]. The text is written in {{language}} using a [content writer tone]
-          tone. --ar 2:3
+
+          a [goal of website] Website Design of a [product][product values simplified][company
+          values simplified] called [company name] aimed at [target audience] who value [target
+          audience values simplified]. Combines a [selected style] styles with a [brand color] 
+          [Color palette type] [Color range of palette config] palette.
+          The titles typography is [selected typographies] and the body typography is [selected
+          typographies] written in {{language}} using a [content writer tone] tone.
+          --ar 2:3
 
         - Text inside square brackets is a placeholder. Remove the placeholder text and the square
           brackets to build a proper sentences.
@@ -33,7 +34,7 @@
         - Please, no include emojis and no justify your choices.
 
 
-        Answer in English.
+        Responde in English.
 
         Design premises:
 
