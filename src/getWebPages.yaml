@@ -10,8 +10,9 @@
     - type: gpt
       selected: true
       prompt: >-
-        Taking into consideration the design premises, please provide a list of the requested pages
-        along with the sections each should include.
+        Taking into consideration the selected layout, the design premises, selected style, selected
+        fonts, writer's tone and color palette, please provide a very detailed description of the
+        requested pages and the sections each should include too.
 
 
         Keep in mind the following guidelines:
@@ -20,39 +21,47 @@
 
         - Respond using this example as a format reference:
 
-          1. 📃 Landing Page:
+          1. 📃 Landing Page: the page layout is in an 'F' pattern, a common web design layout that
+            caters to the natural eye scanning habit of readers from left to right, and top to
+            bottom.
 
-            - Overview: Communicates the key features and benefits of luxury apartments at Hive
-              Residences.
+            - Overview section: Communicates the key features and benefits of luxury apartments at
+              Hive Residences.
 
-              * Visuals: A captivating banner image showcasing the high-end and urban vibe of the
-                apartment complex.
+              Employs an F-pattern layout and serves as the introduction to your site. This section
+              features:
 
-              * Written Content: A brief paragraph summarizing Hive Residences and its commitment to
-                providing luxury living spaces.
+              * A full-width captivating banner image at the top, showcasing the high-end and urban
+                vibe of the apartment complex. This image immediately attracts the viewer's
+                attention and communicates the type of apartments your website offers.
 
-            - Featured Apartments: Highlights a selection of available apartments, with images and
-              essential details.
+              * A brief, centrally-placed introductory paragraph under the banner. This content is
+                written in bold, large fonts to draw the viewer's attention, summarizing Hive
+                Residences and its commitment to providing luxury living spaces.
 
-              * Visuals: High-quality photos of luxury apartments, emphasizing their unique features
-                and designs.
+            - Featured Apartments Section: Highlights a selection of available apartments, with
+              images and essential details.
 
-              * Written Content: Short descriptions, pricing, and highlights for each apartment.
+              Utilizes a card-based layout following an F-pattern design. Each card represents a
+              distinct apartment and consists of two primary elements:
 
-            - 📣📥 Call to Action: Encourages users to explore available apartments and get in touch
-              for more information.
+                * A high-quality photo of the apartment emphasizing their unique features and
+                  designs, occupying the upper two-thirds of the card.
 
-              * Visuals: A prominent button that grabs attention, in line with the color palette.
-                Clicking this button opens a simple, user-friendly contact form.
-
-              * Written Content: An enticing sentence persuading users to check out the Apartment
-                Listings page and encouraging them to contact Hive Residences for inquiries. The
-                contact form should include fields for the user's name, email address, subject, and
-                message. An accompanying short message should further motivate users to reach out
-                with any questions or remarks they might have.
+                * Essential details about the apartment such as name, location, short description,
+                  price and highlights in the lower third of the card.
+              
+              The cards are arranged in a grid, each being clickable and leading to a more detailed
+              page about the respective apartment. For a large number of apartments, a horizontal
+              carousel layout can be used. This section is headed by a large "Featured Apartments"
+              title and concludes with a 'View All' button for accessing all available listings.
 
 
         Answer in English.
+
+        Selected layout:
+
+        {{layout.selected}}
 
         Design premises:
 

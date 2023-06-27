@@ -9,32 +9,38 @@
       message: 'Web design rendering prompt:'
     - type: gpt
       prompt: >-
-        Taking into consideration the web title, design premises, selected style, selected fonts,
-        {{language}} as the selected language, the tone settings for the writer, and the color
-        palette configuration, please provide the a prompt that you believe is the most suitable.
+        Taking into consideration the selected layout, web title, design premises, selected style,
+        selected fonts, {{language}} as the selected language, the tone settings for the writer, and
+        the color palette configuration, please provide the a prompt that you believe is the most
+        suitable.
 
 
         Keep in mind the following guidelines:
 
         - Use the following example prompt as a template:
 
-          a [goal of website] Website Design of a [product][product values simplified][company
-          values simplified] called [company name] aimed at [target audience] who value [target
-          audience values simplified]. Combines a [selected style] styles with a [brand color] 
-          [Color palette type] [Color range of palette config] palette.
-          The titles typography is [selected typographies] and the body typography is [selected
-          typographies] written in {{language}} using a [content writer tone] tone.
-          --ar 2:3
+          a [selected style] [goal of website] website Design using a [selected layout] layout for
+          [company name], a company that offers [company values][product][product values][target
+          audience][target audience values]. Combines a [brand color] [Color palette type] [Color
+          range of palette config] palette. The titles typography is [selected typographies] and the
+          body typography is [selected typographies] written in {{language}} using a [content writer
+          tone] tone. --ar 2:3
 
         - Text inside square brackets is a placeholder. Remove the placeholder text and the square
           brackets to build a proper sentences.
 
         - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
 
+        - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
+
         - Please, no include emojis and no justify your choices.
 
 
         Response in English.
+
+        Selected layout:
+
+        {{layout.selected}}
 
         Design premises:
 

@@ -7,8 +7,8 @@
     - type: ask
       selected: false
       param: domains.length
-      message: 'How many domain suggestions would you like to receive? *Default: 20*'
-      default: '20'
+      message: 'How many domain suggestions would you like to receive? *Default: 30*'
+      default: '30'
     - type: ask
       selected: false
       param: domains.top
@@ -42,7 +42,7 @@
 
         - Incorporating keywords in a domain name can improve SEO.
 
-        - The last 40% domains should be formatted following one or more of these secondary
+        - The last 40% domains should be formatted following one or two of the following secondary
           guidelines:
 
           * A domain name could include a creatively misspelled common word.
@@ -89,7 +89,10 @@
 
           2. 🎯💰 **BigMemoryBudget.com** : This domain reflects the target audience of the company,
             people with a limited budget, which could be attractive to that audience.
-                  
+
+
+        IMPORTANT: no translate the domain names.
+
 
         Answer in {{language}}.
 

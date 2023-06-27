@@ -6,86 +6,73 @@
   steps:
     - type: say
       selected: false
-      message: 'Supported aesthetics styles:'
-    - type: gpt
-      selected: false
-      prompt: >-
-        Please assume this fictional role: You're a Web Designer whizz with the ability to work with
-        the following design styles:
-
-        - Minimalistic
-
-        - Modern
-
-        - Feminine
-
-        - Vintage
-
-        - Elegant
-
-        - Clean
-
-        - Smart
-
-        - Classy
-
-        - High end
-
-        - Luxury
-
-        - Urban
-
-        - Cute
-
-        - Cartoonish
-
-        - Mysterious
-
-        - Sci-fi
-
-        - Futuristic
-
-        - High-tech
-
-        - Futuristic
-
-        - AI Utopia Advancement
-
-        - Vibrant
-
-        - Bright
-
-        - Neon
-
-        - Cyber
-
-        - Watercolor
-
-        - Retro
-
-
-        Please, if you have understood this instruction, respond just with the comma separated style
-        list.
-
-
-        Answer in English
-
-        Styles:
-      param: styles
-    - type: say
-      selected: false
       message: 'Related styles:'
     - type: gpt
       selected: false
       prompt: >-
-        Taking into account the web title and design premises, selected the 8 styles from the list
-        {{styles}} that you think best align.
+        Taking into account the web title and design premises, select the 8 styles more suitables
+        without adding other any comments.
+
+
+        Keep in mind the following guidelines:
+
+        - Get the style options from the next list.
+
+          * Feminine
+
+          * Vintage
+
+          * Elegant
+
+          * Clean
+
+          * Smart
+
+          * Classy
+
+          * High-end
+
+          * Luxury
+
+          * Urban
+
+          * Minimalistic
+
+          * Modern
+
+          * Cute
+
+          * Cartoonish
+
+          * Mysterious
+
+          * Sci-fi
+
+          * Futuristic
+
+          * High-tech
+
+          * Futuristic
+
+          * AI-Utopia-Advancement
+
+          * Vibrant
+
+          * Bright
+
+          * Neon
+
+          * Cyber
+
+          * Watercolor
+
+          * Retro
 
 
         Please, no include emojis and no justify your choices.
 
 
-        Answer in {{language}}.
+        Answer in English.
 
         Web title:
 
@@ -96,53 +83,46 @@
         {{design.premises}}
 
         Related styles:
+      param: style.related
     - type: say
       selected: false
       message: 'Proposed styles:'
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related styles, pick the top 3 styles combinations without adding any
-        other comments.
+        Good, from the list of related styles, pick the top 4 styles without adding any other
+        comments.
 
 
         Keep in mind the following guidelines:
 
-        - Each option should include two styles.
-
         - Please explain each choice.
 
-        - Respond using this example as a reference:
+        - Respond using this example as a format reference:
 
-          1. 🏢 Modern & Elegant:
+          1. 🏢 Modern: A modern design will align with the company's goal of conveying a sense of
+            power.
 
-            * 💻 A modern design will align with the company's goal of conveying a sense of power,
-              while an elegant touch will complement the luxury apartments they offer.
-
-            * 🎨 Combining modern and elegant styles will effectively portray the company's high-end
-              image while maintaining a monochromatic design.
-
-          2. 🏠 High end & Urban:
-
-            * 🌆 An urban design style will resonate with the target audience of men while
-              emphasizing the location of the luxury apartments.
-
-            * 🌟 A high-end design will reflect the company's luxury apartments and make the website
-              more appealing to potential clients.
+          2. 🌆 Urban: An urban design style will resonate with the target audience of men while
+            emphasizing the location of the luxury apartments.
 
 
         Answer in {{language}}.
+
+        Related Styles:
+
+        {{style.related}}
 
         Proposed styles:
     - type: ask
       selected: false
       param: style.selected
       message: >-
-        Please ENTER your preferred style from the above options (e.g., Clean & Vibrant).
+        Please ENTER your preferred style from the above options (e.g., Vibrant).
     - type: gpt
       selected: false
       prompt: >-
-        Normalize {{style.selected}} using the style list as a reference.
+        Normalize {{style.selected}} using the related style list as a reference.
 
 
         Keep in mind the following guidelines:
@@ -150,16 +130,16 @@
         - No justify your choices or include any other comments.
 
         - Respond using this example as a reference:
-          Clean & Vibrant
+          Vibrant
 
 
         Answer in English.
 
-        Styles:
+        Related Styles:
 
-        {{styles}}
+        {{style.related}}
 
-        Normalized selected styles:
+        Normalized selected style:
       param: style.selected
     - type: say
       selected: false
@@ -586,4 +566,129 @@
 
         Normalized writer tone:
       param: writer.tone
+    - type: say
+      selected: false
+      message: 'Related web layouts:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        Taking into account the design premises, selected style, selected fonts, writer's tone and
+        color palette, suggests the 8 web layouts more suitables without adding other any comments.
+
+        [Source](https://websitesetup.org/website-layouts/)
+
+
+        Keep in mind the following guidelines:
+
+        - Get the web layouts from the next list.
+
+          * Single-Column
+
+          * Content-Focused
+
+          * Big-Typography
+
+          * Magazine
+
+          * Grid-Breaking
+
+          * Alternating
+
+          * Full-Screen
+
+          * F-Pattern
+
+          * Z-Pattern
+
+          * Alternating
+
+          * Card-Based
+
+          * Hero
+
+          * Split-Screen
+
+          * Asymmetrical
+
+          * Navigation-Tabs
+
+          * Carousel
+
+
+        Please, no include emojis and no justify your choices.
+
+
+        Answer in English.
+
+        Design premises:
+
+        {{design.premises}}
+
+        Selected Style:
+
+        {{style.selected}}
+
+        Selected fonts:
+
+        {{style.typos}}
+
+        Writer's tone:
+
+        {{writer.tone}}
+
+        Color palette:
+
+        {{palette.config}}
+
+        Related layouts:
+      param: layout.related
+    - type: say
+      selected: false
+      message: 'Proposed web layouts:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        Good, from the list of related layouts, pick the top 4 styles without adding any other
+        comments.
+
+
+        Keep in mind the following guidelines:
+
+        - Please explain each choice.
+
+
+        Answer in {{language}}.
+
+        Related layouts:
+
+        {{layout.related}}
+
+        Proposed layouts:
+    - type: ask
+      selected: false
+      param: layout.selected
+      message: >-
+        Please ENTER your preferred layout from the above options (e.g., Big-Typography).
+    - type: gpt
+      selected: false
+      prompt: >-
+        Normalize {{layout.selected}} using the related layouts as a reference.
+
+
+        Keep in mind the following guidelines:
+
+        - No justify your choices or include any other comments.
+
+        - Respond using this example as a reference:
+          Big-Typography
+
+
+        Answer in English.
+
+        Related layouts:
+
+        {{layout.related}}
+
+        Normalized selected layout:
+      param: layout.selected
   version: 1
