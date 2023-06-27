@@ -9,22 +9,16 @@
       message: 'Web design rendering prompt:'
     - type: gpt
       prompt: >-
-        Taking into consideration the selected layout, web title, design premises, selected style,
-        selected fonts, {{language}} as the selected language, the tone settings for the writer, and
-        the color palette configuration, please provide the a prompt that you believe is the most
-        suitable.
+        Taking into consideration the design premises, brand color, company industry, selected style
+        and the color palette configuration, please provide the a prompt that you believe is the
+        most suitable.
 
 
         Keep in mind the following guidelines:
 
         - Use the following example prompt as a template:
-
-          a [selected style] [goal of website] website Design using a [selected layout] layout for
-          [company name], a company that offers [company values][product][product values][target
-          audience][target audience values]. Combines a [brand color] [Color palette type] [Color
-          range of palette config] palette. The titles typography is [selected typographies] and the
-          body typography is [selected typographies] written in {{language}} using a [content writer
-          tone] tone. --ar 2:3
+          a [selected style] & [brand color] [color palette type without range] website. To [product
+          summary] for [audience summary]. For a [company industry] company. --ar 2:3
 
         - Text inside square brackets is a placeholder. Remove the placeholder text and the square
           brackets to build a proper sentences.
@@ -38,10 +32,6 @@
 
         Response in English.
 
-        Selected layout:
-
-        {{layout.selected}}
-
         Design premises:
 
         {{design.premises}}
@@ -49,14 +39,6 @@
         Selected Style:
 
         {{style.selected}}
-
-        Selected fonts:
-
-        {{style.typos}}
-
-        Writer's tone settings:
-
-        {{writer.tone}}
 
         Color palette configuration:
 
