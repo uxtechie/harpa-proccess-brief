@@ -17,11 +17,11 @@
         Keep in mind the following instructions:
 
         - Use the following prompt template:
-          Website: Conveys a Sense of [First Sense] & [Second Sense]
-          through a [Brief Prefered Design or Selected Style]-Inspired Design. Features:
-          [Color Palette Range Parameter] Hues. Brand Name: [Website Brand]. Brand Color: [Brand
-          Color]. Purpose: to Provide [Product Summary] for: [Audience Summary]. Designed: for a
-          [Company Industry] Company. Typography: [Just the Selected Title Font]. --ar 2:3 --q 2
+          A [Brief Prefered Design or Selected Style] & [Color Palette Type Parameter] Website.
+          Features: [Color Palette Range Parameter] Hues. Convey a Sense of [First Sense] &
+          [Second Sense]. Brand Color: [Brand Color]. Brand Name: [Website Brand]. Purpose: to
+          Provide [Product Summary] for: [Audience Summary]. Designed: for a [Company Industry]
+          Company. Typography: [Just the Selected Title Font]. --ar 2:3 --q 2
 
         - Text inside square brackets is a placeholder.
           * Change the placeholder text to build a proper sentences.
