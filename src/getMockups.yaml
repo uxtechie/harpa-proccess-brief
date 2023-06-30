@@ -18,9 +18,9 @@
 
         - Use the following example prompt as a template:
           a [selected style] & [brand color] [color palette type without range] [color palette
-          ange] hues website. To [product summary] for [audience summary]. For a [company industry]
-          company. Typography is [selected title font]. Based on [extract country from brief domain
-          or {{language}}]. Convey [first sense] & [second sense]. --ar 2:3
+          ange] hues website. Convey [first sense] & [second sense]. To [product summary] for
+          [audience summary]. For a [company industry] company. Typography is [selected title font].
+          Based on [extract country from brief domain or {{language}}]. --ar 2:3
 
         - Text inside square brackets is a placeholder. Remove the placeholder text and the square
           brackets to build a proper sentences.
