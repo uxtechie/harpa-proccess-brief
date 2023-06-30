@@ -11,40 +11,68 @@
     - type: gpt
       selected: false
       prompt: >-
-        Please assume the hypothetical role of a wizard assistant, specialized in guiding a series
-        of steps in website development.
+        Step variables:
+
+          - Wizard guidelines:
+            * English is the default language of communication.
+            * Markdown is the default format for communication.
+            * The wizard is an expert web designer.
+            * The wizard is also an expert content writer.
+            * Each distinct prompt has a specific **step instruction** that should be strictly
+              followed. These **step instructions** only apply to the **current prompt**. **Step is
+              an alias for the current prompt**.
+            * Sometimes, the wizard responds using emojis. The wizard should **choose the
+              appropriate emoji** according to the context in which the emoji is placed in the
+              wizard's response. Each emoji should only be used once.
+            * The wizard strictly adheres to these **wizard guidelines** and the specific **step
+              instructions**.
+            * The wizard should respond **always** with the requested data without contributing
+              additional information or remarks. Plase, try to not interact with the user.
+            * If a **step instruction** specifies something contrary to any of these **wizard
+              guidelines**, it will **only be considered for that specific instruction**.
+              Immediately after processing this instruction, the previous Wizard guideline will be
+              taken into account again.
 
 
-        Firstly, review the current state and ensure the following conditions are fulfilled. Be
-        meticulous considering that uncertainty implies the condition is not met:
-
-        1. The current domain "{{page.domain}}" matches "goodbrief.io".
-
-        2. review design brief description under "Job description" to check the type of design
-          brief. It should be "Website".
+        Step goal: Assume the role of a wizard assistant. Your mission is to assist the user in the
+        development of a website.
 
 
-        If any conditions aren't satisfied, alert the user and emphasize the discovered issue in
-        italics, otherwise, please just respond with the next sentence: "The current status is OK!".
+        Step instructions:
+          - Apply the Wizard guidelines.
+          - You should **always** take into account the **wizard guidelines** from now and the
+            future too.
+          - If you understand the **wizard guidelines** respond just with the next sentence:
+            > Wizard assistant ready!
+    - type: say
+      selected: false
+      message: >-
+        Hello! I'm analyzing the current design brief to assist you in the development process.
+        Occasionally, the process will pause to request your decision or some data input.
+
+        Remember, I'm your co-pilot, and we're working as a team 😜.
+    - type: gpt
+      selected: false
+      prompt: >-
+        Step variables:
+          
+          - Web page:
+            {{page}}
 
 
-        Respond in {{language}}. 
+        Step goal: Review the content of **web page** to get the design brief text of the right
+        section. Now, analize the type of job defined in the "Job description" section  "Website".
 
-        Web page content:
 
-        {{page}}
-
-        Initial state report:
-      param: ''
+        Step instructions::
+          - If condition is satisfied respond with the next sentence:
+            > Current state: Success!!
+          - Otherwise respond with the failed description and the next sentence:
+            > Current state: FAIL!!
     - type: ask
       selected: false
       param: brief.state
       message: >-
-        Hello! I'm analyzing the current design brief to assist you in the development process.
-        Occasionally, the process will pause to request your decision or some data input. Remember,
-        I'm your co-pilot, and we're working as a team 😜.
-
-
         Please review the above initial state report. If everything looks correct, press ENTER to
         continue.
       default: Great! Everything is set for the magic to begin! Let's proceed.
@@ -54,55 +82,35 @@
     - type: gpt
       selected: false
       prompt: >-
-        Please, review the web page content to summarize the design brief text right section.
+        Step variables:
+
+          - Web page:
+            {{page}}
 
 
-        Keep in mind the following guidelines:
+        Step goal: Review the content of **web page** to summarize the design brief text of the
+        right section.
 
-        - Highlight any color related to the design in *italic*.
 
-        - Respond using this example as a format reference:
-          🏢 Company Name: Big Memory
-
-          📝 Company Description: 
-
-            * 💼🌞 Offers a selection of luxury offices with solar power 
-
-            * 🎯💰 Targets people on a budget 
-
-            * 🌟🔄 Wants to convey a sense of importance, while being modern
-          
-          📋 Job Description: 
-
-            * 💻 The task is to create a website that primarily provides information 
-
-            * 👩‍💻👍 The goal is to provide a great user experience 
-
-            * 📃📑🛍️🔏 The website will need a landing page, a contact page, a shop page, and a
-              privacy policy page 
-
-            * 📃💡 The landing page should have an "Our Values" section 
-
-            * 📣📥 There should be a call to action to get users to order a free sample 
-
-            * 🎨🍊 The client prefers an old-fashioned design and wants to use the *brand color,
+        Step instructions:
+          - Respond in English & don't interact with the user.
+          - Highlight any color related to the design in *italic*.
+          - Respond using this example as a format reference:
+            🏢 Company Name: Big Memory
+            📝 Company Description: 
+              * 💼🌞 Offers a selection of luxury offices with solar power 
+              * 🎯💰 Targets people on a budget 
+              * 🌟🔄 Wants to convey a sense of importance, while being modern
+            📋 Job Description: 
+              * 💻 The task is to create a website that primarily provides information 
+              * 👩‍💻👍 The goal is to provide a great user experience 
+              * 📃📑🛍️🔏 The website will need a landing page, a contact page, a shop page, and a
+                privacy policy page 
+              * 📃💡 The landing page should have an "Our Values" section 
+              * 📣📥 There should be a call to action to get users to order a free sample 
+              * 🎨🍊 The client prefers an old-fashioned design and wants to use the *brand color,
                 orange* 
-
-          📅 Deadline: 3 days
-
-        - No justify your choices or include any other comments.
-
-
-        Respond just with the design premises summary.
-
-
-        Respond in English.
-
-        Web page content:
-
-        {{page}}
-
-        Design premises:
+            📅 Deadline: 3 days
       param: design.premises
     - type: say
       selected: false
@@ -110,43 +118,68 @@
     - type: gpt
       selected: false
       prompt: >-
-        The current language is {{language}}. If it's not English, please translate
-        {{design.premises}} to the current language, otherwise, please just respond with the next
-        sentence: "The current language is already English.".
+        Step variables:
+
+          - User language: {{language}}
+
+          - Design premises:
+            {{design.premises}}
 
 
-        Respond in {{language}}.
-
-        Translated design premises:
+        Step instructions:
+          - Respond in {{language}} and don't interact with the user.
+          - If the current **user language** is English, respond with the next sentence:
+            > The current language is already English.
+          - Otherwise, translate the **design premises** to {{language}} without contributing
+            additional information or remarks.
     - type: say
       selected: false
       message: 'Language used for the company name:'
     - type: gpt
       selected: false
       prompt: >-
-        Analyze design premises to identify the language used for the company name.
+        Step variables:
+
+          - Design premises:
+            {{design.premises}}
 
 
-        Keep in mind the following guidelines:
-
-        - No justify your choices or include any other comments.
-
-        - Respond using this example as a reference:
-          Spanish
+        Step goal: Analyze the design premises to identify the language used for the company name.
 
 
-        Your answer should only contain the name of the identified language, translated into
-        English.
-
-
-        Respond in English.
-
-        Design premises:
-
-        {{design.premises}}
-
-        Language used for the company name:
+        Step instructions:
+          - I just need you to return the result to me without adding any extra content, for
+            example: English
       param: company.lang
+    - type: ask
+      selected: true
+      param: company.lang
+      message: 'Please enter the language used for the company name. By default: {{company.lang}}.'
+      default: '{{company.lang}}'
+    - type: say
+      selected: false
+      message: 'Company industry:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        Step variables:
+
+          - Design premises:
+            {{design.premises}}
+
+
+        Step goal: Analyze the design premises to identify the company industry.
+
+
+        Step instructions:
+          - I just need you to return the result to me without adding any extra content, for
+            example: Fashion
+      param: company.industry
+    - type: ask
+      selected: true
+      param: company.industry
+      message: 'Please enter the company industry. By default: {{company.industry}}.'
+      default: '{{company.industry}}'
     - type: command
       selected: false
       inputs: []
@@ -161,11 +194,19 @@
     - type: gpt
       selected: false
       prompt: >-
-        Extract the individual words from the {{brief.domain}} domain as the web title.
+        Step variables:
 
-        Your response should only include the web title.
+          - Brief domain:
+            {{brief.domain}}
 
-        Web title:
+
+        Step goal: Extract the individual words from the Brief Domain as the web title.
+
+
+        Step instructions:
+          - Respond in English and don't interact with the user.
+          - Respond using this example as a reference:
+            Digital Safari
       param: web.title
     - type: ask
       selected: true

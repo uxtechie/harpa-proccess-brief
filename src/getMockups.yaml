@@ -14,11 +14,12 @@
         most suitable.
 
 
-        Keep in mind the following guidelines:
+        Keep in mind the following instructions:
 
         - Use the following example prompt as a template:
           a [selected style] & [brand color] [color palette type without range] website. To [product
-          summary] for [audience summary]. For a [company industry] company. --ar 2:3
+          summary] for [audience summary]. For a [company industry] company. Typography [selected
+          title font]. --ar 2:3
 
         - Text inside square brackets is a placeholder. Remove the placeholder text and the square
           brackets to build a proper sentences.
@@ -37,6 +38,12 @@
         {{design.premises}}
 
         Selected Style:
+
+        {{style.selected}}
+
+        Selected fonts:
+
+        {{style.typos}}
 
         {{style.selected}}
 
