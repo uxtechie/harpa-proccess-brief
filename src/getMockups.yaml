@@ -9,61 +9,47 @@
       message: 'Web design rendering prompt:'
     - type: gpt
       prompt: >-
-        Taking into consideration the design premises, brand color, company industry, selected style
-        and the color palette configuration, please provide the a prompt that you believe is the
-        most suitable.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Selected style: {{style.selected}}
+
+          - Selected fonts:
+            ```markdown
+            {{style.typos}}
+            ```
+
+          - Color palette:
+            ```markdown
+            {{palette.config}}
+            ```
+          
+          - Company industry: {{company.industry}}
+          
+
+        Step goal: Taking into account the **design premises**, **company industry**, **selected
+        style**, **selected fonts** and the **color palette**, please provide the a prompt that you
+        believe is the most suitable.
 
 
-        Keep in mind the following instructions:
-
-        - Use the following prompt template:
-          a [Color Palette Type Parameter] & [Selected Style]-Inspired Website.
-          Features: [Color Palette Range Parameter] Hues. Convey a Sense of [First Sense] &
-          [Second Sense]. Brand Color: [Brand Color]. Brand Name: [Website Brand]. Purpose: to
-          Provide [Product Summary] for: [Audience Summary]. Designed: for a [Company Industry]
-          Company. Typography: [Just the Selected Title Font]. --ar 2:3 --q .5 --s 0 --stop 50
-          --style raw --iw 1
-
-        - Text inside square brackets is a placeholder.
-          * Change the placeholder text to build a proper sentences.
-          * Remove the square brackets. 
-          * Retain the original placeholder case format.
-
-        - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
-
-        - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
-
-        - Please, no include emojis and no justify your choices.
-
-
-        Response in English.
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
-
-        Selected fonts:
-
-        {{style.typos}}
-
-        {{style.selected}}
-
-        Color palette configuration:
-
-        {{palette.config}}
-
-        Tone settings:
-
-        {{writer.tone}}
-
-        Brief domain:
-
-        {{brief.domain}}
-
-        Proposed rendering prompt:
+        Step instructions:
+          - Respond in English & don't interact with the user.
+          - Respond using this template as a format reference:
+            a [Just The Color Palette Type Parameter] & [Selected Style]-Inspired Website. convey a
+            sense of: [First Company Sense] & [Second Company Sense]. colors: [Brand Color]
+            with [Color Palette Range Parameter] Hues. purpose to provide: [Product Summary]. for:
+            [Audience Summary]. designed for a: [Company Industry] company. brand name: [Company
+            Name]. titles: [Just the Selected Title Font] Typography. --ar 2:3 --s 50 --style raw
+          - The text inside square brackets is a placeholder.
+          - Change the placeholder text to build a proper sentences. Ensure to retain the original
+            placeholder case format. Remove the square brackets. 
+          - Ensure that the **first word** following each period is in lowercase.
+          - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
+          - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
+          - No include emojis.
       selected: true
   version: 1

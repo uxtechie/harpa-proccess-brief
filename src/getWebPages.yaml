@@ -10,79 +10,73 @@
     - type: gpt
       selected: true
       prompt: >-
-        Taking into consideration the selected layout, the design premises, selected style, selected
-        fonts, writer's tone and color palette, please provide a very detailed description of the
-        requested pages and the sections each should include too.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Selected style: {{style.selected}}
+
+          - Selected fonts:
+            ```markdown
+            {{style.typos}}
+            ```
+
+          - Color palette:
+            ```markdown
+            {{palette.config}}
+            ```
+          
+          - Writer's tone:
+            ```markdown
+            {{writer.tone}}
+            ```
+
+        Step goal: Taking into account the selected layout, the design premises, selected style,
+        selected fonts, writer's tone and color palette, please provide a very detailed description
+        of the requested pages and the sections each should include too.
 
 
-        Keep in mind the following instructions:
+        Step instructions:
+          - Respond in {{language}} & don't interact with the user.
+          - Respond using this example as a format reference:
+            1. 📃 Landing Page: the page layout is in an 'F' pattern, a common web design layout
+              that caters to the natural eye scanning habit of readers from left to right, and top
+              to bottom.
 
-        - Please, explain each choice.
+              - Overview section: Communicates the key features and benefits of luxury apartments at
+                Hive Residences.
 
-        - Respond using this example as a format reference:
+                Employs an F-pattern layout and serves as the introduction to your site. This
+                section features:
 
-          1. 📃 Landing Page: the page layout is in an 'F' pattern, a common web design layout that
-            caters to the natural eye scanning habit of readers from left to right, and top to
-            bottom.
+                * A full-width captivating banner image at the top, showcasing the high-end and
+                  urban vibe of the apartment complex. This image immediately attracts the viewer's
+                  attention and communicates the type of apartments your website offers.
 
-            - Overview section: Communicates the key features and benefits of luxury apartments at
-              Hive Residences.
+                * A brief, centrally-placed introductory paragraph under the banner. This content is
+                  written in bold, large fonts to draw the viewer's attention, summarizing Hive
+                  Residences and its commitment to providing luxury living spaces.
 
-              Employs an F-pattern layout and serves as the introduction to your site. This section
-              features:
+              - Featured Apartments Section: Highlights a selection of available apartments, with
+                images and essential details.
 
-              * A full-width captivating banner image at the top, showcasing the high-end and urban
-                vibe of the apartment complex. This image immediately attracts the viewer's
-                attention and communicates the type of apartments your website offers.
+                Utilizes a card-based layout following an F-pattern design. Each card represents a
+                distinct apartment and consists of two primary elements:
 
-              * A brief, centrally-placed introductory paragraph under the banner. This content is
-                written in bold, large fonts to draw the viewer's attention, summarizing Hive
-                Residences and its commitment to providing luxury living spaces.
+                  * A high-quality photo of the apartment emphasizing their unique features and
+                    designs, occupying the upper two-thirds of the card.
 
-            - Featured Apartments Section: Highlights a selection of available apartments, with
-              images and essential details.
-
-              Utilizes a card-based layout following an F-pattern design. Each card represents a
-              distinct apartment and consists of two primary elements:
-
-                * A high-quality photo of the apartment emphasizing their unique features and
-                  designs, occupying the upper two-thirds of the card.
-
-                * Essential details about the apartment such as name, location, short description,
-                  price and highlights in the lower third of the card.
-              
-              The cards are arranged in a grid, each being clickable and leading to a more detailed
-              page about the respective apartment. For a large number of apartments, a horizontal
-              carousel layout can be used. This section is headed by a large "Featured Apartments"
-              title and concludes with a 'View All' button for accessing all available listings.
-
-
-        Answer in English.
-
-        Selected layout:
-
-        {{layout.selected}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
-
-        Selected fonts:
-
-        {{style.typos}}
-
-        Writer's tone settings:
-
-        {{writer.tone}}
-
-        Color palette configuration:
-
-        {{palette.config}}
-
-        Proposed web pages:
+                  * Essential details about the apartment such as name, location, short description,
+                    price and highlights in the lower third of the card.
+                
+                The cards are arranged in a grid, each being clickable and leading to a more
+                detailed page about the respective apartment. For a large number of apartments, a
+                horizontal carousel layout can be used. This section is headed by a large "Featured
+                Apartments" title and concludes with a 'View All' button for accessing all available
+                listings.
+            2. ...
       param: web.pages
   version: 1
