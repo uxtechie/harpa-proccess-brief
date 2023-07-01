@@ -19,82 +19,65 @@
       selected: false
       param: domain.lang
       message: >-
-        In which language would you like to compose the domain name? *Default: {{company.lang}}*
-      default: '{{company.lang}}'
+        In which language would you like to compose the domain name? *Default: English*
+      default: English
     - type: gpt
       prompt: >-
-        Use the design premises as a guide for suggesting {{domains.length}} different domain names.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Domain name creation guidelines:
+            * The domain name should include all words from the company name preferably in the order
+              they appear. The proposed domain name should be as close as possible to the company
+              name.
+            * The words you append to the company name to formulate the domain should be in
+              the {{domain.lang}} language.
+            * The top-level domain should be selected from this list {{domains.top}}.
+            * A domain name should represent the essence of a business or brand.
+            * A domain name should be easy to remember and spell.
+            * Incorporating keywords in a domain name can improve SEO.
+            * No include emojis.
+            * The last 40% domains should be formatted following one or two of the following
+              secondary guidelines:
+              1. A domain name could include a creatively misspelled common word.
+              2. An acronym can be included in a domain name.
+              3. Wordplay can be used creatively in a domain name.
+              4. A pun can be creatively used in a domain name.
+              5. An abbreviation can be included in a domain name.
+              6. A catchy phrase can make a domain name more memorable.
+              7. Two words can be merged to make a unique domain name.
 
 
-        Keep in mind the following guidelines:
+        Step goal: Use the **design premises** and **Domain name creation guidelines** as a guide
+        for suggesting {{domains.length}} different domain names.
 
-        - The domain name should include all words from the company name preferably in the order
-          they appear. The proposed domain name should be as close as possible to the company name.
-
-        - The words you append to the company name to formulate the domain should be in
-          the {{domain.lang}} language.
-
-        - The top-level domain should be selected from this list {{domains.top}}.
-
-        - A domain name should represent the essence of a business or brand.
-
-        - A domain name should be easy to remember and spell.
-
-        - Incorporating keywords in a domain name can improve SEO.
-
-        - The last 40% domains should be formatted following one or two of the following secondary
-          guidelines:
-
-          * A domain name could include a creatively misspelled common word.
-
-          * An acronym can be included in a domain name.
-
-          * Wordplay can be used creatively in a domain name.
-
-          * A pun can be creatively used in a domain name.
-
-          * An abbreviation can be included in a domain name.
-
-          * A catchy phrase can make a domain name more memorable.
-
-          * Two words can be merged to make a unique domain name.
-
-
-        Please, no include emojis and no justify your choices.
-
-
-        Respond in {{domain.lang}}.
-
-        Design premises:
-
-        {{design.premises}}
-
-        Related Domains:
+        Step instructions:
+          - Respond in {{domain.lang}} and don't interact with the user.
       selected: false
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related domains, pick the top 4 domains without adding any other
-        comments.
+        Step variables:
+
+          - Related domains:
+            ```markdown
+            {{gpt}}
+            ```
 
 
-        Keep in mind the following instructions:
-
-        - Please explain each choice.
-
-        - Respond using this examples as a format reference:
-
-          1. 💼🌞 **BigMemorySolar.com**: This domain directly refers to the company's offering, the
-            luxury offices with solar power, making it relevant and memorable.
-
-          2. 🎯💰 **BigMemoryBudget.com** : This domain reflects the target audience of the company,
-            people with a limited budget, which could be attractive to that audience.
+        Step goal: from the list of **related domains**, pick the top 4 domains.
 
 
-        IMPORTANT: no translate the domain names.
-
-
-        Answer in {{language}}.
-
-        Proposed Domains:
+        Step instructions:
+          - Respond in {{language}} & don't interact with the user.
+          - No translate the domain names.
+          - Respond using this examples as a format reference:
+            1. 💼🌞 **BigMemorySolar.com**: This domain directly refers to the company's offering,
+              the luxury offices with solar power, making it relevant and memorable.
+            2. 🎯💰 **BigMemoryBudget.com** : This domain reflects the target audience of the
+              company, people with a limited budget, which could be attractive to that audience.
   version: 1
