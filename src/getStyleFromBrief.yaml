@@ -10,81 +10,51 @@
     - type: gpt
       selected: false
       prompt: >-
-        Taking into account the web title and design premises, select the 8 styles more suitables
-        without adding other any comments.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Web title: {{web.title}}
+
+          - Supported style list.
+            * Feminine
+            * Vintage
+            * Elegant
+            * Clean
+            * Smart
+            * Classy
+            * Monochrome
+            * High-end
+            * Luxury
+            * Urban
+            * Minimalistic
+            * Brutalism
+            * Magazine
+            * Modern
+            * Cute
+            * Cartoonish
+            * Sci-fi
+            * Futuristic
+            * High-tech
+            * Dystopic
+            * Neon
+            * Cyber
+            * Cyberpunk
+            * Watercolor
+            * Colorful
+            * Retro
 
 
-        Keep in mind the following instructions:
-
-        - Get the style options from the next list.
-
-          * Feminine
-
-          * Vintage
-
-          * Elegant
-
-          * Clean
-
-          * Smart
-
-          * Classy
-
-          * Monochrome
-
-          * High-end
-
-          * Luxury
-
-          * Urban
-
-          * Minimalistic
-
-          * Brutalism
-
-          * Magazine
-
-          * Modern
-
-          * Cute
-
-          * Cartoonish
-
-          * Sci-fi
-
-          * Futuristic
-
-          * High-tech
-
-          * Dystopic
-
-          * Neon
-
-          * Cyber
-
-          * Cyberpunk
-
-          * Watercolor
-
-          * Colorful
-
-          * Retro
+        Step goal: Taking into account the web title and design premises, select the 8 styles more
+        suitables from the **Supported style list**.
 
 
-        Please, no include emojis and no justify your choices.
-
-
-        Answer in English.
-
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Related styles:
+        Step instructions:
+          - Respond in English & don't interact with the user.
+          - Respond with comma-separated values (e.g., Feminine, Vintage, Elegant...).
       param: style.related
     - type: say
       selected: false
@@ -92,173 +62,102 @@
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related styles, pick the top 4 styles without adding any other
-        comments.
+        Step goal: From the previous list of related styles, pick the top 4 styles.
 
-
-        Keep in mind the following instructions:
-
-        - Please explain each choice.
-
-        - Respond using this example as a format reference:
-
-          1. 🏢 Modern: A modern design will align with the company's goal of conveying a sense of
-            power.
-
-          2. 🌆 Urban: An urban design style will resonate with the target audience of men while
-            emphasizing the location of the luxury apartments.
-
-
-        Answer in {{language}}.
-
-        Related Styles:
-
-        {{style.related}}
-
-        Proposed styles:
+        Step instructions:
+          - Respond in {{language}} & don't interact with the user.
+          - Respond using this example as a format reference:
+            1. 🏢 Modern: A modern design will align with the company's goal of conveying a sense of
+              power.
+            2. ...
     - type: ask
-      selected: false
+      selected: true
       param: style.selected
       message: >-
         Please ENTER your preferred style from the above options (e.g., Vibrant).
     - type: gpt
       selected: false
       prompt: >-
-        Normalize {{style.selected}} using the related style list as a reference.
+        Step Variables:
+
+          - Related Style List: {{style.related}}
 
 
-        Keep in mind the following instructions:
-
-        - No justify your choices or include any other comments.
-
-        - Respond using this example as a reference:
-          Vibrant
+        Step goal: Normalize the selected style {{style.selected}} using the **related style list**
+        as a reference.
 
 
-        Answer in English.
-
-        Related Styles:
-
-        {{style.related}}
-
-        Normalized selected style:
+        Step instructions:
+          - I just need you to return the result to me without adding any extra content, for
+            example: Vibrant
       param: style.selected
-    - type: say
-      selected: false
-      message: 'Palette generator specifications:'
-    - type: gpt
-      selected: false
-      prompt: >-
-        Specifications of the color palette generator.
-
-
-        The first parameter is the type of color palette to generate:
-
-        - Magazine
-
-        - Monochrome
-
-        - 1 color accent
-
-        - 2 colors accent
-
-        - 3 colors accent
-
-
-        The second parameter is the color range preset:
-
-        - Default
-
-        - High Contrast
-
-        - Bright & Light
-
-        - Pastel
-
-        - Vibrant
-
-        - Dark
-
-        - Hyper Color
-
-
-        If you have understood this specifications, please respond with a summary of the palette
-        generator specifications without adding other any comments.
-
-
-        Answer in English.
-
-        Palette generator specifications:
-      param: generator.specs
     - type: say
       selected: false
       message: 'Related palette configurations:'
     - type: gpt
       selected: false
       prompt: >-
-        Given the web title, design premises, selected style, and Palette generator specifications,
-        provide 6 palette generator configurations.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Selected Style: {{style.selected}}
+          
+          - Color palette specifications.
+            * Type: is the type of color palette to generate.
+              - Magazine
+              - Monochrome
+              - 1 color accent
+              - 2 colors accent
+              - 3 colors accent
+            * Range preset: is the hues range preset.
+              - Default
+              - High Contrast
+              - Bright & Light
+              - Pastel
+              - Vibrant
+              - Dark
+              - Hyper Color
 
 
-        Please, no include emojis and no justify your choices.
+        Step goal: given the design premises, selected style, and color palette specifications,
+        provide the 6 palette generator configurations more suitables.
 
 
-        Answer in {{language}}.
-
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
-
-        Palette generator specifications:
-
-        {{generator.specs}}
-
-        Related palette generator configurations:
+        Step instructions:
+          - I just need you to return the result to me without adding any extra content, for
+            example:
+              1. Type: Monochrome, Range: Default
+              2. ...
+      param: palette.related
     - type: say
       selected: false
       message: 'Proposed palette configurations:'
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related palette generator configurations, pick the top 3
-        configurations without adding any other comments.
+        Step variables:
+
+          - Related palette configurations: {{palette.related}}
 
 
-        Keep in mind the following instructions:
-
-        - Please explain each choice.
-
-        - Respond using this example as a reference:
-
-          1. 🎨 Type: Monochrome, Range: Vibrant:
-
-            * The vintage style is often depicted with a monochromatic color palette type.
-
-            * The "Vibrant" range will provide the modern touch the client desires while
-              maintaining a sense of antiquity.
-
-          2. 🌞 Type: 1 color accent, Range: High Contrast:
-
-            * The "1 color accent" palette type can be an effective way to highlight the brand's
-              orange color on the web.
-
-            * The "High Contrast" range will help this color stand out even more and can be
-              perceived as modern and important.
+        Step goal: from the list of related palette generator configurations, pick the top 3
+        configurations.
 
 
-        Answer in {{language}}.
-
-        Proposed palette generator configurations:
+        Step instructions:
+          - Respond in {{language}} & don't interact with the user.
+          - Respond using this example as a reference:
+            1. 🎨 Type: Monochrome, Range: Vibrant:
+              * The vintage style is often depicted with a monochromatic color palette type.
+              * The "Vibrant" range will provide the modern touch the client desires while
+                maintaining a sense of antiquity.
+            2. ...
     - type: ask
-      selected: false
+      selected: true
       param: palette.config
       message: >-
         Please ENTER your preferred color palette config from the above options (e.g., Type:
@@ -266,31 +165,21 @@
     - type: gpt
       selected: false
       prompt: >-
-        Normalize the following palette config using the palette generator specifications as a
-        reference:
+        Step variables:
 
-        {{palette.config}}
-
-
-        Keep in mind the following instructions:
-
-        - No justify your choices or include any other comments.
-
-        - Respond using this example format as a reference:
-          * Type: Monochrome,
-          * Range: Vibrant
+          - Related palette configurations: {{palette.related}}
 
 
-        Respond just with the Normalized color palette config.
+        Step goal: normalize the following palette config using the related palette configurations
+        as a reference:
+          {{palette.config}}
 
 
-        Answer in English.
-
-        Palette generator specifications:
-
-        {{generator.specs}}
-
-        Normalized color palette config:
+        Step instructions:
+          - I just need you to return the result to me without adding any extra content, for
+            example:
+              * Type: Monochrome,
+              * Range: Vibrant
       param: palette.config
     - type: say
       selected: false
@@ -358,7 +247,7 @@
 
         Proposed typographies:
     - type: ask
-      selected: false
+      selected: true
       param: style.typos
       message: >-
         Please ENTER your preferred typography option from the choices provided (e.g., Titles:
@@ -531,13 +420,13 @@
 
         Proposed writer tone configurations:
     - type: ask
-      selected: false
+      selected: true
       param: writer.tone
       message: >-
         Please ENTER your preferred writer tone from the options provided (e.g., Serious, Casual &
         Respectful)
     - type: gpt
-      selected: true
+      selected: false
       prompt: >-
         Considering the Writer tone config nuances to normalize the following writer tone without
         adding any other comments:
@@ -667,7 +556,7 @@
 
         Proposed layouts:
     - type: ask
-      selected: false
+      selected: true
       param: layout.selected
       message: >-
         Please ENTER your preferred layout from the above options (e.g., Big-Typography).

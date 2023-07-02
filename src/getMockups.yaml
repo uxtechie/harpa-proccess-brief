@@ -51,5 +51,5 @@
           - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
           - No include emojis.
-      selected: true
+      selected: false
   version: 1

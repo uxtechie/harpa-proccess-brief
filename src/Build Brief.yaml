@@ -109,7 +109,7 @@
           - Otherwise respond with the detected design type and the next sentence:
             > Current state: FAIL!!
     - type: ask
-      selected: false
+      selected: true
       param: brief.state
       message: >-
         Please review the above initial state report. If everything looks correct, press ENTER to
@@ -305,7 +305,7 @@
       inputs: []
       name: _getDomainsFromBrief
     - type: ask
-      selected: false
+      selected: true
       param: brief.domain
       message: >-
         Please ENTER your preferred domain from the available options. You can choose a different

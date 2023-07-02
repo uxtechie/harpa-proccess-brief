@@ -56,7 +56,7 @@
         for suggesting {{domains.length}} different domain names.
 
         Step instructions:
-          - Respond in {{domain.lang}} and don't interact with the user.
+          - I just need you to return the result to me without adding any extra content.
       selected: false
     - type: gpt
       selected: false

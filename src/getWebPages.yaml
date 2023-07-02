@@ -8,7 +8,7 @@
       selected: false
       message: 'Proposed Web pages:'
     - type: gpt
-      selected: true
+      selected: false
       prompt: >-
         Step variables:
 
