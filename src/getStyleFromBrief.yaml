@@ -53,7 +53,7 @@
 
         Step instructions:
           - Respond in English & don't interact with the user.
-          - Respond with comma-separated values (e.g., Feminine, Vintage, Elegant...).
+          - Respond with comma-separated values, for example: Feminine, Vintage, Elegant...
       param: style.related
     - type: say
       selected: false
@@ -61,7 +61,13 @@
     - type: gpt
       selected: false
       prompt: >-
-        Step goal: From the previous list of related styles, pick the top 4 styles.
+        Step variables:
+
+          - Related styles: {{style.related}}
+
+
+        Step goal: From the **related styles**, pick the top 4 styles.
+
 
         Step instructions:
           - Respond in {{language}} & don't interact with the user.
@@ -79,11 +85,11 @@
       prompt: >-
         Step Variables:
 
-          - Related Style List: {{style.related}}
+          - Related Styles: {{style.related}}
 
 
-        Step goal: Normalize the selected style {{style.selected}} using the **related style list**
-        as a reference.
+        Step goal: Normalize the selected style, {{style.selected}}, getting the closest
+        approximation to the related styles.
 
 
         Step instructions:
@@ -131,8 +137,8 @@
           - Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example:
-              1. Type: Monochrome, Range: Default
-              2. ...
+            1. Type: Monochrome, Range: Default
+            2. ...
       param: palette.related
     - type: say
       selected: false
@@ -171,17 +177,18 @@
           - Related palette configurations: {{palette.related}}
 
 
-        Step goal: normalize the following palette config using the related palette configurations
-        as a reference:
-          {{palette.config}}
+        Step goal: Normalize the selected palette configuration getting the closest approximation to
+        the related palette configurations. Selected palette:
+
+        {{palette.config}}
 
 
         Step instructions:
           Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example:
-              * Type: Monochrome,
-              * Range: Vibrant
+            * Type: Monochrome,
+            * Range: Vibrant
       param: palette.config
     - type: say
       selected: false
@@ -205,8 +212,7 @@
 
         Step instructions:
           - Respond in English and don't interact with the user.
-          - I just need you to return the result to me without adding any extra content, for
-              example: Open Sans, Avenir...
+          - Respond with comma-separated values, for example: Open Sans, Avenir...
       param: typographies.related
     - type: say
       selected: false
@@ -247,9 +253,10 @@
           - Related typographies: {{typographies.related}}
 
 
-        Step goal: normalize the following typographies using the related typographies as a
-        reference:
-          {{style.typos}}
+        Step goal: Normalize the selected typographies getting the closest approximation to the
+        related typographies. Selected typographies:
+
+        {{style.typos}}
 
 
         Step instructions:
@@ -285,12 +292,13 @@
 
         Step goal: considering the design premises, selected style, chosen typographies,
         {{language}} as the current language, and the writer tone configuration, please provide 6
-        suitable tone configurations.
+        suitable tone configurations. Each config has to be a combination of 2 or 3 of the 4 writer
+        tone.
 
 
         Step instructions:
           - Respond in English and don't interact with the user.
-          - Use the follow tone nuances config as a reference, if a nuance is not specified, it
+          - Use the follow nuances interpretation as a reference, if a nuance is not specified, it
             means is set as Neutral:
             * Funny vs Serious = Funny
             * Casual vs Formal = Casual
@@ -298,8 +306,9 @@
             * Enthusiastic vs Matter-of-Fact = Neutral
           - I just need you to return the result to me without adding any extra content, for
             example:
-              1. Funny & Casual
-              2. ...
+            1. Funny & Casual
+            2. Serious & Casual & Irreverent
+            3. ...
       param: tone.related
     - type: say
       selected: false
@@ -341,8 +350,8 @@
           - Related writer tones: {{tone.related}}
 
 
-        Step goal: considering Related writer tones to normalize the following writer tone:
-          {{writer.tone}}
+        Step goal: Normalize the selected writer tone, {{writer.tone}}, getting the closest
+        approximation to the related writer tones.
 
 
         Step instructions:
@@ -399,8 +408,8 @@
 
         Step instructions:
           - Respond in English and don't interact with the user.
-          - I just need you to return the result to me without adding any extra content, for
-            example: Single-Column, Content-Focused, Big-Typography...
+          - Respond with comma-separated values, for example: Single-Column, Content-Focused,
+        Big-Typography...
       param: layout.related
     - type: say
       selected: false
@@ -437,7 +446,8 @@
           - Related layouts: {{layout.related}}
 
 
-        Step goal: Normalize {{layout.selected}} using the related layouts as a reference.
+        Step goal: Normalize the selected layout, {{layout.selected}}, getting the closest
+        approximation to the related layouts.
 
 
         Step instructions:

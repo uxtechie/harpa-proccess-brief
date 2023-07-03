@@ -64,30 +64,130 @@
             {{page}}
             ```
 
+          - Industry list:
+            * Technology
+            * Food
+            * Retail Store
+            * Marketing
+            * News
+            * Entertainment
+            * Fashion
+            * Sports
+            * Education
+            * Transportation
+            * Music
+            * Real Estate
+            * Travel
+            * Health
+            * Finance
+            * Insurance
+            * Infrastructure
+            * Public Services
+            * Politics
+            * Religion
+            * Engineering
+            * Research
+            * Biotechnology
+            * Pharmaceuticals
+            * Automotive
+            * Aviation
+            * Maritime
+            * Rail
+            * Telecommunications
+            * Electronics
+            * Software
+            * Hardware
+            * Internet
+            * Web
+            * Cloud
+            * Data
+            * Artificial Intelligence
+            * Robotics
+            * Blockchain
+            * Virtual Reality
+            * Gaming
+            * Social Media
+            * E-Commerce
+            * Wholesale
+            * Logistics
+            * Supply Chain
+            * Shipping
+            * Warehousing
+            * Human Resources
+            * Customer Service
+            * Sales
+            * Advertising
+            * Public Relations
+            * Legal
+            * Banking
+            * Investment
+            * Architecture
+            * Design
+            * Consulting
+            * Training
+            * Healthcare
+            * Veterinary
+            * Dental
+            * Fitness
+            * Beauty
+            * Cosmetics
+            * Luxury Goods
+            * Jewelry
+            * Beverage
+            * Agriculture
+            * Forestry
+            * Fishing
+            * Mining
+            * Utilities
+            * Water
+            * Waste Management
+            * Manufacturing
+            * Aerospace
+            * Defense
+            * Chemical
+            * Energy
+            * Publishing
+            * Film
+            * Video Games
+            * Government
+            * Space
+            * Military
+            * Law Enforcement
+            * Security
+            * Hospitality
+            * Tourism
+            * Events
+            * Social
+            * Nonprofit
 
-        Step goal: Review the content of **web page** to summarize the design brief text of the
-        right section. Please try to group the information by his nature.
+
+        Step Goal: Review the content of the **web page** to summarize the design brief. Attempt to
+        group the information into these four categories: brand, job, pages, and deadline. Obtain
+        the current company's industry from the **industry list**.
 
 
         Step instructions:
           - Respond in English & don't interact with the user.
-          - Highlight any color related to the design in *italic*.
           - Respond using this example as a format reference:
-            * 🏢 Company Name: Big Memory
-            * 📝 Company Description: 
-              1. 💼🌞 Offers a selection of luxury offices with solar power.
-              2. 🎯💰 Targets people on a budget.
-              3. 🌟🔄 Wants to convey a sense of importance, while being modern.
-            * 📋 Job Description: 
-              4. 💻 The task is to create a website that primarily provides information.
-              5. 👩‍💻👍 The goal is to provide a great user experience.
-              6. 📃📑🛍️🔏 The website will need a landing page, a contact page, a shop page, and a
-                privacy policy page.
-              7. 📃💡 The landing page should have an "Our Values" section.
-              8. 📣📥 There should be a call to action to get users to order a free sample.
-              9. 🎨🍊 The client prefers an old-fashioned design and wants to use the *brand color,
-                orange*.
-            * 📅 Deadline: 3 days.
+            * 🏢 Brand:
+              - 🏢 Name: Big Memory.
+              - 🍊 Color: Orange.
+              - 💼 Industry: Fashion.
+              - 📝 Product: offers a selection of luxury offices with solar power.
+              - 🎯 Target audience: people on a budget.
+              - 🌟 Convey a sense: of importance, while being modern.
+            * 💻 Job:
+              - 💻 Task: create a website that will mainly spread brand awareness.
+              - 🎯 Goal: to increase sales.
+              - 🎨 Design style: old-fashioned.
+            * 📃 Pages:
+              1. 📃 Landing page:
+                * 💡 Our Values section.
+                * 📣📥 There should be a call to action to get users to order a free sample.
+              2. 📑 Contact page.
+              3. 🛍️ Shop page.
+              4. 🔏 Privacy policy page.
+            * 📆 Deadline: 4 days.
       param: design.premises
     - type: gpt
       selected: false
@@ -142,7 +242,7 @@
             additional information or remarks.
     - type: say
       selected: false
-      message: 'Language used for the company name:'
+      message: 'Suggested language used for the company name:'
     - type: gpt
       selected: false
       prompt: >-
@@ -165,141 +265,6 @@
       param: company.lang
       message: 'Please enter the language used for the company name. By default: English.'
       default: 'English'
-    - type: say
-      selected: false
-      message: 'Company industry:'
-    - type: gpt
-      selected: false
-      prompt: >-
-        Step variables:
-
-          - Design premises:
-            ```markdown
-            {{design.premises}}
-            ```
-
-          - Industry list:
-            * Technology
-            * Food
-            * Retail Store
-            * Marketing
-            * Media
-            * News
-            * Entertainment
-            * Fashion
-            * Sports
-            * Education
-            * Transportation
-            * Music
-            * Real Estate
-            * Travel
-            * Health
-            * Finance
-            * Insurance
-            * Infrastructure
-            * Public Services
-            * Politics
-            * Religion
-            * Science
-            * Engineering
-            * Research
-            * Biotechnology
-            * Pharmaceuticals
-            * Automotive
-            * Aviation
-            * Maritime
-            * Rail
-            * Telecommunications
-            * Electronics
-            * Software
-            * Hardware
-            * Internet
-            * Web
-            * Cloud
-            * Data
-            * Artificial Intelligence
-            * Robotics
-            * Nanotechnology
-            * Blockchain
-            * Cryptocurrency
-            * Virtual Reality
-            * Augmented Reality
-            * Gaming
-            * Social Media
-            * E-Commerce
-            * Wholesale
-            * Logistics
-            * Supply Chain
-            * Shipping
-            * Warehousing
-            * Inventory Management
-            * Human Resources
-            * Customer Service
-            * Sales
-            * Advertising
-            * Public Relations
-            * Legal
-            * Accounting
-            * Banking
-            * Investment
-            * Venture Capital
-            * Construction
-            * Architecture
-            * Design
-            * Consulting
-            * Training
-            * Healthcare
-            * Veterinary
-            * Dental
-            * Fitness
-            * Beauty
-            * Cosmetics
-            * Textiles
-            * Luxury Goods
-            * Jewelry
-            * Beverage
-            * Tobacco
-            * Agriculture
-            * Forestry
-            * Fishing
-            * Mining
-            * Oil
-            * Gas
-            * Utilities
-            * Water
-            * Waste Management
-            * Manufacturing
-            * Aerospace
-            * Defense
-            * Chemical
-            * Publishing
-            * Broadcasting
-            * Film
-            * Video Games
-            * Government
-            * Space
-            * Military
-            * Law Enforcement
-            * Security
-            * Hospitality
-            * Tourism
-            * Events
-            * Social
-            * Nonprofit
-
-
-        Step goal: Analyze the **design premises** and the **Industry list** to identify the current
-        company industry.
-
-
-        Step instructions:
-          - I just need you to return the result to me without adding any extra content, for
-            example: Fashion
-      param: company.industry
-    - type: ask
-      selected: true
-      param: company.industry
-      message: 'Please enter the company industry.'
     - type: command
       selected: false
       inputs: []
@@ -311,6 +276,9 @@
         Please ENTER your preferred domain from the available options. You can choose a different
         domain than the suggested ones. Make sure to confirm its availability before making a
         selection.
+    - type: say
+      selected: false
+      message: 'Suggested web title:'
     - type: gpt
       selected: false
       prompt: >-
@@ -319,7 +287,7 @@
           - Brief domain: {{brief.domain}}
 
 
-        Step goal: Extract the individual words from the Brief Domain as the web title.
+        Step goal: Extract the title case individual words from the **brief domain**.
 
 
         Step instructions:

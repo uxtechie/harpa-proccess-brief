@@ -26,30 +26,28 @@
           - Color palette:
             ```markdown
             {{palette.config}}
-            ```
-          
-          - Company industry: {{company.industry}}
-          
+            ```          
 
-        Step goal: Taking into account the **design premises**, **company industry**, **selected
-        style**, **selected fonts** and the **color palette**, please provide the a prompt that you
-        believe is the most suitable.
+
+        Step goal: Taking into account the **design premises**, **selected style**, **selected
+        fonts** and the **color palette**, please provide the a prompt that you believe is the most
+        suitable.
 
 
         Step instructions:
           - Respond in English & don't interact with the user.
           - Respond using this template as a format reference:
-            a [Just The Color Palette Type Parameter] & [Selected Style]-Inspired Website. convey a
-            sense of: [First Company Sense] & [Second Company Sense]. colors: [Brand Color]
-            with [Color Palette Range Parameter] Hues. purpose to provide: [Product Summary]. for:
-            [Audience Summary]. designed for a: [Company Industry] company. brand name: [Company
-            Name]. titles: [Just the Selected Title Font] Typography. --ar 2:3 --s 50 --style raw
+            a [Just The Color Palette Type Parameter] & [Selected Style]-Inspired Website, convey a
+            sense of: [First Company Sense] & [Second Company Sense], colors: [Brand Color]
+            with [Color Palette Range Parameter] Hues, purpose to provide: [Product Summary], for:
+            [Audience Summary] audience, designed for a: [Company Industry] company, brand name:
+            [Company Name], titles: [Just the Selected Title Font] Typography --ar 2:3 --s 200
+            --style raw
           - The text inside square brackets is a placeholder.
-          - Change the placeholder text to build a proper sentences. Ensure to retain the original
-            placeholder case format. Remove the square brackets. 
-          - Ensure that the **first word** following each period is in lowercase.
+          - Change the placeholder text to build proper sentences.
+          - Remove the square brackets.
+          - IMPORTANT: ensure to retain the template and placeholders original case formats.
           - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
-          - No include emojis.
       selected: false
   version: 1
