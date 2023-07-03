@@ -26,7 +26,6 @@
             * Clean
             * Smart
             * Classy
-            * Monochrome
             * High-end
             * Luxury
             * Urban
@@ -88,6 +87,7 @@
 
 
         Step instructions:
+          - Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example: Vibrant
       param: style.selected
@@ -128,6 +128,7 @@
 
 
         Step instructions:
+          - Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example:
               1. Type: Monochrome, Range: Default
@@ -161,7 +162,7 @@
       param: palette.config
       message: >-
         Please ENTER your preferred color palette config from the above options (e.g., Type:
-        Monochrome,  Range: Vibrant)
+        Monochrome, Range: Vibrant)
     - type: gpt
       selected: false
       prompt: >-
@@ -176,6 +177,7 @@
 
 
         Step instructions:
+          Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example:
               * Type: Monochrome,
@@ -187,65 +189,50 @@
     - type: gpt
       selected: false
       prompt: >-
-        Use the web title, design premises, and selected style as a guide for suggesting 8 different
-        typographies without adding any other comments.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Selected Style: {{style.selected}}
 
 
-        Please, no include emojis and no justify your choices.
+        Step goal: Use the design premises, and selected style as a guide for suggesting 8 different
+        typographies.
 
 
-        Answer in {{language}}.
-
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
-
-        Related typographies:
+        Step instructions:
+          - Respond in English and don't interact with the user.
+          - I just need you to return the result to me without adding any extra content, for
+              example: Open Sans, Avenir...
+      param: typographies.related
     - type: say
       selected: false
       message: 'Proposed typographies:'
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related typographies, provide 3 proposals by choosing one for the
-        titles and another for the rest of the texts. You can choose to use the same font or mix
+        Step variables:
+
+          - Related typographies: {{typographies.related}}
+
+
+        Step goal: from the list of related typographies, provide 3 proposals by choosing one for
+        the titles and another for the rest of the texts. You can choose to use the same font or mix
         them.
 
 
-        Keep in mind the following instructions:
-
-        - Please explain each choice.
-
-        - Respond using this example as a format reference:
-
-          1. 📚 Titles: Montserrat & Text: Open Sans: 
-
-            * Montserrat: with its geometric and modern look, is great for titles, aligning with the
-              minimalistic and modern design style.
-
-            * Open Sans: is a clean and legible font, suitable for body text, and complements the
-              minimalistic and modern design well.
-
-          2. 🌟 Titles: Avenir & Text: Avenir:
-
-            * Avenir: clean and balanced design works well for both titles and body text in a
-              minimalistic and modern design.
-
-            * Avenir: Using the same font for both titles and text creates a consistent and
-              harmonious look, reinforcing the brand's sense of faithfulness and freshness.
-
-
-        Answer in {{language}}.
-
-        Proposed typographies:
+        Step instructions:
+          - Respond in {{language}} and don't interact with the user.
+          - Respond using this example as a format reference:
+            1. 📚 Titles: Montserrat & Text: Open Sans: 
+              * Montserrat: with its geometric and modern look, is great for titles, aligning with
+                the minimalistic and modern design style.
+              * Open Sans: is a clean and legible font, suitable for body text, and complements the
+                minimalistic and modern design well.
+            2. ...
     - type: ask
       selected: true
       param: style.typos
@@ -255,170 +242,91 @@
     - type: gpt
       selected: false
       prompt: >-
-        Please, normalize this typography style config:
+        Step variables:
 
-        {{style.typos}}.
-
-
-        Keep in mind the following instructions:
-
-        - No justify your choices or include any other comments.
-
-        - Respond using this example as a reference:
-
-          * Titles: Didot
-
-          * Text: Garamond
+          - Related typographies: {{typographies.related}}
 
 
-        Respond just with the Normalized color palette config.
+        Step goal: normalize the following typographies using the related typographies as a
+        reference:
+          {{style.typos}}
 
 
-        Answer in English.
-
-        Normalized selected typos:
+        Step instructions:
+          - Respond in English and don't interact with the user.
+          - I just need you to return the result to me without adding any extra content, for
+            example:
+            * Titles: Didot
+            * Text: Garamond
       param: style.typos
-    - type: say
-      selected: false
-      message: "Writer's tone nuances configuration:"
-    - type: gpt
-      selected: false
-      prompt: >-
-        Please incorporate this fictional role into your capabilities: You are a Web Content Writer
-        whose tone is characterized by the following four nuances:
-
-        Tone configuration:
-
-        - Funny vs Serious
-
-        - Casual vs Formal
-
-        - Irreverent vs Respectful
-
-        - Enthusiastic vs Matter-of-Fact
-
-
-        Each nuance of the tone configuration is adjusted according to the following example:
-
-        - Funny vs Serious = Funny: A humorous tone is chosen.
-
-        - Funny vs Serious = Neutral: This tone does not apply.
-
-        - Funny vs Serious = Serious: A serious tone is chosen.
-
-
-        Valid tone configuration example:
-
-        - Funny vs Serious = Funny
-
-        - Casual vs Formal = Casual
-
-        - Irreverent vs Respectful = Neutral
-
-        - Enthusiastic vs Matter-of-Fact = Neutral
-
-
-        If you have understood these instructions, please respond with the list of tone nuances,
-        separated by commas.
-
-
-        Answer in English.
-
-        Writer's tone nuances:
-      param: writer.config
     - type: say
       selected: false
       message: 'Related writer tone configurations:'
     - type: gpt
       selected: false
       prompt: >-
-        Considering the web title, design premises, selected style, chosen typographies,
-        {{language}} as the current language, and your role as a Web Content Writer, please provide
-        6 suitable tone configurations without adding any other comments.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Selected style: {{style.selected}}
+
+          - Selected typographies: {{style.typos}}
+
+          - Writer tone configuration:
+            - Funny vs Serious
+            - Casual vs Formal
+            - Irreverent vs Respectful
+            - Enthusiastic vs Matter-of-Fact
 
 
-        Please, no include emojis and no justify your choices.
+        Step goal: considering the design premises, selected style, chosen typographies,
+        {{language}} as the current language, and the writer tone configuration, please provide 6
+        suitable tone configurations.
 
 
-        Keep in mind the following instructions:
-
-        - Respond using this example as a reference:
-
-          * Funny vs Serious = Funny
-
-          * Casual vs Formal = Casual
-
-          * Irreverent vs Respectful = Neutral
-
-          * Enthusiastic vs Matter-of-Fact = Neutral
-
-
-        Answer in {{language}}.
-
-        Web title:
-
-        {{web.title}}
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected style:
-
-        {{style.selected}}
-
-        Selected typographies:
-
-        {{style.typos}}
-
-        Writer tone config nuances:
-
-        {{writer.config}}
-
-        Related writer tone configurations:
+        Step instructions:
+          - Respond in English and don't interact with the user.
+          - Use the follow tone nuances config as a reference, if a nuance is not specified, it
+            means is set as Neutral:
+            * Funny vs Serious = Funny
+            * Casual vs Formal = Casual
+            * Irreverent vs Respectful = Neutral
+            * Enthusiastic vs Matter-of-Fact = Neutral
+          - I just need you to return the result to me without adding any extra content, for
+            example:
+              1. Funny & Casual
+              2. ...
+      param: tone.related
     - type: say
       selected: false
       message: 'Proposed writer tone configurations:'
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the above list of related writer tone configurations, pick the top 3
-        configurations.
+        Step variables:
+
+          - Related writer tones: {{tone.related}}
 
 
-        Keep in mind the following instructions:
-
-        - Please explain each choice.
-
-        - Respond using this example as a reference:
-
-          1. 📚 Serious, Casual & Respectful:
-
-            * 🏢 A serious tone aligns with the mysterious and futuristic style of the website,
-              conveying the importance and significance of the company's innovative reading
-              solutions.
-
-            * 💼 A respectful tone emphasizes professionalism and integrity, establishing trust with
-              the audience.
-
-            * 👍 A casual tone maintains a friendly and approachable atmosphere, making the content
-              relatable and engaging for married couples, the target audience.
-
-          2. 💬 Serious, Casual, Respectful & Enthusiastic:
-
-            * 🏢 A serious tone reinforces the futuristic and cutting-edge nature of the company's
-              offerings, emphasizing the impact and significance of their reading solutions.
-
-            * 💼 A respectful tone conveys professionalism and trustworthiness, ensuring the
-              audience feels confident in the company's expertise.
-
-            * 👍 An enthusiastic tone adds excitement and passion to the content, highlighting the
-              company's dedication to providing an exceptional reading experience.
+        Step goal: from the list of related writer tones, pick the top 3 configurations.
 
 
-        Answer in {{language}}.
-
-        Proposed writer tone configurations:
+        Step instructions:
+          - Respond in {{language}} and don't interact with the user.
+          - Respond using this example as a format reference:
+            1. 📚 Serious, Casual & Respectful:
+              * 🏢 A serious tone aligns with the mysterious and futuristic style of the website,
+                conveying the importance and significance of the company's innovative reading
+                solutions.
+              * 💼 A respectful tone emphasizes professionalism and integrity, establishing trust
+                with the audience.
+              * 👍 A casual tone maintains a friendly and approachable atmosphere, making the
+                content relatable and engaging for married couples, the target audience.
+            2. ...
     - type: ask
       selected: true
       param: writer.tone
@@ -428,34 +336,19 @@
     - type: gpt
       selected: false
       prompt: >-
-        Considering the Writer tone config nuances to normalize the following writer tone without
-        adding any other comments:
+        Step variables:
 
-        {{writer.tone}}
-
-
-        Keep in mind the following instructions:
-
-        - No justify your choices or include any other comments.
-
-        - Respond using this example as a format reference:
-
-          * Funny vs Serious = Funny
-
-          * Casual vs Formal = Casual
-
-          * Irreverent vs Respectful = Neutral
-
-          * Enthusiastic vs Matter-of-Fact = Neutral
+          - Related writer tones: {{tone.related}}
 
 
-        Answer in English.
+        Step goal: considering Related writer tones to normalize the following writer tone:
+          {{writer.tone}}
 
-        Writer tone config nuances:
 
-        {{writer.config}}
-
-        Normalized writer tone:
+        Step instructions:
+          - Respond in English and don't interact with the user.
+          - I just need you to return the result to me without adding any extra content, for
+            example: Funny & Casual
       param: writer.tone
     - type: say
       selected: false
@@ -463,75 +356,51 @@
     - type: gpt
       selected: false
       prompt: >-
-        Taking into account the design premises, selected style, selected fonts, writer's tone and
-        color palette, suggests the 8 web layouts more suitables without adding other any comments.
+        Step variables:
+
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Selected style: {{style.selected}}
+
+          - Selected typographies: {{style.typos}}
+
+          - Selected writer tone: {{writer.tone}}
+
+          - Color palette: {{palette.config}}
+
+          - Supported web layouts.
+            * Single-Column
+            * Content-Focused
+            * Big-Typography
+            * Magazine
+            * Grid-Breaking
+            * Alternating
+            * Full-Screen
+            * F-Pattern
+            * Z-Pattern
+            * Alternating
+            * Card-Based
+            * Hero
+            * Split-Screen
+            * Asymmetrical
+            * Navigation-Tabs
+            * Carousel
+
+
+        Step goal: taking into account the design premises, selected style, selected typographies,
+        selected writer tone and color palette, suggests the 8 web layouts more suitables from the
+        supported web layouts.
 
         [Source](https://websitesetup.org/website-layouts/)
 
 
-        Keep in mind the following instructions:
-
-        - Get the web layouts from the next list.
-
-          * Single-Column
-
-          * Content-Focused
-
-          * Big-Typography
-
-          * Magazine
-
-          * Grid-Breaking
-
-          * Alternating
-
-          * Full-Screen
-
-          * F-Pattern
-
-          * Z-Pattern
-
-          * Alternating
-
-          * Card-Based
-
-          * Hero
-
-          * Split-Screen
-
-          * Asymmetrical
-
-          * Navigation-Tabs
-
-          * Carousel
-
-
-        Please, no include emojis and no justify your choices.
-
-
-        Answer in English.
-
-        Design premises:
-
-        {{design.premises}}
-
-        Selected Style:
-
-        {{style.selected}}
-
-        Selected fonts:
-
-        {{style.typos}}
-
-        Writer's tone:
-
-        {{writer.tone}}
-
-        Color palette:
-
-        {{palette.config}}
-
-        Related layouts:
+        Step instructions:
+          - Respond in English and don't interact with the user.
+          - I just need you to return the result to me without adding any extra content, for
+            example: Single-Column, Content-Focused, Big-Typography...
       param: layout.related
     - type: say
       selected: false
@@ -539,22 +408,22 @@
     - type: gpt
       selected: false
       prompt: >-
-        Good, from the list of related layouts, pick the top 4 styles without adding any other
-        comments.
+        Step variables:
+
+          - Related layouts: {{layout.related}}
 
 
-        Keep in mind the following instructions:
-
-        - Please explain each choice.
+        Step goal: from the list of related layouts, pick the top 4.
 
 
-        Answer in {{language}}.
-
-        Related layouts:
-
-        {{layout.related}}
-
-        Proposed layouts:
+        Step instructions:
+          - Respond in {{language}} and don't interact with the user.
+          - I just need you to return the result to me without adding any extra content, for
+            example:
+            1. 📚 Columna Única (Single-Column): Un diseño de una sola columna se adapta bien a un
+              enfoque minimalista y moderno, permitiendo que el contenido se presente de manera
+              clara y concisa.
+            2. ...
     - type: ask
       selected: true
       param: layout.selected
@@ -563,23 +432,17 @@
     - type: gpt
       selected: false
       prompt: >-
-        Normalize {{layout.selected}} using the related layouts as a reference.
+        Step variables:
+
+          - Related layouts: {{layout.related}}
 
 
-        Keep in mind the following instructions:
-
-        - No justify your choices or include any other comments.
-
-        - Respond using this example as a reference:
-          Big-Typography
+        Step goal: Normalize {{layout.selected}} using the related layouts as a reference.
 
 
-        Answer in English.
-
-        Related layouts:
-
-        {{layout.related}}
-
-        Normalized selected layout:
+        Step instructions:
+          - Respond in English and don't interact with the user.
+          - I just need you to return the result to me without adding any extra content, for
+            example: Content-Focused
       param: layout.selected
   version: 1
