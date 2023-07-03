@@ -41,7 +41,7 @@
             sense of: [First Company Sense] & [Second Company Sense], colors: [Brand Color]
             with [Color Palette Range Parameter] Hues, purpose to provide: [Product Summary], for:
             [Audience Summary] audience, designed for a: [Company Industry] company, brand name:
-            [Company Name], titles: [Just the Selected Title Font] Typography --ar 2:3 --s 200
+            [Company Name], titles: [Just the Selected Title Font] Typography --ar 2:3 --s 100
             --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
