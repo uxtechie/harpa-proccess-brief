@@ -27,7 +27,7 @@
             * Smart
             * Classy
             * High-end
-            * Luxury
+            * Luxurious
             * Urban
             * Minimalistic
             * Brutalism
@@ -130,7 +130,7 @@
 
 
         Step goal: given the design premises, selected style, and color palette specifications,
-        provide the 6 palette generator configurations more suitables.
+        provide the 8 palette generator configurations more suitables.
 
 
         Step instructions:
@@ -151,7 +151,7 @@
           - Related palette configurations: {{palette.related}}
 
 
-        Step goal: from the list of related palette generator configurations, pick the top 3
+        Step goal: from the list of related palette generator configurations, pick the top 4
         configurations.
 
 
@@ -206,8 +206,8 @@
           - Selected Style: {{style.selected}}
 
 
-        Step goal: Use the design premises, and selected style as a guide for suggesting 8 different
-        typographies.
+        Step goal: Use the design premises, and selected style as a guide for suggesting 10
+        different typographies.
 
 
         Step instructions:
@@ -225,7 +225,7 @@
           - Related typographies: {{typographies.related}}
 
 
-        Step goal: from the list of related typographies, provide 3 proposals by choosing one for
+        Step goal: from the list of related typographies, provide 4 proposals by choosing one for
         the titles and another for the rest of the texts. You can choose to use the same font or mix
         them.
 
@@ -291,7 +291,7 @@
 
 
         Step goal: considering the design premises, selected style, chosen typographies,
-        {{language}} as the current language, and the writer tone configuration, please provide 6
+        {{language}} as the current language, and the writer tone configuration, please provide 8
         suitable tone configurations. Each config has to be a combination of 2 or 3 of the 4 writer
         tone.
 
@@ -327,14 +327,9 @@
         Step instructions:
           - Respond in {{language}} and don't interact with the user.
           - Respond using this example as a format reference:
-            1. 📚 Serious, Casual & Respectful:
-              * 🏢 A serious tone aligns with the mysterious and futuristic style of the website,
-                conveying the importance and significance of the company's innovative reading
-                solutions.
-              * 💼 A respectful tone emphasizes professionalism and integrity, establishing trust
-                with the audience.
-              * 👍 A casual tone maintains a friendly and approachable atmosphere, making the
-                content relatable and engaging for married couples, the target audience.
+            1. 📚 Serious, Casual & Respectful: a serious tone aligns with the mysterious and
+              futuristic style of the website and with a casual tone maintains a friendly and
+              approachable atmosphere (continue the explaination)...
             2. ...
     - type: ask
       selected: true

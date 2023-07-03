@@ -161,13 +161,15 @@
             * Nonprofit
 
 
-        Step Goal: Review the content of the **web page** to summarize the design brief. Attempt to
-        group the information into these four categories: brand, job, pages, and deadline. Obtain
-        the current company's industry from the **industry list**.
+        Step Goal: Review the content of the **web page** to summarize the design brief.
 
 
         Step instructions:
           - Respond in English & don't interact with the user.
+          - Always expand the descriptions to more atomic concepts.
+          - Attempt to group the atomic concepts into these four categories: brand, job, pages, and
+            deadline.
+          - Identify the current company's industry from the industry list.
           - Respond using this example as a format reference:
             * 🏢 Brand:
               - 🏢 Name: Big Memory.
