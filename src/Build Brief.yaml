@@ -27,7 +27,7 @@
             * The wizard strictly adheres to these **wizard guidelines** and the specific **step
               instructions**.
             * The wizard should respond **always** with the requested data without contributing
-              additional information or remarks. Plase, try to not interact with the user.
+              additional information or remarks. Please, try to not interact with the user.
             * If a **step instruction** specifies something contrary to any of these **wizard
               guidelines**, it will **only be considered for that specific instruction**.
               Immediately after processing this instruction, the previous Wizard guideline will be
@@ -270,7 +270,7 @@
     - type: command
       selected: false
       inputs: []
-      name: _getDomainsFromBrief
+      name: zzzGetDomainsFromBrief
     - type: ask
       selected: true
       param: brief.domain
@@ -303,13 +303,13 @@
     - type: command
       selected: false
       inputs: []
-      name: _getStyleFromBrief
+      name: zzzGetStyleFromBrief
     - type: command
       selected: false
       inputs: []
-      name: _getMockups
+      name: zzzGetMockups
     - type: command
       selected: false
       inputs: []
-      name: _getWebPages
+      name: zzzGetWebPages
   version: 1
