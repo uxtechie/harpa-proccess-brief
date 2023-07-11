@@ -45,6 +45,8 @@
             future too.
           - If you understand the **wizard guidelines** respond just with the next sentence:
             > Wizard assistant ready!
+            
+        Step result:
     - type: say
       selected: false
       message: >-
@@ -191,6 +193,8 @@
               3. 🛍️ Shop page.
               4. 🔏 Privacy policy page.
             * 📆 Deadline: 4 days.
+
+        Step result:
       param: design.premises
     - type: gpt
       selected: false
@@ -211,6 +215,8 @@
             > Current state: Success!!
           - Otherwise respond with the detected design type and the next sentence:
             > Current state: FAIL!!
+
+        Step result:
     - type: ask
       selected: true
       param: brief.state
@@ -243,6 +249,8 @@
             > The current language is already English.
           - Otherwise, translate the **design premises** to {{language}} without contributing
             additional information or remarks.
+
+        Step result:
     - type: say
       selected: false
       message: 'Suggested language used for the company name:'
@@ -262,6 +270,8 @@
         Step instructions:
           - I just need you to return the result to me without adding any extra content, for
             example: English
+
+        Step result:
       param: company.lang
     - type: ask
       selected: true
@@ -296,6 +306,8 @@
         Step instructions:
           - I just need you to return the result to me without adding any extra content, for
             example: Digital Safari
+
+        Step result:
       param: web.title
     - type: ask
       selected: true
@@ -309,8 +321,35 @@
       selected: false
       inputs: []
       name: zzzGetMockups
+    - type: say
+      selected: false
+      message: 'Proposed landing page:'
     - type: command
       selected: false
-      inputs: []
-      name: zzzGetWebPages
+      inputs:
+        - >-
+          - Design premises:
+            ```markdown
+            {{design.premises}}
+            ```
+
+          - Selected style: {{style.selected}}
+
+          - Selected fonts:
+            ```markdown
+            {{style.typos}}
+            ```
+
+          - Color palette:
+            ```markdown
+            {{palette.config}}
+            ```
+
+          - Writer's tone:
+            ```markdown
+            {{writer.tone}}
+            ```
+
+          - Selected layout: {{layout.selected}}
+      name: Landing page structure
   version: 1

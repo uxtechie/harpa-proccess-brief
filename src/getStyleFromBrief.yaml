@@ -54,6 +54,8 @@
         Step instructions:
           - Respond in English & don't interact with the user.
           - Respond with comma-separated values, for example: Feminine, Vintage, Elegant...
+
+        Step result:
       param: style.related
     - type: say
       selected: false
@@ -75,6 +77,8 @@
             1. 🏢 Modern: A modern design will align with the company's goal of conveying a sense of
               power.
             2. ...
+
+        Step result:
     - type: ask
       selected: true
       param: style.selected
@@ -96,6 +100,8 @@
           - Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example: Vibrant
+
+        Step result:
       param: style.selected
     - type: say
       selected: false
@@ -139,6 +145,8 @@
             example:
             1. Type: Monochrome, Range: Default
             2. ...
+
+        Step result:
       param: palette.related
     - type: say
       selected: false
@@ -163,6 +171,8 @@
               * The "Vibrant" range will provide the modern touch the client desires while
                 maintaining a sense of antiquity.
             2. ...
+
+        Step result:
     - type: ask
       selected: true
       param: palette.config
@@ -189,6 +199,8 @@
             example:
             * Type: Monochrome,
             * Range: Vibrant
+
+        Step result:
       param: palette.config
     - type: say
       selected: false
@@ -213,6 +225,8 @@
         Step instructions:
           - Respond in English and don't interact with the user.
           - Respond with comma-separated values, for example: Open Sans, Avenir...
+
+        Step result:
       param: typographies.related
     - type: say
       selected: false
@@ -239,6 +253,8 @@
               * Open Sans: is a clean and legible font, suitable for body text, and complements the
                 minimalistic and modern design well.
             2. ...
+
+        Step result:
     - type: ask
       selected: true
       param: style.typos
@@ -265,6 +281,8 @@
             example:
             * Titles: Didot
             * Text: Garamond
+
+        Step result:
       param: style.typos
     - type: say
       selected: false
@@ -309,6 +327,8 @@
             1. Funny & Casual
             2. Serious & Casual & Irreverent
             3. ...
+
+        Step result:
       param: tone.related
     - type: say
       selected: false
@@ -331,6 +351,8 @@
               futuristic style of the website and with a casual tone maintains a friendly and
               approachable atmosphere (continue the explaination)...
             2. ...
+
+        Step result:
     - type: ask
       selected: true
       param: writer.tone
@@ -353,6 +375,8 @@
           - Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example: Funny & Casual
+
+        Step result:
       param: writer.tone
     - type: say
       selected: false
@@ -404,7 +428,9 @@
         Step instructions:
           - Respond in English and don't interact with the user.
           - Respond with comma-separated values, for example: Single-Column, Content-Focused,
-        Big-Typography...
+            Big-Typography...
+
+        Step result:
       param: layout.related
     - type: say
       selected: false
@@ -428,6 +454,8 @@
               enfoque minimalista y moderno, permitiendo que el contenido se presente de manera
               clara y concisa.
             2. ...
+
+        Step result:
     - type: ask
       selected: true
       param: layout.selected
@@ -449,5 +477,7 @@
           - Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
             example: Content-Focused
+
+        Step result:
       param: layout.selected
   version: 1

@@ -81,5 +81,7 @@
                 Apartments" title and concludes with a 'View All' button for accessing all available
                 listings.
             2. ...
+
+        Step result:
       param: web.pages
   version: 1

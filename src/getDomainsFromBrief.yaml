@@ -55,8 +55,11 @@
         Step goal: Use the **design premises** and **Domain name creation guidelines** as a guide
         for suggesting {{domains.length}} different domain names.
 
+
         Step instructions:
           - I just need you to return the result to me without adding any extra content.
+
+        Step result:
       selected: false
     - type: gpt
       selected: false
@@ -80,4 +83,6 @@
               the luxury offices with solar power, making it relevant and memorable (continue the
               explaination)...
             2. ...
+
+        Step result:
   version: 1

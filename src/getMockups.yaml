@@ -49,5 +49,7 @@
           - IMPORTANT: ensure to retain the template and placeholders original case formats.
           - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
+
+        Step result:
       selected: false
   version: 1
