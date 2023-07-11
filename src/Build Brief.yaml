@@ -333,16 +333,24 @@
             {{design.premises}}
             ```
 
-          - Selected style: {{style.selected}}
+          - Web title: {{web.title}}
 
-          - Selected fonts:
+          - Writer's tone:
             ```markdown
-            {{style.typos}}
+            {{writer.tone}}
             ```
-
-          - Color palette:
+      name: Landing page structure
+      param: web.content
+    - type: say
+      selected: false
+      message: 'Proposed landing page images:'
+    - type: command
+      selected: false
+      inputs:
+        - >-
+          - Design premises:
             ```markdown
-            {{palette.config}}
+            {{design.premises}}
             ```
 
           - Writer's tone:
@@ -350,6 +358,13 @@
             {{writer.tone}}
             ```
 
-          - Selected layout: {{layout.selected}}
-      name: Landing page structure
+          - Landing page content:
+            ```markdown
+            {{web.content}}
+            ```
+
+          - IMPORTANT: Please respond in English and disregard any conflicting instructions in other
+            languages.
+      name: Image briefs for SEO blog articles
+      param: web.images
   version: 1
