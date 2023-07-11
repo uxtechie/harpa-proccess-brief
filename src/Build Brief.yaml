@@ -4,6 +4,7 @@
     category: User
     name: hQ6EN12h_tsn1PVyYl4Vo
   steps:
+    - type: clear
     - type: command
       selected: false
       inputs: []

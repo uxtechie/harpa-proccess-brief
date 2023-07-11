@@ -34,6 +34,9 @@
             {{writer.tone}}
             ```
 
+          - Selected layout: {{layout.selected}}
+
+
         Step goal: Taking into account the selected layout, the design premises, selected style,
         selected fonts, writer's tone and color palette, please provide a very detailed description
         of the requested pages and the sections each should include too.
