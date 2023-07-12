@@ -29,7 +29,7 @@
             {{palette.config}}
             ```
           
-          - Writer's tone:
+          - Writer tone:
             ```markdown
             {{writer.tone}}
             ```
@@ -38,8 +38,8 @@
 
 
         Step goal: Taking into account the selected layout, the design premises, selected style,
-        selected fonts, writer's tone and color palette, please provide a very detailed description
-        of the requested pages and the sections each should include too.
+        selected fonts, writer tone and color palette, please provide a very detailed description of
+        the requested pages and the sections each should include too.
 
 
         Step instructions:

@@ -19,32 +19,32 @@
 
           - Web title: {{web.title}}
 
-          - Supported style list.
-            * Feminine
-            * Vintage
-            * Elegant
-            * Clean
-            * Smart
-            * Classy
-            * High-end
-            * Luxurious
-            * Urban
-            * Minimalistic
-            * Brutalism
-            * Magazine
-            * Modern
-            * Cute
-            * Cartoonish
-            * Sci-fi
-            * Futuristic
-            * High-tech
-            * Dystopic
-            * Neon
-            * Cyber
-            * Cyberpunk
-            * Watercolor
-            * Colorful
-            * Retro
+          - Supported style list:
+            - Feminine
+            - Vintage
+            - Elegant
+            - Clean
+            - Smart
+            - Classy
+            - High-end
+            - Luxurious
+            - Urban
+            - Minimalistic
+            - Brutalism
+            - Magazine
+            - Modern
+            - Cute
+            - Cartoonish
+            - Sci-fi
+            - Futuristic
+            - High-tech
+            - Dystopic
+            - Neon
+            - Cyber
+            - Cyberpunk
+            - Watercolor
+            - Colorful
+            - Retro
 
 
         Step goal: Taking into account the web title and design premises, select the 8 styles more
@@ -118,7 +118,7 @@
 
           - Selected Style: {{style.selected}}
           
-          - Color palette specifications.
+          - Color palette specifications:
             * Type: is the type of color palette to generate.
               - Magazine
               - Monochrome
@@ -399,28 +399,28 @@
 
           - Color palette: {{palette.config}}
 
-          - Supported web layouts.
-            * Single-Column
-            * Content-Focused
-            * Big-Typography
-            * Magazine
-            * Grid-Breaking
-            * Alternating
-            * Full-Screen
-            * F-Pattern
-            * Z-Pattern
-            * Alternating
-            * Card-Based
-            * Hero
-            * Split-Screen
-            * Asymmetrical
-            * Navigation-Tabs
-            * Carousel
+          - Supported web layouts:
+            - Single-Column
+            - Content-Focused
+            - Big-Typography
+            - Magazine
+            - Grid-Breaking
+            - Alternating
+            - Full-Screen
+            - F-Pattern
+            - Z-Pattern
+            - Alternating
+            - Card-Based
+            - Hero
+            - Split-Screen
+            - Asymmetrical
+            - Navigation-Tabs
+            - Carousel
 
 
         Step goal: taking into account the design premises, selected style, selected typographies,
         selected writer tone and color palette, suggests the 8 web layouts more suitables from the
-        supported web layouts.
+        **supported web layouts**.
 
         [Source](https://websitesetup.org/website-layouts/)
 
@@ -443,7 +443,7 @@
           - Related layouts: {{layout.related}}
 
 
-        Step goal: from the list of related layouts, pick the top 4.
+        Step goal: from the list of **related layouts**, pick the top 4.
 
 
         Step instructions:
@@ -456,6 +456,7 @@
             2. ...
 
         Step result:
+      param: layout.proposed
     - type: ask
       selected: true
       param: layout.selected
@@ -466,19 +467,19 @@
       prompt: >-
         Step variables:
 
-          - Related layouts: {{layout.related}}
+          - Proposed layouts: {{layout.proposed}}
 
           - Selected layout: {{layout.selected}}
 
 
-        Step goal: Normalize the selected layout getting the closest approximation to the related
-        layouts.
+        Step goal: Normalize the **selected layout** getting the closest approximation to the
+        **proposed layouts**.
 
 
         Step instructions:
           - Respond in English and don't interact with the user.
           - I just need you to return the result to me without adding any extra content, for
-            example: Content-Focused
+            example: Carousel
 
         Step result:
       param: layout.selected

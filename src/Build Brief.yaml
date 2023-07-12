@@ -337,7 +337,7 @@
 
             - Web title: {{web.title}}
 
-            - Writer's tone: {{writer.tone}}
+            - Writer tone: {{writer.tone}}
 
 
           Step instructions:
@@ -345,10 +345,10 @@
 
           Step result:
       name: Landing page structure
-      param: web.content
+      param: writer.content
     - type: say
       selected: false
-      message: 'Proposed landing page images:'
+      message: 'Proposed landing images:'
     - type: command
       selected: false
       inputs:
@@ -360,9 +360,12 @@
 
           - Selected style: {{style.selected}}
 
-          - Writer's tone: {{writer.tone}}
+          - Writer tone: {{writer.tone}}
 
-          - Landing page content: {{web.content}}
+          - Writer content: 
+            ```markdown
+            {{writer.content}}
+            ```
 
 
           IMPORTANT: Please respond in English and disregard any conflicting instructions in
@@ -377,7 +380,10 @@
       prompt: >-
         Step variables:
 
-          - Required Web images: {{web.images}}
+          - Web images:
+          ```markdown
+          {{web.images}}
+          ```
 
 
         Step goal: Get only an image **property** from each different image listed in the **required
@@ -397,7 +403,7 @@
 
 
         Step result:
-      param: images.descriptions
+      param: images.description
     - type: say
       selected: false
       message: 'Images prompts:'
@@ -406,7 +412,7 @@
       prompt: >-
         Step variables:
 
-          - Required Web images:
+          - Web images:
             ```markdown
             {{web.images}}
             ```
@@ -419,8 +425,8 @@
             ```          
 
 
-        Step goal: Provide, for each different image listed in the **required Web images** content,
-        an image generation prompt following the step instructions.
+        Step goal: Provide, for each different image listed in the **Web images** content, an image
+        generation prompt following the step instructions.
 
 
         Step instructions:
