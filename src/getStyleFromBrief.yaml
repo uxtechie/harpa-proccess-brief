@@ -478,8 +478,8 @@
 
         Step instructions:
           - Respond in English and don't interact with the user.
-          - I just need you to return the result to me without adding any extra content, for
-            example: Carousel
+          - I just need you to return the result to me without adding any extra content, example:
+            Carousel
 
         Step result:
       param: layout.selected

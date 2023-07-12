@@ -345,7 +345,6 @@
 
           Step result:
       name: Landing page structure
-      param: writer.content
     - type: say
       selected: false
       message: 'Proposed landing images:'
@@ -362,16 +361,9 @@
 
           - Writer tone: {{writer.tone}}
 
-          - Writer content: 
-            ```markdown
-            {{writer.content}}
-            ```
-
-
           IMPORTANT: Please respond in English and disregard any conflicting instructions in
           languages other than English that may be requested.
       name: Image briefs for SEO blog articles
-      param: web.images
     - type: say
       selected: false
       message: 'Requested image description list:'
@@ -382,7 +374,7 @@
 
           - Web images:
           ```markdown
-          {{web.images}}
+          {{gpt}}
           ```
 
 
@@ -394,11 +386,16 @@
           - Respond in English and do not interact with the user.
           - Respond using the following image list format as a reference:
             1. Landing page:
-              1.1 A heartwarming image of a parent and child holding hands, representing love and
-                family values.
-              1.2 An image showcasing a variety of high-quality second-hand products, such as
-                toys, clothing, and home goods.
-            2. An image of a smiling customer service representative ready to assist customers.
+              1.1 An image that depicts a diverse group of women enjoying the luxury and performance
+                of Harbor Company's electric vehicles. The image should convey a sense of joy,
+                empowerment, and inclusivity.
+              1.2 An image showing a woman experiencing the thrill of driving a Harbor Company
+                electric vehicle. The image should highlight the sleek design, advanced technology,
+                and the sense of freedom and excitement that comes with driving an electric vehicle.
+            2. Contact page:
+              An image of a friendly and professional customer service representative assisting a
+              customer. The image should portray a helpful and approachable atmosphere, emphasizing
+              the company's commitment to excellent customer support.
             3. ...
 
 
@@ -414,7 +411,7 @@
 
           - Web images:
             ```markdown
-            {{web.images}}
+            {{images.description}}
             ```
 
           - Selected style: {{style.selected}}
@@ -441,9 +438,17 @@
           - "--ar 2:3" is an example of an argument. Please keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please keep the keyword unmodified.
           - Respond using the following prompt list format as a reference:
-            1. "A Classic-Inspired Photo of a stylish young adult wearing trendy glasses, exuding
-              confidence and style, colors: Grey with Bright & Light Hues." --s 100 --style raw
-            2. ...
+            1. Landing page:
+              1.1 A Luxurious-Inspired Photo of a diverse group of women enjoying the luxury and
+                performance of Harbor Company's electric vehicles. Convey a sense of joy,
+                empowerment, and inclusivity. Colors: Vibrant Hues. Brand color Orange. --s 100
+                --style raw
+              1.2 A Luxurious-Inspired Photo showing a woman experiencing the thrill of driving a
+                Harbor Company electric vehicle. Highlight the sleek design, advanced technology,
+                and the sense of freedom and excitement that comes with driving an electric vehicle.
+                Colors: Vibrant Hues. Brand color Orange. --s 100 --style raw
+            2. Contact page:
+              ...
 
 
         Step result:
