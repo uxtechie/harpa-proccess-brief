@@ -430,8 +430,8 @@
         Step instructions:
           - Respond in English and do not interact with the user.
           - Generate each individual prompt using this template as a format reference:
-            "a [Selected Style]-Inspired Photo of [Required Image], [Color Palette Range Parameter]
-            Hues, brand color [Brand Color], --s 100 --style raw
+            "a [Selected Style] Photo of [Required Image], [Color Palette Range Parameter]
+            Hues. Brand color [Brand Color]. Brand name [Company Name]. --s 100 --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to construct proper sentences.
           - Remove the square brackets.
@@ -440,16 +440,17 @@
           - "layout::0" is an example of a height keyword. Please keep the keyword unmodified.
           - Respond using the following prompt list format as a reference:
             1. Landing page:
-              1.1 A Luxurious-Inspired Photo of a diverse group of women enjoying the luxury and
+              1.1 A Luxurious Photo of a diverse group of women enjoying the luxury and
                 performance of Harbor Company's electric vehicles. Convey a sense of joy,
-                empowerment, and inclusivity. Colors: Vibrant Hues. Brand color Orange. --s 100
-                --style raw
-              1.2 A Luxurious-Inspired Photo showing a woman experiencing the thrill of driving a
+                empowerment, and inclusivity. Colors: Vibrant Hues. Brand color Orange. Brand name:
+                Red Horizons. --s 100 --style raw
+              1.2 A Luxurious Photo showing a woman experiencing the thrill of driving a
                 Harbor Company electric vehicle. Highlight the sleek design, advanced technology,
                 and the sense of freedom and excitement that comes with driving an electric vehicle.
-                Colors: Vibrant Hues. Brand color Orange. --s 100 --style raw
+                Colors: Vibrant Hues. Brand color Orange. Brand name: Red Horizons. --s 100 --style
+                raw
             2. Contact page:
-              A Luxurious-Inspired Photo that depicts a customer service representative or a group
+              A Luxurious Photo that depicts a customer service representative or a group
               of representatives assisting a ...
 
 
