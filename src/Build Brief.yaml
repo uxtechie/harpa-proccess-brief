@@ -68,100 +68,100 @@
             ```
 
           - Industry list:
-            * Technology
-            * Food
-            * Retail Store
-            * Marketing
-            * News
-            * Entertainment
-            * Fashion
-            * Sports
-            * Education
-            * Transportation
-            * Music
-            * Real Estate
-            * Travel
-            * Health
-            * Finance
-            * Insurance
-            * Infrastructure
-            * Public Services
-            * Politics
-            * Religion
-            * Engineering
-            * Research
-            * Biotechnology
-            * Pharmaceuticals
-            * Automotive
-            * Aviation
-            * Maritime
-            * Rail
-            * Telecommunications
-            * Electronics
-            * Software
-            * Hardware
-            * Internet
-            * Web
-            * Cloud
-            * Data
-            * Artificial Intelligence
-            * Robotics
-            * Blockchain
-            * Virtual Reality
-            * Gaming
-            * Social Media
-            * E-Commerce
-            * Wholesale
-            * Logistics
-            * Supply Chain
-            * Shipping
-            * Warehousing
-            * Human Resources
-            * Customer Service
-            * Sales
-            * Advertising
-            * Public Relations
-            * Legal
-            * Banking
-            * Investment
-            * Architecture
-            * Design
-            * Consulting
-            * Training
-            * Healthcare
-            * Veterinary
-            * Dental
-            * Fitness
-            * Beauty
-            * Cosmetics
-            * Luxury Goods
-            * Jewelry
-            * Beverage
-            * Agriculture
-            * Forestry
-            * Fishing
-            * Mining
-            * Utilities
-            * Water
-            * Waste Management
-            * Manufacturing
-            * Aerospace
-            * Defense
-            * Chemical
-            * Energy
-            * Publishing
-            * Film
-            * Video Games
-            * Government
-            * Space
-            * Military
-            * Law Enforcement
-            * Security
-            * Hospitality
-            * Tourism
-            * Events
-            * Social
-            * Nonprofit
+            - Technology
+            - Food
+            - Retail Store
+            - Marketing
+            - News
+            - Entertainment
+            - Fashion
+            - Sports
+            - Education
+            - Transportation
+            - Music
+            - Real Estate
+            - Travel
+            - Health
+            - Finance
+            - Insurance
+            - Infrastructure
+            - Public Services
+            - Politics
+            - Religion
+            - Engineering
+            - Research
+            - Biotechnology
+            - Pharmaceuticals
+            - Automotive
+            - Aviation
+            - Maritime
+            - Rail
+            - Telecommunications
+            - Electronics
+            - Software
+            - Hardware
+            - Internet
+            - Web
+            - Cloud
+            - Data
+            - Artificial Intelligence
+            - Robotics
+            - Blockchain
+            - Virtual Reality
+            - Gaming
+            - Social Media
+            - E-Commerce
+            - Wholesale
+            - Logistics
+            - Supply Chain
+            - Shipping
+            - Warehousing
+            - Human Resources
+            - Customer Service
+            - Sales
+            - Advertising
+            - Public Relations
+            - Legal
+            - Banking
+            - Investment
+            - Architecture
+            - Design
+            - Consulting
+            - Training
+            - Healthcare
+            - Veterinary
+            - Dental
+            - Fitness
+            - Beauty
+            - Cosmetics
+            - Luxury Goods
+            - Jewelry
+            - Beverage
+            - Agriculture
+            - Forestry
+            - Fishing
+            - Mining
+            - Utilities
+            - Water
+            - Waste Management
+            - Manufacturing
+            - Aerospace
+            - Defense
+            - Chemical
+            - Energy
+            - Publishing
+            - Film
+            - Video Games
+            - Government
+            - Space
+            - Military
+            - Law Enforcement
+            - Security
+            - Hospitality
+            - Tourism
+            - Events
+            - Social
+            - Nonprofit
 
 
         Step Goal: Review the content of the **web page** to summarize the design brief.
@@ -174,25 +174,25 @@
             deadline.
           - Identify the current company's industry from the variable industry list.
           - Respond using this example as a format reference:
-            * 🏢 Brand:
+            a. 🏢 Brand:
               - 🏢 Name: Big Memory.
               - 🍊 Color: Orange.
               - 💼 Industry: Fashion.
               - 📝 Product: offers a selection of luxury offices with solar power.
               - 🎯 Target audience: people on a budget.
               - 🌟 Convey a sense: of importance, while being modern.
-            * 💻 Job:
+            b. 💻 Job:
               - 💻 Task: create a website that will mainly spread brand awareness.
               - 🎯 Goal: to increase sales.
               - 🎨 Design style: old-fashioned.
-            * 📃 Pages:
+            c. 📃 Pages:
               1. 📃 Landing page:
                 1.1 💡 Our Values section.
                 1.2 📣📥 There should be a call to action to get users to order a free sample.
               2. 📑 Contact page.
               3. 🛍️ Shop page.
               4. 🔏 Privacy policy page.
-            * 📆 Deadline: 4 days.
+            d. 📆 Deadline: 4 days.
 
         Step result:
       param: design.premises
@@ -328,17 +328,22 @@
       selected: false
       inputs:
         - >-
-          - Design premises:
-            ```markdown
-            {{design.premises}}
-            ```
+          Step variables:
 
-          - Web title: {{web.title}}
+            - Design premises:
+              ```markdown
+              {{design.premises}}
+              ```
 
-          - Writer's tone:
-            ```markdown
-            {{writer.tone}}
-            ```
+            - Web title: {{web.title}}
+
+            - Writer's tone: {{writer.tone}}
+
+
+          Step instructions:
+            - Respond in {{language}} & don't interact with the user.
+
+          Step result:
       name: Landing page structure
       param: web.content
     - type: say
@@ -353,18 +358,87 @@
             {{design.premises}}
             ```
 
-          - Writer's tone:
-            ```markdown
-            {{writer.tone}}
-            ```
+          - Selected style: {{style.selected}}
 
-          - Landing page content:
-            ```markdown
-            {{web.content}}
-            ```
+          - Writer's tone: {{writer.tone}}
 
-          - IMPORTANT: Please respond in English and disregard any conflicting instructions in other
-            languages.
+          - Landing page content: {{web.content}}
+
+
+          IMPORTANT: Please respond in English and disregard any conflicting instructions in
+          languages other than English that may be requested.
       name: Image briefs for SEO blog articles
       param: web.images
+    - type: say
+      selected: false
+      message: 'Requested image description list:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        Step variables:
+
+          - Required Web images: {{web.images}}
+
+
+        Step goal: Get only an image **property** from each different image listed in the **required
+        Web images**.
+
+
+        Step instructions:
+          - Respond in English and do not interact with the user.
+          - Respond using the following image list format as a reference:
+            1. Landing page:
+              1.1 A heartwarming image of a parent and child holding hands, representing love and
+                family values.
+              1.2 An image showcasing a variety of high-quality second-hand products, such as
+                toys, clothing, and home goods.
+            2. An image of a smiling customer service representative ready to assist customers.
+            3. ...
+
+
+        Step result:
+      param: images.descriptions
+    - type: say
+      selected: false
+      message: 'Images prompts:'
+    - type: gpt
+      selected: false
+      prompt: >-
+        Step variables:
+
+          - Required Web images:
+            ```markdown
+            {{web.images}}
+            ```
+
+          - Selected style: {{style.selected}}
+
+          - Color palette:
+            ```markdown
+            {{palette.config}}
+            ```          
+
+
+        Step goal: Provide, for each different image listed in the **required Web images** content,
+        an image generation prompt following the step instructions.
+
+
+        Step instructions:
+          - Respond in English and do not interact with the user.
+          - Generate each individual prompt using this template as a format reference:
+            "a [Selected Style]-Inspired Photo of [Required Image], [Color Palette Range Parameter]
+            Hues, brand color [Brand Color], --s 100 --style raw
+          - The text inside square brackets is a placeholder.
+          - Change the placeholder text to construct proper sentences.
+          - Remove the square brackets.
+          - IMPORTANT: Ensure to retain the template and placeholder's original case formats.
+          - "--ar 2:3" is an example of an argument. Please keep the argument unmodified.
+          - "layout::0" is an example of a height keyword. Please keep the keyword unmodified.
+          - Respond using the following prompt list format as a reference:
+            1. "A Classic-Inspired Photo of a stylish young adult wearing trendy glasses, exuding
+              confidence and style, colors: Grey with Bright & Light Hues." --s 100 --style raw
+            2. ...
+
+
+        Step result:
   version: 1

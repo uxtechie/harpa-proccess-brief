@@ -468,9 +468,11 @@
 
           - Related layouts: {{layout.related}}
 
+          - Selected layout: {{layout.selected}}
 
-        Step goal: Normalize the selected layout, {{layout.selected}}, getting the closest
-        approximation to the related layouts.
+
+        Step goal: Normalize the selected layout getting the closest approximation to the related
+        layouts.
 
 
         Step instructions:
