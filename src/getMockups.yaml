@@ -6,7 +6,7 @@
   steps:
     - type: say
       selected: false
-      message: 'Web design rendering prompt:'
+      message: 'Website rendering prompt:'
     - type: gpt
       prompt: >-
         Step variables:
@@ -37,12 +37,12 @@
         Step instructions:
           - Respond in English & don't interact with the user.
           - Respond using this template as a format reference:
-            a [Just The Color Palette Type Parameter] & [Selected Style]-Inspired Website, convey a
-            sense of: [First Company Sense] & [Second Company Sense], colors: [Brand Color]
-            with [Color Palette Range Parameter] Hues, purpose to provide: [Product Summary], for:
-            [Audience Summary] audience, designed for a: [Company Industry] company, brand name:
-            [Company Name], titles: [Just the Selected Title Font] Typography --no shading detail
-            --ar 2:3 --s 100 --style raw
+            A [Just The Color Palette Type Parameter] & [Selected Style] Website, designed for
+            a: [Company Industry] company, brand name: [Company Name], provide: [Product
+            Summary], for: [Audience Summary] audience, convey a sense of: [First Company Sense] &
+            [Second Company Sense], colors: [Brand Color] with [Color Palette Range Parameter] Hues,
+            titles: [Just the Selected Title Font] Typography. --no shading detail --ar 1:1 --s 100
+            --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
           - Remove the square brackets.
@@ -54,7 +54,7 @@
       selected: false
     - type: say
       selected: false
-      message: 'Logo design rendering prompt:'
+      message: 'Login rendering prompt:'
     - type: gpt
       prompt: >-
         Step variables:
@@ -85,11 +85,12 @@
         Step instructions:
           - Respond in English & don't interact with the user.
           - Respond using this template as a format reference:
-            a [Just The Color Palette Type Parameter] & [Selected Style]-Inspired Logo Design,
-            convey a sense of: [First Company Sense] & [Second Company Sense], colors: [Brand Color]
-            with [Color Palette Range Parameter] Hues, designed for a: [Company Industry] company
-            that provide: [Product Summary], brand name: [Company Name], titles: [Just the Selected
-            Title Font] Typography --no shading detail --ar 1:1 --s 100 --style raw
+            A [Just The Color Palette Type Parameter] & [Selected Style] Centered Login Card, form
+            fields: EMail & Password, designed for a: [Company Industry] company, brand name:
+            [Company Name], provide: [Product Summary], for: [Audience Summary] audience, convey a
+            sense of: [First Company Sense] & [Second Company Sense], colors: [Brand Color] with
+            [Color Palette Range Parameter] Hues, titles: [Just the Selected Title Font] Typography.
+            --no shading detail --ar 1:1 --s 100 --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
           - Remove the square brackets.
