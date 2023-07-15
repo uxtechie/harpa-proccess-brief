@@ -369,7 +369,7 @@
       name: Image briefs for SEO blog articles
     - type: say
       selected: false
-      message: 'Requested image description list:'
+      message: 'Related images:'
     - type: gpt
       selected: false
       prompt: >-
@@ -381,25 +381,38 @@
           ```
 
 
-        Step goal: Get only an image **property** from each different image listed in the **required
-        Web images**.
+        Step goal: Get only the image **content description** from each different image listed in
+        the **required Web images**.
 
 
         Step instructions:
           - Respond in English and do not interact with the user.
-          - Respond using the following image list format as a reference:
-            1. Landing page:
-              1.1 An image that depicts a diverse group of women enjoying the luxury and performance
-                of Harbor Company's electric vehicles. The image should convey a sense of joy,
-                empowerment, and inclusivity.
-              1.2 An image showing a woman experiencing the thrill of driving a Harbor Company
-                electric vehicle. The image should highlight the sleek design, advanced technology,
-                and the sense of freedom and excitement that comes with driving an electric vehicle.
-            2. Contact page:
-              An image of a friendly and professional customer service representative assisting a
-              customer. The image should portray a helpful and approachable atmosphere, emphasizing
-              the company's commitment to excellent customer support.
-            3. ...
+          - Mantain the source website structure.
+          - Respond using the following format as a reference:
+            1. Landing page images:
+              1.1 About the Team section:
+                - Include an image [continue with the image description].
+              1.2 Call to action to subscribe to the newsletter:
+                - Include an image [continue with the image description].
+            2. About page images:
+              - Include an image [continue with the image description].
+            3. Product images:
+              3.1 Include an image [related to the specific features and benefits of the product].
+              3.2 Include an image [related to the specific features and benefits of the product].
+              3.3 Include an image [related to the specific features and benefits of the product].
+            4. Blog images:
+              3.1 Include an image [relevant to a blog topic. These visuals should enhance the
+                blog content and engage the readers visually].
+              3.2 Include an image [relevant to a blog topic. These visuals should enhance the
+                blog content and engage the readers visually].
+              3.3 Include an image [relevant to a blog topic. These visuals should enhance the
+                blog content and engage the readers visually].
+            5. [continue if necessary]
+          - The text inside square brackets is a placeholder.
+          - Change the placeholder text to build proper sentences.
+          - Remove the square brackets.
+          - Generate 3 diferent product images.
+          - Generate 3 diferent blog images if this section is requested.
 
 
         Step result:
@@ -412,7 +425,7 @@
       prompt: >-
         Step variables:
 
-          - Web images:
+          - Related web images:
             ```markdown
             {{images.description}}
             ```
@@ -425,35 +438,35 @@
             ```          
 
 
-        Step goal: Provide, for each different image listed in the **Web images** content, an image
-        generation prompt following the step instructions.
+        Step goal: Provide, for **each different image** listed in the **related web images**, an
+        image generative prompt following the step instructions.
 
 
         Step instructions:
           - Respond in English and do not interact with the user.
-          - Generate each individual prompt using this template as a format reference:
-            "a [Selected Style] Photo of [Required Image], [Color Palette Range Parameter]
-            Hues. Brand color [Brand Color]. Brand name [Company Name]. --s 100 --style raw
+          - Generate each prompt using this template as a format reference:
+            "a [selected style] photo of [required image], using [brand color] with [color palette
+            range parameter] hues, and the brand name [Company Name]. --ar 1:1 --s 100 --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to construct proper sentences.
           - Remove the square brackets.
-          - IMPORTANT: Ensure to retain the template and placeholder's original case formats.
           - "--ar 2:3" is an example of an argument. Please keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please keep the keyword unmodified.
-          - Respond using the following prompt list format as a reference:
+          - Respond using the following prompt list format too:
             1. Landing page:
-              1.1 A Luxurious Photo of a diverse group of women enjoying the luxury and
-                performance of Harbor Company's electric vehicles. Convey a sense of joy,
-                empowerment, and inclusivity. Colors: Vibrant Hues. Brand color Orange. Brand name:
-                Red Horizons. --s 100 --style raw
-              1.2 A Luxurious Photo showing a woman experiencing the thrill of driving a
-                Harbor Company electric vehicle. Highlight the sleek design, advanced technology,
-                and the sense of freedom and excitement that comes with driving an electric vehicle.
-                Colors: Vibrant Hues. Brand color Orange. Brand name: Red Horizons. --s 100 --style
-                raw
-            2. Contact page:
-              A Luxurious Photo that depicts a customer service representative or a group
-              of representatives assisting a ...
+              1.1 About the Team section:
+                - A Vibrant Photo of a [continue with the image generative prompt]
+              1.2 Call to action to subscribe to the newsletter:
+                - A Vibrant Photo of a [continue with the image generative prompt]
+            2. About page:
+              - A Vibrant Photo of a [continue with the image generative prompt]
+            3. Product pages:
+              3.1 - A Vibrant Photo of a [continue with the image generative prompt]
+              3.2 [continue]
+          - Mantain the source website structure.
+          - The text inside square brackets is a placeholder.
+          - Change the placeholder text to build proper sentences.
+          - Remove the square brackets.
 
 
         Step result:

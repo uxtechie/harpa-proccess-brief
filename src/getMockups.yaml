@@ -39,64 +39,15 @@
         Step instructions:
           - Respond in English & don't interact with the user.
           - Respond using this template as a format reference:
-            A [Just The Color Palette Type Parameter] & [Selected Style] Website, designed for
-            a: [Company Industry] company, provide: [Product Summary], for: [Audience Summary]
-            audience, convey a sense of: [First Company Sense] & [Second Company Sense], colors:
-            [Brand Color] with [Color Palette Range Parameter] Hues, titles: [Just the Selected
-            Title Font] Typography, brand name: [Company Name]. --no shading detail --ar 1:1 --s 100
-            --style raw
+            A [just the color palette type parameter] & [selected style] website designed for
+            a [company industry] company that offers [short product summary] to a [audience
+            summary] audience. The website conveys a sense of [first company sense] and [second
+            company sense], using [brand color] with [color palette range parameter] hues, title
+            typography [just the selected title font], and the brand name [Company Name]. --no
+            shading detail --ar 2:3 --s 100 --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
           - Remove the square brackets.
-          - IMPORTANT: ensure to retain the template and placeholders original case formats.
-          - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
-          - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
-
-        Step result:
-      selected: false
-    - type: say
-      selected: false
-      message: 'UI Design rendering prompt:'
-    - type: gpt
-      prompt: >-
-        Step variables:
-
-          - Design premises:
-            ```markdown
-            {{design.premises}}
-            ```
-
-          - Selected style: {{style.selected}}
-
-          - Selected fonts:
-            ```markdown
-            {{style.typos}}
-            ```
-
-          - Color palette:
-            ```markdown
-            {{palette.config}}
-            ```          
-
-
-        Step goal: Taking into account the **design premises**, **selected style**, **selected
-        fonts** and the **color palette**, please provide a prompt that you believe is the most
-        suitable.
-
-
-        Step instructions:
-          - Respond in English & don't interact with the user.
-          - Respond using this template as a format reference:
-            A [Just The Color Palette Type Parameter] & [Selected Style] UI Design, designed for
-            a: [Company Industry] company, provide: [Product Summary], for: [Audience Summary]
-            audience, convey a sense of: [First Company Sense] & [Second Company Sense], colors:
-            [Brand Color] with [Color Palette Range Parameter] Hues, titles: [Just the Selected
-            Title Font] Typography, brand name: [Company Name]. --no shading detail --ar 1:1 --s 100
-            --style raw
-          - The text inside square brackets is a placeholder.
-          - Change the placeholder text to build proper sentences.
-          - Remove the square brackets.
-          - IMPORTANT: ensure to retain the template and placeholders original case formats.
           - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
 
@@ -135,16 +86,15 @@
         Step instructions:
           - Respond in English & don't interact with the user.
           - Respond using this template as a format reference:
-            A [Just The Color Palette Type Parameter] & [Selected Style] Flat Logo, designed for
-            a: [Company Industry] company, provide: [Product Summary], for: [Audience Summary]
-            audience, convey a sense of: [First Company Sense] & [Second Company Sense], colors:
-            [Brand Color] with [Color Palette Range Parameter] Hues, titles: [Just the Selected
-            Title Font] Typography, brand name: [Company Name]. --no shading detail --ar 1:1 --s 100
-            --style raw
+            A [just the color palette type parameter] & [selected style] flat logo designed for
+            a [company industry] company that offers [short product summary] to a [audience
+            summary] audience. The logo conveys a sense of [first company sense] and [second company
+            sense], using [brand color] with [color palette range parameter] hues, title typography
+            [just the selected title font], and the brand name [Company Name]. --no shading detail
+            --ar 1:1 --s 100 --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
           - Remove the square brackets.
-          - IMPORTANT: ensure to retain the template and placeholders original case formats.
           - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
 
@@ -183,16 +133,15 @@
         Step instructions:
           - Respond in English & don't interact with the user.
           - Respond using this template as a format reference:
-            A [Just The Color Palette Type Parameter] & [Selected Style] Centered Login Card, form
-            fields: EMail & Password, designed for a: [Company Industry] company, provide: [Product
-            Summary], for: [Audience Summary] audience, convey a sense of: [First Company Sense] &
-            [Second Company Sense], colors: [Brand Color] with [Color Palette Range Parameter] Hues,
-            titles: [Just the Selected Title Font] Typography, brand name: [Company Name].
-            --no shading detail --ar 1:1 --s 100 --style raw
+            A [just the color palette type parameter] & [selected style] clean login screen
+            designed for a [company industry] company that offers [short product summary] to a
+            [audience summary] audience. The login screen conveys a sense of [first company sense]
+            and [second company sense], using [brand color] with [color palette range parameter]
+            hues, title typography [just the selected title font], and the brand name [Company
+            Name]. --no shading detail --ar 1:1 --s 100 --style raw
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
           - Remove the square brackets.
-          - IMPORTANT: ensure to retain the template and placeholders original case formats.
           - "--ar 2:3" is an example of an argument. Please, keep the argument unmodified.
           - "layout::0" is an example of a height keyword. Please, keep the keyword unmodified.
 
