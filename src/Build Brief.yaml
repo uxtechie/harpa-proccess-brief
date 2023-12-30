@@ -407,7 +407,7 @@
                 blog content and engage the readers visually].
               3.3 Include an image [relevant to a blog topic. These visuals should enhance the
                 blog content and engage the readers visually].
-            5. [continue if necessary]
+            5. [continue if is necessary...]
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
           - Remove the square brackets.
@@ -455,14 +455,20 @@
           - Respond using the following prompt list format too:
             1. Landing page:
               1.1 About the Team section:
-                - A Vibrant Photo of a [continue with the image generative prompt]
+                - A Vibrant Photo of a [continue with the image generative prompt] --ar 1:1 --s 100
+                  --style raw
               1.2 Call to action to subscribe to the newsletter:
-                - A Vibrant Photo of a [continue with the image generative prompt]
+                - A Vibrant Photo of a [continue with the image generative prompt] --ar 1:1 --s 100
+                  --style raw
             2. About page:
-              - A Vibrant Photo of a [continue with the image generative prompt]
+              - A Vibrant Photo of a [continue with the image generative prompt] --ar 1:1 --s 100
+                --style raw
             3. Product pages:
-              3.1 - A Vibrant Photo of a [continue with the image generative prompt]
-              3.2 [continue]
+              3.1 A Vibrant Photo of a [continue with the image generative prompt] --ar 1:1 --s
+                100 --style raw
+              3.2 A Vibrant Photo of a [continue with the image generative prompt] --ar 1:1 --s
+                100 --style raw
+              3.3 [continue...]
           - Mantain the source website structure.
           - The text inside square brackets is a placeholder.
           - Change the placeholder text to build proper sentences.
