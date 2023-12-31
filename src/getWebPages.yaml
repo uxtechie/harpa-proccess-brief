@@ -1,4 +1,4 @@
-# HARPA AI - Build Design Brief © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
+# HARPA AI - Web Design Brief Processor © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
 
 - meta:
     title: zzzGetWebPages
@@ -30,7 +30,7 @@
             ```markdown
             {{palette.config}}
             ```
-          
+
           - Writer tone:
             ```markdown
             {{writer.tone}}
@@ -76,7 +76,7 @@
 
                   * Essential details about the apartment such as name, location, short description,
                     price and highlights in the lower third of the card.
-                
+
                 The cards are arranged in a grid, each being clickable and leading to a more
                 detailed page about the respective apartment. For a large number of apartments, a
                 horizontal carousel layout can be used. This section is headed by a large "Featured

@@ -1,4 +1,4 @@
-# HARPA AI - Build Design Brief © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
+# HARPA AI - Web Design Brief Processor © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
 
 - meta:
     title: zzzGetStyleFromBrief
@@ -118,7 +118,7 @@
             ```
 
           - Selected Style: {{style.selected}}
-          
+
           - Color palette specifications:
             * Type: is the type of color palette to generate.
               - Magazine
@@ -248,7 +248,7 @@
         Step instructions:
           - Respond in {{language}} and don't interact with the user.
           - Respond using this example as a format reference:
-            1. 📚 Titles: Montserrat & Text: Open Sans: 
+            1. 📚 Titles: Montserrat & Text: Open Sans:
               * Montserrat: with its geometric and modern look, is great for titles, aligning with
                 the minimalistic and modern design style.
               * Open Sans: is a clean and legible font, suitable for body text, and complements the

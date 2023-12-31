@@ -1,4 +1,4 @@
-# HARPA AI - Build Design Brief © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
+# HARPA AI - Web Design Brief Processor © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
 
 - meta:
     title: zzzGetMockups
@@ -28,7 +28,7 @@
           - Color palette:
             ```markdown
             {{palette.config}}
-            ```          
+            ```
 
 
         Step goal: Taking into account the **design premises**, **selected style**, **selected
@@ -75,7 +75,7 @@
           - Color palette:
             ```markdown
             {{palette.config}}
-            ```          
+            ```
 
 
         Step goal: Taking into account the **design premises**, **selected style**, **selected
@@ -122,7 +122,7 @@
           - Color palette:
             ```markdown
             {{palette.config}}
-            ```          
+            ```
 
 
         Step goal: Taking into account the **design premises**, **selected style**, **selected

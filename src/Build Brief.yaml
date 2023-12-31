@@ -1,4 +1,4 @@
-# HARPA AI - Build Design Brief © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
+# HARPA AI - Web Design Brief Processor © 2023 by Julián Mulet is licensed under CC BY-NC 4.0
 
 - meta:
     title: Build Brief
@@ -47,7 +47,7 @@
             future too.
           - If you understand the **wizard guidelines** respond just with the next sentence:
             > Wizard assistant ready!
-            
+
         Step result:
     - type: say
       selected: false
@@ -203,7 +203,7 @@
       selected: false
       prompt: >-
         Step variables:
-          
+
           - Design premises:
             ```markdown
             {{design.premises}}
@@ -435,7 +435,7 @@
           - Color palette:
             ```markdown
             {{palette.config}}
-            ```          
+            ```
 
 
         Step goal: Provide, for **each different image** listed in the **related web images**, an
