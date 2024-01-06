@@ -1,50 +1,52 @@
-# HARPA.AI Custom Commands for Web Design Briefs
+# HARPA.AI - Custom Commands for Web Design Briefs
 
-## Descripción
+**Here is an [easily accessible copy available on Google Drive!](https://drive.google.com/drive/folders/1-m2lf_xJ-ZpkQp_41E-Ri_V9K4p-872C?usp=drive_link)**
 
-Este proyecto, creado por [@uxtechie](https://github.com/uxtechie), proporciona comandos personalizados para ser utilizados con la extensión [HARPA.AI](https://harpa.ai/). Estos comandos ayudan a procesar briefings de diseño web. Pertenecen al curso gratuito publicado en el [canal de YouTube de @uxtechie](https://www.youtube.com/@uxtechie).
-El objetivo es proporcionar a los estudiantes herramientas eficientes para gestionar sus proyectos de diseño web.
+## Description
 
-## Requisitos
+This project, created by [@uxtechie](https://github.com/uxtechie), provides custom commands to be used with the [HARPA.AI](https://harpa.ai/) browser extension. These commands help in processing web design briefings. They are part of a free course published on [@uxtechie's YouTube channel](https://www.youtube.com/@uxtechie).
+The goal is to provide students with efficient tools to manage their web design projects.
 
-- Extensión de navegador [HARPA.AI](https://harpa.ai/) instalada en un navegador compatible
-(como Google Chrome, Microsoft Edge, Firefox, Opera y Arc Browser).
-- Conocimientos básicos de cómo utilizar [comandos personalizados con la extensión HARPA.AI](https://harpa.ai/guide/custom-page-aware-chatgpt-commands).
+## Requirements
 
-## Instalación
+- [HARPA.AI](https://harpa.ai/) browser extension installed on a compatible browser
+(such as Google Chrome, Microsoft Edge, Firefox, Opera, and Arc Browser).
+- Basic knowledge of how to use [custom commands with the HARPA.AI extension](https://harpa.ai/guide/custom-page-aware-chatgpt-commands).
 
-1. Asegúrate de tener la extensión de navegador [HARPA.AI](https://harpa.ai/) instalada y activa.
-2. Visita el repositorio en [GitHub](https://github.com/uxtechie/harpa-proccess-brief) y sigue las instrucciones para clonar o descargar los scripts de los comandos.
-3. Sigue las instrucciones específicas de este video de Youtube: [02. Introducción a HARPA.AI y VisBug: Potenciando el Frontend](https://www.youtube.com/watch?v=e-6_YZPu3kw&list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_&index=2&pp=gAQBiAQB) para ver como instalar la extensión.
+## Installation
 
-## Uso
+1. Ensure that you have the [HARPA.AI](https://harpa.ai/) browser extension installed and active.
+2. Visit the repository on [GitHub](https://github.com/uxtechie/harpa-proccess-brief) and follow the instructions to clone or download the command scripts.
+3. Follow the specific instructions in this YouTube video: [02. HARPA.AI and VisBug: Empowering the Browser](https://www.youtube.com/watch?v=e-6_YZPu3kw&list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_&index=2&pp=gAQBiAQB) to see how to install the extension.
 
-- Abre la extensión HARPA.AI en tu navegador.
-- Instala los scripts de los comandos personalizados proporcionados en este proyecto. Puedes guiarte siguiendo este video de Youtube: [03. Procesando Briefings Eficazmente con HARPA.AI](https://www.youtube.com/watch?v=LqkoKjWtDT0&list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_&index=3&pp=gAQBiAQB)
-- Utiliza estos comandos para procesar y optimizar tus briefings de diseño web.
-- Puedes usar la web [goodbrief.io](https://goodbrief.io/) para generar briefings de prueba.
-- Por último, si necesitas adaptar los scripts a tus necesidades particulares puedes hacerlo siguiendo esta introducción: [04. Anatomía del Prompt de Midjourney](https://www.youtube.com/watch?v=SJAUBl-H-FU&list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_&index=4&pp=gAQBiAQB).
+## Usage
 
-## Curso Relacionado en YouTube
+- Open the HARPA.AI extension in your browser.
+- Install the custom command scripts provided in this project. You can follow along using this YouTube video: [03. Efficiently Processing Briefings with HARPA.AI](https://www.youtube.com/watch?v=LqkoKjWtDT0&list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_&index=3&pp=gAQBiAQB)
+- Use these commands to process and optimize your web design briefings.
+- You can use the website [goodbrief.io](https://goodbrief.io/) to generate test briefings.
+- Finally, if you need to adapt the scripts to your particular needs, you can do so by following this introduction: [04. Anatomy of the Midjourney Prompt](https://www.youtube.com/watch?v=SJAUBl-H-FU&list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_&index=4&pp=gAQBiAQB).
 
-[Lista de videos del curso](https://www.youtube.com/playlist?list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_)
+## Related Course on YouTube
 
-Para obtener más información y aplicar los conocimientos relacionados con estos comandos, visita el [canal de YouTube de @uxtechie](https://www.youtube.com/@uxtechie).
+[Course video playlist](https://www.youtube.com/playlist?list=PLej9SGANHoGinH0OCtYhVP7zg604K4ay_)
 
-## Contribuciones
+For more information and to apply the knowledge related to these commands, visit [@uxtechie's YouTube channel](https://www.youtube.com/@uxtechie).
 
-Si estás interesado en contribuir al desarrollo de estos comandos, te invitamos a:
+## Contributions
 
-1. Haz un fork del repositorio.
-2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`).
-3. Realiza tus cambios y haz commit (`git commit -m 'Add some AmazingFeature'`).
-4. Haz push a la rama (`git push origin feature/AmazingFeature`).
-5. Abre un Pull Request.
+If you are interested in contributing to the development of these commands, we invite you to:
 
-## Licencia
+1. Fork the repository.
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`).
+3. Make your changes and commit them (`git commit -m 'Add some AmazingFeature'`).
+4. Push the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
 
-Este proyecto está bajo la licencia "HARPA AI - Web Design Brief Processor © 2023 by Julián Mulet", licenciado bajo CC BY-NC 4.0. Consulta el archivo `LICENSE` para más detalles.
+## License
 
-## Contacto
+This project is under the "HARPA AI - Web Design Brief Processor © 2023 by Julián Mulet" license, licensed under CC BY-NC 4.0. See the `LICENSE` file for more details.
+
+## Contact
 
 @uxtechie - <contact@uxtechie.com>
